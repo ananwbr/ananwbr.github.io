@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/styles.css"><title>Objective-C Runtime: Part I | ANANWBR's</title></head><body><div class="container"><div class="columns page-header"><h1>ANANWBR's</h1></div><div class="columns"><div class="navigation"><nav class="menus-main"><a href="/" class="favicon"><img alt="ANANWBR's" src="/favicon.png"></a><a href="/">Home</a></nav></div></div><div class="columns"><div class="block-body column three-fourths"><article><header><small class="right"></small><h2>Objective-C Runtime: Part I</h2></header><div class="article-meta clearfix"><time class="left">2014-06-08</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><!--
+    背景
+    runtime文件结构
+    Messages
+    Objects, Classes & Metaclasses
+    Methods, Selectors and IMPs
+    Other Runtime Functionality
+    Associated object
+    Classes And Selectors From Strings
+    Method Swizzling
+    Dynamic Subclassing/isa Swizzling
+    Dynamic Method Resolution
+    Message Forwarding
+    Using Blocks As Method IMPs
+    总结
+        优缺点
+-->
+<p>下周要做个组内分享。本来是想着正好iOS8出来了，可以挑个新特性学习一下。结果没想到Apple出了大招，新语言Swift横空出世了。这几天微博上不断出现Swift相关的文章，大牛们果然学习热情和能力都是超越常人。在短时间内弄明白一个新语言还能写出高质量的文章显然是我等无法企及的。不过也很庆幸自己在这个欣欣向荣的领域里，有这么多充满激情的前辈，虽说不能并肩同行但就算在后面跟着他们的脚步也是颇有兴致的。</p>
+<p>既然在短时间内没有能力深入学习新的语言和特性，那就还是来讲讲Objective-C runtime了。虽然Swift在未来的某一天会取代Objective-C，但目前看来后者还会是主力开发语言，深入学习依然有价值。</p>
+<p>本篇文章就讲讲是什么使得Objective-C具有了动态特性(runtime)，以及对这种动态特性的应用。</p>
+<p>##背景</p>
+<p>我个人的学习习惯是当要深入学习某一个知识点的时候我需要一个问句作为思维脑图的初始节点。在runtime这块，<a href="http://lianxu.me/2012/11/10-cocoa-objc-newbie-problems/" target="_blank" rel="external">lianxu的这篇文章</a>给我提供了这个问句：如果让你（设计）实现一个计算机语言，你要如何下手？</p>
+<p>文中提到了3种不同的层次，以下是一个简单的概括，具体的细节可细读lianxu的文章：</p>
+<p>第一种是传统的面向过程的语言，例如C语言。这种语言的编译器在编译的时候将代码里的函数名称转化成一个相对内存地址，把调用这个函数的语句转换成一个jmp跳转指令。一切在编译时就已经确定了。</p>
+<p>第二种是面向对象的语言，是在第一种语言基础上做了改进，增加了类的部分，例如C++。增加了类的部分意味着编译器需要多绕个弯，在严格的C编译器上增加一层类处理的机制，把一个函数限制在它处在的class环境里，每次请求一个函数调用，先找到它的对象, 其类型,返回值，参数等等，确定了这些后再jmp跳转到需要的函数。虽然多了灵活性，但仍然是静态语言。</p>
+<p>第三种是动态语言，它将第二种的类的实现部分抽象出来，做成一套完整运行阶段的检测环境。这种语言的函数调用在编译期不能确定内存地址，只有到了运行时才能根据runtime环境中的情况做出跳转。Objective-C就是这样的动态语言。</p>
+<p>简而言之，Objective-C就是C的超集+runtime。初学者可能只看到了Objective-C在C的基础上增加的一些额外的关键字和语法，但真正使得这个语言如此强大的是它的runtime，虽然小巧，却无比灵活。</p>
+<h2 id="The_Runtime"><a href="#The_Runtime" class="headerlink" title="The Runtime"></a>The Runtime</h2><p><strong>在开始深入学习之前，我们需要建立这样一个概念：runtime的核心是消息发送机制。</strong></p>
+<h3 id="Messages"><a href="#Messages" class="headerlink" title="Messages"></a>Messages</h3><!--
+When you think of invoking some code, you think of calling a method. In some languages, this allows for the compiler to perform extra optimisations and error checking as it is a direct and clear relationship between what is being called and what is being invoked. With message sending, this distinction is less clear. You don't need to know if an object will respond to a message in order to send it. You send off the message and it might get handled by the object. Or it could be passed along to another object. A message doesn't need to map to a single method, an object can potentially handle several messages that it funnels through to a single method implementation.
+
+In Objective-C, this messaging is handled by the objc_msgSend() runtime function and its cousins. This function takes a target, a selector and a list of arguments. In fact at a conceptual level, the compiler simply converts all your message sends to calls to objc_msgSend(). For example, the following are functionally equivalent:
+
+[array insertObject:foo atIndex:5];
+objc_msgSend(array, @selector(insertObject:atIndex:), foo, 5);
+-->
+<p>当我们想要执行一段代码的时候，我们通常会调用一个方法。在有些语言中，由于调用的方法和实际执行的代码之间是直接、清楚的关系，所以编译器会做一些额外的优化和错误检查。而在基于消息发送机制的语言中，这种关系变得不再那么清晰。当我们给一个对象发送消息的时候，我们不需要知道该对象是否能响应这个消息。消息发送之后，可能会被这个对象处理，也可能会被转给另一个对象。另外，一个消息并不需要映射到一个单一的方法，而一个对象也可以处理映射到同一个方法实现的不同消息。</p>
+<p>在Objective-C中，这种消息机制是通过“objc_msgSend()”runtime函数以及其他一组相似的函数来处理的。我们可以看一下这个函数的声明，它需要一个target，一个selector和一个参数列表：</p>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">/** </span><br><span class="line">		* <span class="type">Sends</span> a message <span class="keyword">with</span> a simple <span class="keyword">return</span> value to an instance <span class="keyword">of</span> a class.</span><br><span class="line"> * </span><br><span class="line"> * @param self A <span class="type">pointer</span> to the instance <span class="keyword">of</span> the class that <span class="keyword">is</span> to receive the message.</span><br><span class="line"> * @param op <span class="type">The</span> selector <span class="keyword">of</span> the <span class="keyword">method</span> that handles the message.</span><br><span class="line"> * @param ... </span><br><span class="line"> *   A variable argument list containing the arguments to the <span class="keyword">method</span>.</span><br><span class="line"> * </span><br><span class="line"> * @<span class="keyword">return</span> <span class="type">The</span> <span class="keyword">return</span> value <span class="keyword">of</span> the <span class="keyword">method</span>.</span><br><span class="line"> * </span><br><span class="line"> * @note <span class="type">When</span> it encounters a <span class="keyword">method</span> call, the compiler generates a call to one <span class="keyword">of</span> the</span><br><span class="line"> *  functions \c objc_msgSend, \c objc_msgSend_stret, \c objc_msgSendSuper, <span class="keyword">or</span> \c objc_msgSendSuper_stret.</span><br><span class="line"> *  <span class="type">Messages</span> sent to an <span class="keyword">object</span>’s superclass (<span class="keyword">using</span> the \c super keyword) are sent <span class="keyword">using</span> \c objc_msgSendSuper; </span><br><span class="line"> *  other messages are sent <span class="keyword">using</span> \c objc_msgSend. <span class="type">Methods</span> that have data structures <span class="keyword">as</span> <span class="keyword">return</span> values</span><br><span class="line"> *  are sent <span class="keyword">using</span> \c objc_msgSendSuper_stret <span class="keyword">and</span> \c objc_msgSend_stret.</span><br><span class="line"> */	</span><br><span class="line"> <span class="type">OBJC_EXPORT</span> id objc_msgSend(id self, <span class="type">SEL</span> op, ...)</span><br><span class="line">   __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);</span><br></pre></td></tr></table></figure>
+<p>其实在概念层面上，编译器只是简单的将所有消息发送转换成了对objc_msgSend()函数的调用。所以，下面两种方式在功能上来讲是一样的：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">[array <span class="string">insertObject:</span>foo <span class="string">atIndex:</span><span class="number">5</span>];</span><br><span class="line">objc_msgSend(array, <span class="annotation">@selector</span>(<span class="string">insertObject:</span><span class="string">atIndex:</span>), foo, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>除了能给对象发送消息，还可以给类发送消息。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[anObject dosomething:something]</span><span class="comment">;</span></span><br><span class="line"><span class="title">[AnClass dosomethong:something]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>下面我们就来详解一下上面两条消息中的主角object和Class，看一下Objective-C的对象模型。</p>
+<p>###Objects, Classes &amp; Metaclasses<br>&lt;!–<br>In most OOP languages you have the concepts of classes and of objects. Classes are blueprints from which objects are formed. However, in Objective-C, classes are themselves objects, which can respond to messages, which is why you have the distinction between class and instance methods. In concrete terms, an object in Objective-C is a struct, who’s first member is called isa and is a pointer to its class. This is the definition from objc/objc.h</p>
+<p>The object’s class is what holds the list of methods it implements, as well as a pointer to the superclass. Now that makes sense for objects, but classes are also objects. This means a class also has an isa variable, so what does it point to? Well this is where the 3rd type comes in: metaclasses. A metaclass is to a class, what a class is to an object, i.e. it holds the list of methods it implements, as well as the super metaclass. To get a more complete understanding of how objects, classes and metaclasses fit together, read this post by Greg Parker which explains them incredibly well.<br>–&gt;<br>在大多数面向对象编程（OOP）语言中都有类（class）和对象（object）的概念。类给对象提供了生成模板。但在Objective-C中，有点不同，类本身也是对象，也可以响应消息，因此也就有了类方法和实例方法的区别。具体而言，Objective-C中的一个对象是一个结构体（struct），它的第一个成员是一个叫isa的指针，指向它的类。我们可以在。bjc/objc.h中看到定义：</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">/// Represents an<span class="instruction"> instance </span>of a class.</span><br><span class="line">struct objc_object &#123;</span><br><span class="line">    Class isa  OBJC_ISA_AVAI<span class="class">LABILITY;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>对象的类持有该对象的方法列表，也持有一个指向父类的指针。我们也说过类本身也是对象，这意味着类也有一个isa的变量，它又指向哪里呢。这时候第三种类型元类（metaclass）该登场啦。其实元类对于类来说就如类对于对象一样，它持有类的方法列表和一个指向父元类的指针。这三者之间的关系可以参考下图：</p>
+<p><img src="/images/2014/6/class-diagram.png" alt="Object,Class和Metaclass之间的关系"></p>
+<!--
+What about the metaclass? Is it metaclasses all the way down? No. A metaclass is an instance of the root class's metaclass; the root metaclass is itself an instance of the root metaclass. The isa chain ends in a cycle here: instance to class to metaclass to root metaclass to itself. The behavior of metaclass isa pointers rarely matters, since in the real world nobody sends messages to metaclass objects.
+
+More important is the superclass of a metaclass. The metaclass's superclass chain parallels the class's superclass chain, so class methods are inherited in parallel with instance methods. And the root metaclass's superclass is the root class, so each class object responds to the root class's instance methods. In the end, a class object is an instance of (a subclass of) the root class, just like any other object.
+
+Confused? The diagram may help. Remember, when a message is sent to any object, the method lookup starts with that object's isa pointer, then continues up the superclass chain. "Instance methods" are defined by the class, and "class methods" are defined by the metaclass plus the root (non-meta) class.
+-->
+<p>从上图可以看出，metaclass并不是无限制的传递下去的，isa指针链会在一个循环中终止：instance-&gt;class-&gt;metaclass-&gt;root metaclass-&gt;root metaclass。由于在现实世界中没有人会给元类发送消息，所以它的isa指向哪里并不重要。Objective-C甚至试图隐藏了metaclass的信息，比如<code>[NSObject class]</code>和<code>[NSObject self]</code>返回的结果一样，但正常情况下前者应该返回<code>NSObject-isa</code>指向的元类。</p>
+<p>以上只是简单的介绍了Objective-C的对象模型，如果还想深入了解，推荐细读<a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">Greg Parker的这篇文章</a>，也是上图的出处。</p>
+<p>讲完了message左边的target部分，再来看看右边的method部分吧。</p>
+<p>###Methods, Selectors and IMPs<br><!--最后要整理一下整个流程--><br>&lt;!–<br>So we know that the runtime sends messages to objects. We also know that an object’s class holds a list of its methods. So how do those messages map to methods and how are methods actually implemented?</p>
+<p>The answer to the first question is pretty simple. The method list in a class is essentially a dictionary, where selectors are the keys and IMPs are the values. An IMP is simply a pointer to the method’s implementation in memory. The really important thing though, is that this connection between the selector and the IMP is determined at runtime, not compile time. This allows us to play around with it, as we’ll see later.</p>
+<p>The IMP is usually a pointer to a function, where the first argument is of type id and called self, the second argument is of type SEL and is called _cmd and subsequent arguments are the method arguments. This is where the self and _cmd variables are declared when you use them inside a method. Below is an example of a method and a potential IMP for it:</p>
+<ul>
+<li>(id)doSomethingWithInt:(int)aInt {}<br>id doSomethingWithInt(id self, SEL _cmd, int aInt) {}<br>–&gt;<br>现在我们已经知道runtime会给对象发送消息，也知道一个对象的类持有该对象的方法列表。那么消息是如何映射到方法，方法的具体实现又是什么呢。</li>
+</ul>
+<p>对第一个小问的答案其实很简单：类持有的方法列表本质上是一个以selector和IMP作为键值对的dictionary。一个IMP是一个指向内存中该方法具体实现的指针。不过真正重要的一点也是我们需要建立的概念是这种selector和IMP之间的对应关系是在运行时才确定的，而不是编译器。这样的特性也给我们提供了施展各种黑魔法的机会，后面我们会讲到更具体的例子。</p>
+<p>我们还是再深入地了解一下IMP吧。通常它是一个指向带有特定参数的函数的指针：第一个参数是id类型叫做self，第二个参数是SEL类型叫做_cmd，随后跟着方法的参数。这也是对我们在方法中使用的self和_cmd变量的生命。以下就是一个方法和它可能对应的IMP的例子：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)doSomethingWithInt:(<span class="keyword">int</span>)aInt &#123;&#125;</span><br><span class="line"><span class="keyword">id</span> doSomethingWithInt(<span class="keyword">id</span> <span class="keyword">self</span>, SEL _cmd, <span class="keyword">int</span> aInt) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在了解了各种概念之后，我们来整理一下整个消息发送的流程。</strong><br><!--
+Remember, when a message is sent to any object, the method lookup starts with that object's isa pointer, then continues up the superclass chain. "Instance methods" are defined by the class, and "class methods" are defined by the metaclass plus the root (non-meta) class.
+--><br>当我们想要调用一段代码时，我们给一个对象发送消息。编译器把这个消息转换成对objc_msgSend()函数的调用。程序运行时，runtime环境根据对象的isa指针找到它的类从而找到方法列表，再根据seloctor得到对应的IMP，最后跳转到该IMP指向的具体实现。如果在isa指向的类中没有找到该方法，那runtime还会沿着该类的父类链查找。同理，给一个类发送消息也是如此。我们要清楚class定义了实例方法，metaclass和root class定义了类方法。</p>
+<p>下面的图可以帮助我们更好的理解这个流程。</p>
+<p><img src="/images/2014/6/message_sending.png" alt="消息发送流程"></p>
+<p>###Other Runtime Functionality</p>
+<p>现在我们已经了解了object，class，selector，IMP和消息发送等概念了，可能有人会问，那runtime到底能做什么呢。其实runtime的功能归纳起来就两点：</p>
+<ol>
+<li>类和对象的创建，修改和内省</li>
+<li>消息发送</li>
+</ol>
+<p>前文中我们已经涉及到消息发送的内容了，但它只是runtime功能很小的一部分。我们可以来看一下objc/runtime.h和objc/message.h头文件，发现所有的函数的函数名都以它所作用的对象为前缀的。下面就来了解一些有哪些前缀以及相关的函数。</p>
+<p>####class<br>以class为前缀的函数是用来类修改和内省的。</p>
+<p>比如<code>class_addIvar</code>，<code>class_addMethod</code>，<code>class_addProperty</code>，<code>class_addProtocol</code>，<code>class_addProtocol</code>等允许我们给类添加各种结构。</p>
+<p><code>class_copyIvarList</code>，<code>class_copyMethodList</code>，<code>class_copyProtocolList</code>和 <code>class_copyPropertyList</code>等用来得到类中各种类型的结构的列表。</p>
+<p>而<code>class_getClassMethod</code>，<code>class_getClassVariable</code>，<code>class_getInstanceMethod</code>，<code>class_getInstanceVariable</code>，<code>class_getMethodImplementation</code>和<code>class_getProperty</code>等函数会根据给定的名字返回对应的结构。</p>
+<p>除此之外，也有很多更常用的内省函数被封装成Cocoa方法，</p>
+<p>比如<code>class_conformsToProtocol</code>，<code>class_respondsToSelector</code>和<code>class_getSuperclass</code>等。甚至还可以用<code>class_createInstance</code>函数创建一个类的实例对象。</p>
+<p>####ivar<br>以ivar为前缀的函数用来得到一个示例变量的名字，内存便宜和Objective-C编码类型等信息。</p>
+<p>####method<br>以method为前缀的函数大部分是用来内省的，</p>
+<p>比如<code>method_getName</code>，<code>method_getImplementation</code>，<code>method_getReturnType</code>等。还有一些是用来对方法进行修改的，比如<code>method_setImplementation</code>和<code>method_exchangeImplementations</code>，对于这两个函数后面还有更深入的学习。</p>
+<p>####objc<br>以objc为前缀的函数层次就比较高了。它包括了一组objc_msgSend函数用来处理核心的消息发送公功能。它还有诸如<code>objc_getAssociatedObject</code>，<code>objc_setAssociatedObject</code>和<code>objc_removeAssociatedObjects</code>等函数用来处理相关参考（associated references，后面会再讲到）。由于这类函数处于整个结构的顶部，我们还可以在运行时通过<code>objc_copyProtocolList</code>，<code>objc_getClassList</code>，<code>objc_getProtocol</code>，<code>objc_getClass</code>等得到更高层次的信息。</p>
+<p>####object<br>以object为前缀的函数被对象用来修改和内省。我们可以get和set一个对象的示例变量的值。使用<code>object_copy</code>和<code>object_dispose</code>可以复制对象和释放对象的内存。我们还可以得到对象的类，但最有趣的是我们甚至可以使用<code>object_setClass</code>在运行时去改变这个对象的类。后面我们会看到这种用法的威力。</p>
+<p>####property<br>属性存储了相当多的数据。以property为前缀的参数除了得到名字外，还能通过<code>property_getAttributes</code>得到诸如属性的返回类型，它是原子或非原子，使用的内存管理方式，自定义的getter和setter的名字，它的实现是否是动态实现的，支持它的示例变量的名字以及它是否是一个若引用等信息。</p>
+<p>####protocol<br>协议和类有点像，但比类精简一点，很多方法是一样的。我们可以通过以protocol为前缀的方法得到某个协议的方法，属性和协议列表并检查它是否遵循了其它的协议。</p>
+<p>####sel<br>最后还有一些以sel为前缀的函数可以得到selecor的名字，注册一个selector名字以及检查selector是否相等。</p>
+<p>##结束语<br>呼~松一口气。第一部分终于讲完啦。原来没有分上下篇，想一气呵成，不过写起来的篇幅超过预想，所以就先停在这吧。</p>
+<p>现在我们已经一定程度掌握了Objective-C runtime能做什么，怎么做等内容。下一篇文章会来讲讲基于runtime有哪些有趣的动态编程技术。相信比这一章的理论知识会更有意思吧。</p>
+</div></article></div><div class="block-sidebar column one-fourth"><div class="widget tags"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul></div><div class="widget archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">一月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a><span class="archive-list-count">1</span></li></ul></div><div class="widget text-content"><p>© 2015 ananwbr <br>
+Powered by &nbsp;<a href="http://hexo.io">Hexo</a></p></div></div></div></div></body></html>

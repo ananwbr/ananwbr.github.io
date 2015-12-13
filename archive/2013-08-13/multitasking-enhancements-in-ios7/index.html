@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/styles.css"><title>iOS7多任务增强（1） | ANANWBR's</title></head><body><div class="container"><div class="columns page-header"><h1>ANANWBR's</h1></div><div class="columns"><div class="navigation"><nav class="menus-main"><a href="/" class="favicon"><img alt="ANANWBR's" src="/favicon.png"></a><a href="/">Home</a></nav></div></div><div class="columns"><div class="block-body column three-fourths"><article><header><small class="right"></small><h2>iOS7多任务增强（1）</h2></header><div class="article-meta clearfix"><time class="left">2013-08-13</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><p>参与的上一个项目上线后，忽然就有了几天空闲的时间。前一篇文章提到过要分享的事，因为赶项目一直没有进行。正好趁着这几天专心研究一下。这次主要把焦点放在iOS7多任务增强上，决定先把官方文档读一读。在<a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS7.html#//apple_ref/doc/uid/TP40013162-SW1" target="_blank" rel="external">《What’s new in iOS 7》</a>这篇文档中，推荐我们阅读《iOS App Programming Guide》的<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW3" target="_blank" rel="external">“App States and Multitasking”</a>章节了解更多相关内容。结果在接触到多任务增强的内容之前，花了很多时间边阅读边翻译应用状态的部分。虽然弄清楚这部分的知识也很必要，但是因为最初的目的是尽快学习新增的内容以做分享，所以这样缓慢的进度也让我很着急。另外，在阅读的过程中总会碰到相关却还不太清楚的知识点，比如在读到<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW14" target="_blank" rel="external">“The Main Run Loop”</a>的时候我又找了另一篇文档学习<a href="http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW1" target="_blank" rel="external">“run loops”</a>的知识。就像越滚越大的雪球，需要学习的相关知识也越来越多，又因为自己还不够快的学习速度，等我真正开始研究新增的特性时，已经过去了四天。不过最后证明，有了前面几天的铺垫，后面的学习进度更快了。当然选对学习材料也很重要，除了官方文档之外，我还花了很多时间在网上收集资料，最后发现，其实WWDC提供的视频+Keynote+Sample才是利器，能帮助我们更快更全面的了解重点内容，有谁比苹果的工程师更了解新特性呢。虽然这几天进度慢啃得很辛苦也走了点弯路，却也让我找到了学习状态和更好的方法，让我对今后的学习更有信心。今天是七夕，没有情人的我，就靠这些感悟愉悦一下心情吧：P。</p>
+<p>话不多说了，下面开始本文的重点内容吧。</p>
+<p>目录：</p>
+<ul>
+<li>预备知识</li>
+<li>iOS7多任务增强 </li>
+</ul>
+<h2 id="u9884_u5907_u77E5_u8BC6"><a href="#u9884_u5907_u77E5_u8BC6" class="headerlink" title="预备知识"></a>预备知识</h2><p>在开始将新增特性之前，还是先简单地说说下面两点吧</p>
+<ul>
+<li>iOS应用的状态（App States）</li>
+<li>iOS6中的多任务</li>
+</ul>
+<h4 id="iOS_u5E94_u7528_u72B6_u6001"><a href="#iOS_u5E94_u7528_u72B6_u6001" class="headerlink" title="iOS应用状态"></a>iOS应用状态</h4><p>对于一个iOS应用来说，知道自己当前是运行在前台还是后台是很重要的。由于iOS设备的系统资源更加有限，应用需要根据这种状态信息，针对不同的状态做不同的操作。另外，操作系统也会限制你的应用运行在后台时能做的事，以达到提高电池的续航能力，提升用户对跑在前台的应用的用户体验的目的。当你的应用在前台和后台两种模式之间转换时，系统会通知你的应用。当接收到通知时，就是改变应用行为的机会啦。<br>在任何时刻，应用的状态都逃不出以下几种：</p>
+<ul>
+<li>不在运行（Not Running）：应用未启动或已启动但被终止</li>
+<li>非活跃（Inactive）：应用跑在前台但当前不能接收事件（可能在执行其它代码）。应用通常只在这种状态停留很短的时间然后转到其他状态</li>
+<li>活跃（Active）：跑在前台而且可以接收事件 </li>
+<li>后台（Background）：应用跑在后台执行代码。大多数应用在被挂起之前会短暂进入这个状态。不过应用可以请求额外的执行时间从而保留在这个状态久一点。另外，如果应用运行后直接进入后台会进入该状态，而不是非活跃状态</li>
+<li>睡眠（Suspended）：应用在后台但不执行代码。系统在把应用放到该状态之前不会通知应用。当进入睡眠状态时时，应用还保留在内存中但不执行代码。当低内存的时候处于睡眠状态的应用可能会被终止，此时系统也不会通知应用</li>
+</ul>
+<p>这几种状态之间的变化如下图所示：</p>
+<p><img src="/images/2013/8/app_states_change.png" alt="状态改变"></p>
+<p>状态的改变总是伴随这app delegate对象方法的调用：</p>
+<ul>
+<li><code>application:willFinishLaunchingWithOptions:</code>——启动时的第一个执行代码的机会</li>
+<li><code>application:didFinishLaunchingWithOptions:</code>——在应用展示给用户之前做最后的初始化</li>
+<li><code>applicationDidBecomeActive:</code>——让应用知道它即将成为前台应用程序，可以在此做最后的准备</li>
+<li><code>applicationWillResignActive:</code>——让应用知道它马上就要离开前台了</li>
+<li><code>applicationDidEnterBackground:</code>——让应用知道它运行在后台可能在将来某个时间将休眠</li>
+<li><code>applicationWillEnterForeground:</code>——应用将离开后台回到前台，但还不是活跃状态</li>
+<li><code>applicationWillTerminate:</code>——让应用知道它将被终止，如果应用在睡眠状态被终止则不会调用该方法</li>
+</ul>
+<p>我们重点讨论的就是当应用处于后两种状态时，应用应该做什么以及可以做什么。其它的状态暂时不详谈。</p>
+<p>当用户按了主屏（Home）键或睡眠/唤醒（锁屏/解屏）键，或系统启动了另一个应用时，当前运行在前台的应用会转变为非活跃状态然后进入后台状态。这些状态变化会调用<code>applicationWillResignActive:</code>和<code>applicationDidEnterBackground:</code>方法。</p>
+<p>过程如图所示：</p>
+<p><img src="/images/2013/8/foreground_to_background.png" alt="前台进入后台"></p>
+<p>这时候难题出现了。<br>一方面，当应用进入后台时，应该在<code>applicationDidEnterBackground:</code>方法中考虑以下操作：</p>
+<ul>
+<li>为系统截图做准备。当<code>applicationDidEnterBackground:</code>方法返回时，系统会给应用当前的用户界面截个图。然后用这张图做过渡动画。如果应用当前界面上有敏感信息的视图，可以在该方法返回前把这部分隐藏起来。</li>
+<li>保存用户数据和应用状态信息。当应用进入后台的时候所有未保存的改变都要写到磁盘。因为你的应用在后台的时候可能会被杀掉。你可以将这些操作放到一个背景线程中。</li>
+<li>尽可能释放内存</li>
+</ul>
+<p>另一方面，在<code>applicationDidEnterBackground:</code>返回前大概只有5秒的时间可以执行任务，如果超过的话应用就会被杀掉。所以应该尽快执行完任务，如果你的任务需要更多时间，那你可以调用<code>beginBackgroundTaskWithExpirationHandler:</code>方法请求额外的时间然后在一个次要的线程中开始运行费时的任务。不过，不管是否开启后台任务，<code>applicationDidEnterBackground:</code>方法都需要在5秒内返回。该方法结束后大多数应用很快会进入睡眠状态。如果应用请求了特定的后台任务（比如播放音乐）或是向系统请求了额外的执行时间那还会再运行长一点的时间。</p>
+<p>注意上面提到的“请求额外的时间”和“特定的后台任务”都属于iOS的后台技术，<strong>现在是时候介绍iOS的多任务啦！</strong></p>
+<h4 id="iOS6_u4E2D_u7684_u591A_u4EFB_u52A1"><a href="#iOS6_u4E2D_u7684_u591A_u4EFB_u52A1" class="headerlink" title="iOS6中的多任务"></a>iOS6中的多任务</h4><p>从iOS4开始，在用户按了Home键使应用离开屏幕后，大多数应用很快就会进入睡眠状态。此时应用虽然还在内存中，但它已经没有权利执行代码了。不过，如前面提到的，如果应用请求了特定的后台任务或是向系统请求了额外的执行时间，那它还可以在后台多运行一会儿。下面就来了解一下有哪些特定的后台任务以及如何请求额外的执行时间吧。</p>
+<p>在详解之前，iOS6中可用的5种基本后台模式：</p>
+<ul>
+<li>播放音频：应用可以继续在后台播放和/或录制音频。</li>
+<li>接收位置更新：当设备的位置发生变化时，应用可以获得回调。</li>
+<li>下载报刊杂志：Newsstand应用可以在后台下载内容</li>
+<li>提供Voice-over-IP（VoIP）服务：VoIP允许用户通过网络而不是蜂窝数据打电话 </li>
+<li>执行有限长度的任务：应用可以在有限时间内运行任何代码</li>
+</ul>
+<p>前面四种模式在本篇文章中不作详述，有兴趣的同学可以参考优质教程网站RayWenderlich上的<a href="http://www.raywenderlich.com/29948/backgrounding-for-ios#" target="_blank" rel="external">这篇教程</a>，它非常详细地讲解了如果使用运用这些模式。我们只把重点放在最后一种模式上。</p>
+<p>当应用转入后台时，应用可以向系统请求额外的时间以完成一些重要的工作。这时候可以调用<code>UIApplication</code>类的<code>beginBackgroundTaskWithExpirationHandler:</code>方法。这个方法可以延迟应用进入睡眠状态，为应用争取更多的时间完成诸如“将用户信息写到磁盘”或“从网络服务器端下载一个重要文件”等任务。</p>
+<p>具体代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (<span class="typename">void</span>)<span class="string">applicationDidEnterBackground:</span>(UIApplication *)application</span><br><span class="line">&#123;</span><br><span class="line">    bgTask = [application <span class="string">beginBackgroundTaskWithExpirationHandler:</span>^&#123;</span><br><span class="line">        <span class="comment">// Clean up any unfinished task business by marking where you</span></span><br><span class="line">        <span class="comment">// stopped or ending the task outright.</span></span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;];</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Start the long-running task and return immediately.</span></span><br><span class="line">    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Do the work associated with the task, preferably in chunks.</span></span><br><span class="line"> </span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码展示了当应用进入后台时如何开始一个会长时间运行的任务。大家可能注意到了，结束后台任务的代码<code>[application endBackgroundTask:bgTask];</code>被调用了两次。第一处是在时间到期处理块中调用的，这是考虑了任务过长以至于请求的额外时间用完了任务还是没完成的情况.如果不调用，应用将被终止。在创建了一个任务之后，再将该任务提交到一个派遣队列中异步执行。不要忘了<code>applicationDidEnterBackground:</code>方法还是得在规定的时间内返回的。</p>
+<p>这里还有几点需要注意：</p>
+<ul>
+<li>任何<code>beginBackgroundTaskWithExpirationHandler:</code>方法的调用都需要有对应的<code>endBackgroundTask:</code>方法来标记任务的结束。因为应用只有有限的时间执行任务，时间用完的时候如果任务没有被标记为已经结束那么系统就会终止应用。</li>
+<li>一个应用可以同时有多个后台任务。每个任务在创建的时候会返回一个任务标识，在该任务结束的时候必须将自己的标识符传给<code>endBackgroundTask:</code>方法。</li>
+<li>每次创建任务的时候都传一个时间到期处理块给<code>beginBackgroundTaskWithExpirationHandler:</code>方法。当该处理块被执行时，应用可以执行任务的时间已经所剩无几了，因此应该尽快执行清理代码并将任务标记为结束。如果你想知道应用具体剩的时间，可以访问<code>UIApplication</code>的<code>backgroundTimeRemaining</code>属性。</li>
+</ul>
+<p>另外有人可能会问调用这个方法最多可以得到多少的额外时间呢。这个数值其实是不确定的，它由iOS系统决定。但我们可以通过<code>backgroundTimeRemaining</code>属性查看某个时刻的具体数值。一般情况下，基于观察得出的时间长度是10分钟。不过要再次重申，官方文档中也没有给出一个大概的数值，所以不要依赖这个最大时间数值。</p>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>关于iOS6中的多任务就讲这么多啦。不管什么时候都要记住，官方文档+WWDC视频+Keynote永远是我们学习的好伙伴。如果有什么不理解或想继续深入学习的，可以行动起来啦。</p>
+<p>明天终于要写iOS7中的新特性啦~撒花~</p>
+<!--
+How much time you get after your app gets backgrounded is determined by iOS. There are no guarantees on the time you’re granted, but you can always check the backgroundTimeRemaining property of UIApplication. This will tell you how much time you have left.
+The general, observation-based consensus is that usually, you get 10 minutes. Again, there are no guarantees and the API documentation doesn’t even give a ballpark number – so don’t rely on this number. You might get 5 minutes or 5 seconds, so your app needs to be prepared for anything!
+
+Technically, this is not a background mode at all, as you don’t have to declare that your app uses this mode in Info.plist. Instead, it’s an API that lets you run arbitrary code for a finite amount of time when your app is in the background. Well… whatever!
+
+The way to use the beginBackgroundTaskWithExpirationHandler: method is to call it before starting the task you want to protect. Every call to this method must be balanced by a corresponding call to the endBackgroundTask: method to mark the end of the task. Because apps are given only a limited amount of time to finish background tasks, you must call this method before time expires; otherwise the system will terminate your app. To avoid termination, you can also provide an expiration handler when starting a task and call the endBackgroundTask: method from there. (You can use the value in the backgroundTimeRemaining property of the app object to see how much time is left.)
+
+Important: An app can have any number of tasks running at the same time. Each time you start a task, the beginBackgroundTaskWithExpirationHandler: method returns a unique identifier for the task. You must pass this same identifier to the endBackgroundTask: method when it comes time to end the task.
+
+Listing 3-3 shows how to start a long-running task when your app transitions to the background. In this example, the request to start a background task includes an expiration handler just in case the task takes too long. The task itself is then submitted to a dispatch queue for asynchronous execution so that the applicationDidEnterBackground: method can return normally. The use of blocks simplifies the code needed to maintain references to any important variables, such as the background task identifier. The bgTask variable is a member variable of the class that stores a pointer to the current background task identifier and is initialized prior to its use in this method.
+
+Listing 3-3  Starting a background task at quit time
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // Clean up any unfinished task business by marking where you
+        // stopped or ending the task outright.
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+
+    // Start the long-running task and return immediately.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        // Do the work associated with the task, preferably in chunks.
+
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    });
+}
+Note: Always provide an expiration handler when starting a task, but if you want to know how much time your app has left to run, get the value of the backgroundTimeRemaining property of UIApplication.
+In your own expiration handlers, you can include additional code needed to close out your task. However, any code you include must not take too long to execute because, by the time your expiration handler is called, your app is already very close to its time limit. For this reason, perform only minimal cleanup of your state information and end the task.
+-->
+</div></article></div><div class="block-sidebar column one-fourth"><div class="widget tags"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul></div><div class="widget archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">一月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a><span class="archive-list-count">1</span></li></ul></div><div class="widget text-content"><p>© 2015 ananwbr <br>
+Powered by &nbsp;<a href="http://hexo.io">Hexo</a></p></div></div></div></div></body></html>

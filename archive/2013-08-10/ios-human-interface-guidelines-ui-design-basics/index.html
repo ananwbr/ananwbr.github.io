@@ -1,0 +1,251 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/styles.css"><title>iOS界面设计规范 | ANANWBR's</title></head><body><div class="container"><div class="columns page-header"><h1>ANANWBR's</h1></div><div class="columns"><div class="navigation"><nav class="menus-main"><a href="/" class="favicon"><img alt="ANANWBR's" src="/favicon.png"></a><a href="/">Home</a></nav></div></div><div class="columns"><div class="block-body column three-fourths"><article><header><small class="right"></small><h2>iOS界面设计规范</h2></header><div class="article-meta clearfix"><time class="left">2013-08-10</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><p>时间过得真快，入职五周了。第一周周五的时候师傅问我最近有没有学习iOS7的东西，我很惭愧的回答最近看的比较少。因为那段时间忙着毕业的事，真正毕业后又给自己放了两周的假回家休息去了，完全不在学习的状态。然后师傅让我近期学习一下准备组内分享吧。刚入职就接到这任务实在是有点诚惶诚恐。怕自己一只小菜鸟到时候说的都是他们知道的，肯定是尽给挑刺的。不过我属于有压力就有动力型的。况且就算他不交代任务我也是准备入职后就要给自己充充电了，近期应该会启动个人项目了。</p>
+<p>说来惭愧，在我刚开始学习iOS编程的时候就知道<a href="https://developer.apple.com/library/prerelease/ios/design/index.html#//apple_ref/doc/uid/TP40013289" target="_blank" rel="external">《iOS界面设计规范》</a>这份文档的重要性，虽然那时候的学习材料是全英文的，但当我开始读这份文档时，还是没有坚持读下去的耐心，毕竟和读母语材料比起来速度还是慢不少。在过去的几年里，我有意培养自己阅读英文文档的能力，书或材料如果有英文版本，我会尽量读原版，中文版会偶尔作为参考。最近觉得自己不管是理解分析能力还是速度都有了很大的提高。不过，由于最近需要看的材料太多，而这份文档并不是最主要的，于是就选择翻译的版本。在此，非常感谢那些无私奉献自己的时间和精力，为更多人带来便利的<a href="http://www.weibo.com/c7210" target="_blank" rel="external">译者</a>。虽然他自称是搬运工，但还是要感谢一下。也希望自己有一天也有能力参与其中。</p>
+<p>这边文章是在读完“基础UI”部分后做的笔记，供自己不时的快速浏览掌握重点，更详细的内容可以阅读<a href="http://beforweb.com/node/215" target="_blank" rel="external">这里</a>。</p>
+<h2 id="iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI"><a href="#iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI" class="headerlink" title="iOS界面设计规范-基础UI"></a>iOS界面设计规范-基础UI</h2><h4 id="1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09"><a href="#1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09" class="headerlink" title="1、为iOS7而设计（Design for iOS 7）"></a>1、为iOS7而设计（Design for iOS 7）</h4><p>iOS7涵盖了三个方面的设计主题思想：依从，清晰，纵深</p>
+<ul>
+<li>依从于内容<ul>
+<li>充分利用全屏空间</li>
+<li>慎用拟物化视觉元素</li>
+<li>让半透明的视觉元素透露其背后的内容</li>
+</ul>
+</li>
+<li>提供清晰的视觉效果<ul>
+<li>充分运用留白</li>
+<li>通过色彩简化UI（选一种关键的颜色）</li>
+<li>使用系统字体，确保清晰易读</li>
+<li>拥抱无边的按钮（搭配一种关键色或系统色，表达一个可交互的UI元素）</li>
+</ul>
+</li>
+<li>利用纵深进行沟通<ul>
+<li>iOS7会在不同的层面上显示内容，以体现内容的层级和位置关系，这有利于用户理解屏幕上各种元素之间的关联 </li>
+</ul>
+</li>
+</ul>
+<h4 id="2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09"><a href="#2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09" class="headerlink" title="2、iOS应用解析（iOS App Anatomy）"></a>2、iOS应用解析（iOS App Anatomy）</h4><p>UIKit框架提供的视图可分为四大类</p>
+<ul>
+<li>栏（Bars）：包含与上下文内容情景相关的信息，告诉用户他们当前在应用当中所处的位置；同时还包含相关的导航功能，或是可以由用户发起的操作</li>
+<li>内容视图（Content Views）：包含当前应用所特有的内容，并支持相关的交互行为，例如滚屏、插入、删除、对列表条目进行重新排序，等等</li>
+<li>控制元素（Controls）：产生行为或显示信息</li>
+<li>临时视图（Temporary views）：临时性的向用户呈现重要信息，或提供额外的功能及选项</li>
+</ul>
+<p>除了定义UI元素以为，UIKit框架还定义了那些可以完成诸如手势识别、绘制、辅助支持、打印支持等功能的对象。</p>
+<h4 id="3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09"><a href="#3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09" class="headerlink" title="3、启动与退出（Starting and Stopping）"></a>3、启动与退出（Starting and Stopping）</h4><ul>
+<li>即刻启动（用户在一到两分钟内对应用做出评估）<ul>
+<li>尽可能避免使用无意义的启动画面（欢迎画面）或其他类似的启动体验</li>
+<li>应用安装完成后，不要让用户必须进行设置才能使用。取而代之地：<ul>
+<li>将解决方案聚焦在80%的用户需求上</li>
+<li>尽可能地从其它来源获取信息</li>
+<li>如果确实需要用户进行安装设置，尽量让他们在你的应用内部进行输入</li>
+</ul>
+</li>
+<li>尽可能晚些让用户登录</li>
+<li>一般来说，要按照默认的屏幕定向方式启动应用。iPhone：竖屏。iPad，设备当前所处的状态就是其默认定向方式。</li>
+<li>可以提供一张与应用首屏看上去几乎一致的启动图片</li>
+<li>如果可能，不要让用户在初次加载应用时阅读免责声明或必须对用户进行确认</li>
+<li>在应用重启后，要恢复到用户退出时的状态，让他们可以在中断的地方继续使用</li>
+</ul>
+</li>
+<li>时刻准备着退出<ul>
+<li>iOS应用永远不会有用来执行关闭或退出的操作，用户退出的方式就是切换到另外一个应用、回到系统主界面，或是使设备进入睡眠模式<ul>
+<li>及时地、尽可能频繁地保存用户数据</li>
+<li>退出时，尽可能在细节层面保存当前的状态</li>
+</ul>
+</li>
+<li>永远不要以程序化的方式自动退出iOS应用。如果出入某些原因，你的应用无法按预期正常工作，你需要告诉用户当前情况。取决于问题严重性，有两种选择：<ul>
+<li>通过一个能够吸引用户注意力的界面描述当前问题，并提出执行建议</li>
+<li>如果只有一部分功能不可用了，可以在用户用到这些功能的时候，通过一个单独的界面或是弹出提示（alert）来告诉他们当前的情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4_u3001_u5E03_u5C40_uFF08Layout_uFF09"><a href="#4_u3001_u5E03_u5C40_uFF08Layout_uFF09" class="headerlink" title="4、布局（Layout）"></a>4、布局（Layout）</h4><p>布局所关乎的远不止“界面元素在屏幕上看上去如何”这么简单。通过布局，你可以让用户知道哪些东西是最重要的，他们有哪些事情可做，内容之间具有怎样的关联。取决于设备类型和横竖屏定向方式，同一款应用布局界面也可能会有不同的模式。</p>
+<ul>
+<li>确保交互元素具有足够大的尺寸，以便用户可以很容易的与内容和功能进行交互。可点区域尽量不小于44*44像素</li>
+<li>将重要的内容和功能放在权重更高的位置上，使用户的注意力更好的聚焦在主要任务上（前半频，左侧）</li>
+<li>利用视觉表现形式的权重和平衡，向用户展示界面元素之间的相对重要程度（尺寸）</li>
+<li>通常情况下，要防止UI元素在外观上具有不统一的表现形式</li>
+<li>确保界面中的主要内容在默认尺寸下可以被阅读和理解</li>
+</ul>
+<h4 id="5_u3001_u5BFC_u822A_uFF08Navigation_uFF09"><a href="#5_u3001_u5BFC_u822A_uFF08Navigation_uFF09" class="headerlink" title="5、导航（Navigation）"></a>5、导航（Navigation）</h4><p>总体上讲，导航可以分为三种类型，其中每一类都很好的适用于一种特定类型的应用：</p>
+<ul>
+<li>树形信息结构的应用</li>
+<li>扁平化信息结构的应用</li>
+<li>由内容或体验所驱动的应用</li>
+</ul>
+<p>通过UIKit框架当中定义的一些标准UI控件，可以轻松的创建属性导航或扁平化结构的导航，此外，还有些控件可以帮你创建以内容为中心的导航模式。</p>
+<ul>
+<li>通过导航栏（navigation bar），为用户提供一种能够轻松的在树形信息结构大过年周前后行进的导航方式</li>
+<li>通过标签栏（tab bar）展示整体内容或功能之下的若干个同级分类项</li>
+<li>通过分页控件（page control）来暗示多个条目或内容视图的存在</li>
+<li>一般来讲，最好让每个界面都有唯一的入口。如果用户可以在不同的上下文当中访问到同一个界面，请考虑使用一种临时化的视图，例如模态视图（modal view），动作表单（action sheet）或是警告提示（alert）。</li>
+</ul>
+<h4 id="6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09"><a href="#6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09" class="headerlink" title="6、模态情境（Modal Context）"></a>6、模态情境（Modal Context）</h4><p>模态，一种用来承载特定内容、功能或体验的模式，比如警告框，模态视图和分享界面。它可以帮助用户完成某些任务，或在不受干扰的情况获取信息，但会暂时性的强迫用户停止与应用其他部分的互动。通常，仅在这些情况下考虑创建模态情境：</p>
+<ul>
+<li>非常有必要吸引用户的注意力</li>
+<li>必须完成某些任务，或明确的放弃某项操作，否则用户数据将进入不稳定的状态</li>
+</ul>
+<p>在使用模态时，应该注意一下几点：</p>
+<ul>
+<li>保持模态任务的简单、简短、易聚焦</li>
+<li>始终提供一种明显而安全的退出方式</li>
+<li>如果主任务需要一系列层极化的模态视图，那么要确保用户知道当他们再模态视图中点击“完成”按钮后发生什么</li>
+<li>使用警告框来传递那些必不可少的重要信息，通常还要提供可执行的功能选项</li>
+<li>尊重用户对于是否接受通知信息所做的设定</li>
+</ul>
+<h4 id="7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09"><a href="#7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09" class="headerlink" title="7、交互性与反馈（Interactivity and Feedback）"></a>7、交互性与反馈（Interactivity and Feedback）</h4><ul>
+<li>用户习惯于标准手势<ul>
+<li>人们会使用诸如点击、拖拽、开合等手势与iOS设备及应用进行交互。他们会希望所有应用当中的手势操作模式保持一致<ul>
+<li>通过点击（tap）来按压或选择一个对象</li>
+<li>通过拖拽（drag）来滚屏或移动对象（将其从界面一边拖向另一边）</li>
+<li>通过滑动（flick）来快速滚屏或移动对象</li>
+<li>使用一个手指进行轻扫（swipe），可以展现更多内容。例如列表的删除功能，从界面顶端展开通知中心</li>
+<li>通过双击（double tap）将内容或图片放大并治愈屏幕中央；如果当前内容已呈最大状态，则将其缩小至默认尺寸</li>
+<li>通过双指张开（pinch open）或闭合（pinch close）对内容进行放大或缩小</li>
+<li>通过长按（Touch and hold）在可编辑或可选择的文字上显示放大镜，用来定位光标</li>
+<li>通过摇晃（shake）机身执行撤销或重做的操作</li>
+</ul>
+</li>
+<li>使用手势时要注意<ul>
+<li>不要为标准手势赋予不同的行为</li>
+<li>不要重复创建与标准手势具有相同作用的自定义手势</li>
+<li>可以将复杂的手势作为完成任务的快捷方式，而不是唯一的方式</li>
+<li>不要定义新的手势，除非你的应用是游戏</li>
+<li>对于iPad，要考虑使用多指手势</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>反馈有助于理解（iOS用户习惯于接受各种反馈。这些反馈可以帮助他们了解当前的状态，发现接下来可以做什么，或是预计自己的操作会产生怎样的结果）<ul>
+<li>尽可能将状态或其他的相关反馈信息整合到UI当中</li>
+<li>避免不必要的警告提示</li>
+</ul>
+</li>
+<li>信息输入方式要简单易行（无论是点击元素还是使用键盘，输入信息都需要耗费用户的时间和注意力。）<ul>
+<li>使用选择让输入更轻松</li>
+<li>在合适的情况下，从iOS获取信息</li>
+<li>给予用户有价值的反馈，来平衡向他们索取信息的要求</li>
+</ul>
+</li>
+</ul>
+<h4 id="8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09"><a href="#8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09" class="headerlink" title="8、术语和措辞（Terminology and Wording）"></a>8、术语和措辞（Terminology and Wording）</h4><p>应用当中所显示的任何一个词汇都是你与用户之间交流对话的一部分。要将这些多看做是帮助人们提升舒适感的机会。</p>
+<ul>
+<li>确保你所使用的术语能够被用户理解</li>
+<li>使用非正式的、友善的语气，但不要过于随便</li>
+<li>像报纸编辑一样思考，留意那些多余的、非必要的词语</li>
+<li>在交互控件旁边使用剪短的标题或含义明确的图标</li>
+<li>在描述日期信息是，一定要做到准确</li>
+<li>在App Store中撰写优秀的产品描述文案，尽可能创造机会与潜在用户进行沟通<ul>
+<li>更正所有的拼写、语法和标点当中的错误</li>
+<li>尽量少使用全部大写字母的词语</li>
+<li>考虑对特定的bug修正进行描述</li>
+</ul>
+</li>
+</ul>
+<h4 id="9_u3001_u52A8_u753B_uFF08Animation_uFF09"><a href="#9_u3001_u52A8_u753B_uFF08Animation_uFF09" class="headerlink" title="9、动画（Animation）"></a>9、动画（Animation）</h4><p>漂亮而精致的动画效果遍及iOS各处，它们使应用体验更具动态性，更加吸引人。惊喜恰当的动画效果可以：</p>
+<ul>
+<li>传达状态</li>
+<li>增强用户对直接操作（direct manipulation）的感知</li>
+<li>通过视觉化的方式像用户呈现操作结果</li>
+</ul>
+<p>在使用动画时应该注意以下几点：</p>
+<ul>
+<li>要谨慎的使用动画效果，特别是在非沉浸型应用当中</li>
+<li>尽可能与iOS内置应用的动画模式保持一致</li>
+<li>在你的应用当中保持动画效果的一致性</li>
+<li>多数情况下，要在你的自定义动画效果中力争实现仿真效果</li>
+</ul>
+<h4 id="10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29"><a href="#10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29" class="headerlink" title="10、文字排版与配色（Typography and Color)"></a>10、文字排版与配色（Typography and Color)</h4><ul>
+<li>文字必须易读：最首要的是，要确保文字排版的清晰易读。iOS7当中的动态文字（Dynamic Type）可以实现<ul>
+<li>在每种字号下都能自动调整文字的粗细、字间距和行高</li>
+<li>针对语义上有所区别的文本模块，例如Body、Footnote或Headline1等，可以自动指定不同的文字样式风格</li>
+<li>文字可以根据用户在动态文字及可访问性设置当中指定的字号来自动调整</li>
+</ul>
+</li>
+<li>色彩可以增进沟通<ul>
+<li>考虑定义一种基本色</li>
+<li>色彩是具有沟通能力的，但不总是以你希望的方式来实现</li>
+<li>多数情况下，不要让用户因为色彩而分神</li>
+</ul>
+</li>
+</ul>
+<h4 id="11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29"><a href="#11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29" class="headerlink" title="11、图形与图标（Icons and Graphics)"></a>11、图形与图标（Icons and Graphics)</h4><ul>
+<li>应用图标<ul>
+<li>应用图标是产品品牌的重要组成部分</li>
+<li>最好的应用图标都是独特、简洁和吸引人的</li>
+<li>应用图标在不同的尺寸规格下都应该表现良好</li>
+</ul>
+</li>
+<li>其他图标（iOS提供了很多小图标用来再标签栏、工具栏和导航栏当中代表常见的任务或内容类型。也可以在需要表现自定义行为或内容类型时使用定制化的图标）</li>
+<li>图形<ul>
+<li>支持Retina屏幕</li>
+<li>按照原始的长宽比例显示照片和图形，另外放大比率不要超过100%</li>
+<li>不要在你的设计当中使用那些代表苹果公司产品的图形</li>
+</ul>
+</li>
+</ul>
+<h4 id="12_u3001_u54C1_u724C_uFF08Branding_uFF09"><a href="#12_u3001_u54C1_u724C_uFF08Branding_uFF09" class="headerlink" title="12、品牌（Branding）"></a>12、品牌（Branding）</h4><p>当你需要在应用中明确的向用户展示品牌信息的时候，要记住一下两点：</p>
+<ul>
+<li>将品牌元素中的色彩或图形进行必要的精炼，通过一种非侵入式的方式整合到应用当中</li>
+<li>不要从用户所关注的内容当中挤兑空间来展示品牌信息</li>
+</ul>
+<p>Note：应用图标是个例外，它完全聚焦在品牌识别性上。因为用户会很频繁的看到你的图标，所以要多花些时间再图标的设计上，增强其对于用户目光的可识别性，这是很重要的</p>
+<h4 id="13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09"><a href="#13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09" class="headerlink" title="13、与iOS的系统整合（Integrating with iOS）"></a>13、与iOS的系统整合（Integrating with iOS）</h4><ul>
+<li>使用标准UI<ul>
+<li>尽可能使用UIKit框架定义的各种标准UI元素。使用标准UI控件而非自定义元素，你和你的用户都会收益：<ul>
+<li>如果iOS本身经过重新设计，那么标准的UI元素再系统更新时随时可以随之自动更新，而自定义的UI元素不会</li>
+<li>人们会自动了解怎样使用你的应用，因为他们已经习惯于标准的UI元素</li>
+</ul>
+</li>
+<li>为了充分发挥系统标准UI元素的价值，你必须：<ul>
+<li>在使用任何一个标准UI元素的时候都要依照设计规范的指导</li>
+<li>通常，不要为标准的交互行为创建自定义UI控件</li>
+<li>不要为系统预设的按钮和图标赋予其它含义</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对横竖屏的响应<ul>
+<li>让用户再横竖屏的状态下都能聚焦于最重要的内容</li>
+<li>通常，要让应用能够运行在各种定向模式当中<ul>
+<li>应用再启动时只按照默认支持的定向方式进行加载，忽略当前设备的屏幕方向</li>
+<li>避免在界面中通过UI元素提示人们调转设备屏幕</li>
+<li>同时支持两种子状态</li>
+</ul>
+</li>
+<li>如果对于你的应用来说，调转屏幕方向是用户输入方式的一部分，那么你可以通过特定的方式进行定制化的处理</li>
+<li>在iPhone上，判断用户再调转屏幕方向时的需求所在，并进行响应</li>
+<li>在iPad上，尽量支持所以的定向方式，满足用户的期待</li>
+<li>在为iPad应用设计横竖屏响应规则时，遵循以下几点规范：<ul>
+<li>考虑改变辅助信息或功能的展示方式</li>
+<li>避免无意义的布局变化</li>
+<li>如果可能，再切换横竖屏时尽量避免对信息内容样式的重新定义</li>
+<li>为横竖屏各提供一张单独的启动图片</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弱化文件和文档的处理过程<ul>
+<li>在iOS中，用户不应该被要求与文件直接打交道，特别不该去面对任何会让他们联想到文件数据源或存储位置一类信息的东西，例如：<ul>
+<li>确认打开或保存文件的对话框</li>
+<li>关于文件访问权限的信息</li>
+</ul>
+</li>
+<li>尽量让人们在不需要打开桌面端iTunes的情况下管理各种文档，如果你的应用需要提供创建及编辑文档的功能，那么可以尝试提供某种“文档选择器”。理想情况下，这样的文档选择器应该：<ul>
+<li>具有高度的图形化外观</li>
+<li>让人们使用最少量的手势完成目标操作</li>
+<li>提供新建文档的功能</li>
+</ul>
+</li>
+<li>给用户一张安全感，让他们知道自己的工作始终会被保存，除非他们主动取消保存或进行删除</li>
+</ul>
+</li>
+<li>必要的时候提供设置方式<ul>
+<li>尽量避免将用户打发到系统的“设置”当中进行操作</li>
+<li>如果有必要，让用户尽量再你的应用内部进行设置</li>
+<li>如果需要，尽量在应用的主界面中提供设置选项</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="block-sidebar column one-fourth"><div class="widget tags"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul></div><div class="widget archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">一月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a><span class="archive-list-count">1</span></li></ul></div><div class="widget text-content"><p>© 2015 ananwbr <br>
+Powered by &nbsp;<a href="http://hexo.io">Hexo</a></p></div></div></div></div></body></html>

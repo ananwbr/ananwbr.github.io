@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[ANANWBR's]]></title>
+  <subtitle><![CDATA[Code & Write]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://ananwbr.com/"/>
+  <updated>2015-12-13T11:56:41.000Z</updated>
+  <id>http://ananwbr.com/</id>
+  
+  <author>
+    <name><![CDATA[ananwbr]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[暂别杭州]]></title>
+    <link href="http://ananwbr.com/archive/2015-10-17/I-got-a-new-job/"/>
+    <id>http://ananwbr.com/archive/2015-10-17/I-got-a-new-job/</id>
+    <published>2015-10-16T16:00:00.000Z</published>
+    <updated>2015-12-13T11:56:41.000Z</updated>
+    <content type="html"><![CDATA[<p>各种机缘巧合，我成为了一名远程工作者。</p>
+<p>暂别杭州，回家生活了几个月，这是我这六年来离开这个城市最久的一次了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>各种机缘巧合，我成为了一名远程工作者。</p>
+<p>暂别杭州，回家生活了几个月，这是我这六年来离开这个城市最久的一次了。</p>
+]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我的2014]]></title>
+    <link href="http://ananwbr.com/archive/2015-01-03/2014-review/"/>
+    <id>http://ananwbr.com/archive/2015-01-03/2014-review/</id>
+    <published>2015-01-03T08:38:45.000Z</published>
+    <updated>2015-11-16T12:04:01.000Z</updated>
+    <content type="html"><![CDATA[<p>几天前还在想着该怎么跨年，像我这样单身，好朋友们都回了老家没人陪的人，实在是想不出可以安排怎样的活动。可是到了2014年的最后一天，才幡然醒悟这样的一天又有什么不同呢，就如往常一样上了一天班，没有什么特别的心情。只是在走路回家的路上进了首尔石锅吃了一锅热腾腾的拌饭心满意足的回家了。因为没有电视、网络又不是非常流畅所以连跨年演唱会网络直播也没看。最后，我竟然是在敲代码中跨进了2015。</p>
+<p>每年最后几天都会看到大量的年终总结，我也总是一边读一边回顾自己这一年都干了什么，有什么变化。直到今天，元旦假期的最后一天，我才终于开始记录自己的版本。</p>
+<a id="more"></a>
+<h4 id="u5173_u4E8E_u5DE5_u4F5C"><a href="#u5173_u4E8E_u5DE5_u4F5C" class="headerlink" title="关于工作"></a>关于工作</h4><p>从毕业到现在已经正式工作一年半了，再加上之前半年的实习，半年的自由状态做着从导师那接的项目，也算是有两年多的实际开发经验。在今年大概6、7月份的时候，突然觉得特别疲惫，有很多想法，也考虑过是不是应该换个工作环境。尤其是没有可以交流这些想法的人，自己一个人在那默默和自己拉扯的时候，总是特别容易产生消极的情绪还不自知。过了好一段时间才恢复过来，并和自己做了个约定，定了期限。在后来的几个月里，因为负责公司主推的应用，迭代速度也快起来，虽然比起之前多了点压力却也燃起了我的工作热情。具体关于项目开发过程中细节、感悟就留待交年终总结的时候在写了。中间还有个小插曲，就在我度过了迷茫期不久大学同学突然来电让我去阿里试试，如果时间再稍微再早一点点或许我真的就去了。</p>
+<p>在新的一年里我不确定会不会又来一次心理动荡，但我知道我会继续踏实的工作和积累，把握好每一次机会。</p>
+<h4 id="u5173_u4E8E_Tomaster"><a href="#u5173_u4E8E_Tomaster" class="headerlink" title="关于 Tomaster"></a>关于 Tomaster</h4><p>虽然年初的时候我是计划今年至少做3个APP的，但人嘛总是想的很美好。不过结果还不算太差，总算上架了自己的APP，Tomaster，一个结合了一万小时理论，GTD，番茄工作法的应用。都说做应用要搔自己的痒。Tomaster也的确是这样的诞生的。我喜欢尝试各种可能改进我的工作、学习效率的方法，前面提到的三点就是我个人认为行之有效的。App Strore现有的应用都无法同时解决我的需求，所以我决定自己做一个。这就是程序员的优点，虽然我并不是在这一点上实践的特别好的人，但这种能力还是有的。我给它定价12块钱，只在最开始的时候卖出几个，后来长期限免。虽然收益惨淡，但在这个过程中也感受了很多，收获了很多。比如卖出第一份时的欣喜，收到用户反馈时的感动，从需求分析到设计到开发到提交这整个过程中学到的技能等等，都推动着我继续前进。所以前文说的敲代码跨年，其实就是在做Tomaster 2.0的收尾工作，并已在昨天提交，祈祷一下能快快通过审核，让Tomaster在新年也有一个新的开始。</p>
+<p>接下去我会继续更新Tomaster，虽然很小众，但能给一部分带去价值也是令人欣喜的事。另外还会考虑做新的应用。我希望能在做自己的产品的过程中更多地体会到手艺人的欣喜。</p>
+<h4 id="u5173_u4E8E_u751F_u6D3B"><a href="#u5173_u4E8E_u751F_u6D3B" class="headerlink" title="关于生活"></a>关于生活</h4><p>2014年要说在生活方面变化最大的地方应该就是我决定素食了，从九月份开始到现在四个来月，期间吃过几次鱼，陆地上的动物是坚决没碰过。最开始是因为对同事忽然素食这件事感到好奇，于是在某个周末从纪录片开始，观看和阅读了大量的视频、书籍和网络上的文章，觉得素食实在是一种健康、环保又有爱的生活方式。就像同事说的我被“洗脑”了一样，我好像一夜之间忘记了自己曾经是吃肉的，第一步就是把鸡胸肉、鸡蛋都从冰箱里剔除掉，开始了素食的饮食方式。然后我又跟家人、朋友说了我的选择，虽然有人表示无法理解，也觉得我只是一时玩笑，但总体而言他们还是表示支持。尤其是我妈，原本以为她会反对，没想到她很自然的接受了。不过可能是我们现在没有生活在一起，感受不到矛盾点，需要过年回家磨合一下。关于素食带来的影响，我想留到以后再详述，毕竟目前素食的时间不长，再加上素食之前本来就食肉不多，所以并没有太明显的变化。但我相信，我会长期这样生活下去。</p>
+<p>除了饮食，运动方面也有话要说。比起往年，今年跑了很多步。目前Nike+的记录是251.3km。但大部分都是在4、5、6、7月份积累的。那几个月份天气舒适，每周有好几天都会在下班后冲到附近的学校操场跑上40分钟。不过可惜真正进入夏天之后就渐渐没有跑步记录了，原因竟然是办了健身卡。原本以为办了健身卡之后会更积极的运动，没想到反而增加了我走出门去的阻碍。毕竟去健身房还要收拾装备再加上2、3公里的路程总是比去附近的操场要麻烦。而且我实在不喜欢室内跑步机上跑步的感觉，总觉得室外跑步有风、有月光惬意太多。等天气转暖我会渐渐恢复室外运动的。</p>
+<p>对新年的展望就是做一个健康的素食跑者。</p>
+<h4 id="u5173_u4E8E_u604B_u7231"><a href="#u5173_u4E8E_u604B_u7231" class="headerlink" title="关于恋爱"></a>关于恋爱</h4><p>1号凌晨刚跨到2015的时候，我，小黄，呆，用小黄的话来说我们这三个分别在杭州，上海，香港的孤独的人们，在微信里一致抒发了对新年要谈一场恋爱的渴望。最近每年开始的时候，我都会许愿新年让我遇到对的人吧，可惜直到现在也没实现。一直觉得不谈恋爱怎么体验生活呢，可是就是没有遇上。当然在这件事上我是需要好好反思的，总体上来说我自己并不是十分积极的心态。比如老家的阿姨先后给我介绍过两个男生，都因为我的原因没有了下文。我自己就更没有主动去寻找了，一直抱着随缘的心态。就目前的工作、生活的圈子，想靠缘分遇上一个心怡的人，也太难了吧。所以我妈最近的教育重点是让我也要主动一点，不要一开始都还没怎么了解就拒绝了，甚至搬出了当年她和我爸的恋爱史，还跟我描述了那种就算是远远看一一眼，或是收到信时的心跳加剧。我真是醉了。</p>
+<p>不过严格说起来我也不是完全心如止水的，现实中有人会让我觉得这就是我的理想型，和这样的一起应该会很有趣的。对，有趣是我对另一半的期待，人生路漫漫，不和一个有趣的人一起，又怎么过有趣的大半生呢。</p>
+<p>如果你也能感受到的我的心绪，并且有同样的感受，那就太好。</p>
+<p>还有一件事必须要记录，那就是XW的宝宝出生了。大概是和我很有缘吧，因为小天使在平安夜出身，她爸爸给她去了安安的小名。我一直把自己叫做安安，也有朋友同事这么叫我，我也一直想把这个名字传给我将来的孩子，没想到被捷足先登了一步。安安呐，阿姨也会好好疼你的。我原本从来没想过结婚生子，可是看到XW已经超速地过上了这样的生活，竟也有了小小的对家庭生活的渴望。</p>
+<h4 id="u5173_u4E8E_u65C5_u884C"><a href="#u5173_u4E8E_u65C5_u884C" class="headerlink" title="关于旅行"></a>关于旅行</h4><p>之前在翻抽屉的时候翻到一张以前列的对工作后的生活的展望，其中有一项就是每年有多少次旅行，包括和家人一起的旅行。可是真的工作之后发现出去旅行不是那么简单的事，不好请假。不过虽然没有自己出去玩过，倒是和公司的小伙伴团体玩了两次。3月份的时候去了丽江。说起丽江，这真是从《一米阳光》开始我心心念念了这么多年的地方。我知道真的去了未必会如想象中的好，但我还是很高兴我真的站在了小武和川夏待过的地方。有时候想想明明只要一张机票几个小时就能去的地方为什么要等个十年再去呢。第二次是11月份去的嵊泗，没有很多玩乐的地方，但是住在豪华海景房，坐在阳台看看海，走出去逛逛海滩也挺不错的。</p>
+<p>可惜的是没有和朋友家人一起出去旅行。爸妈原本要来杭州玩，结果因为临时有事取消，紧接着就去了外地生活，而我也没能去那里玩一趟。本来要和小黄一起去香港的结果也因为通行证问题没能同行。</p>
+<p>最近心里有很强烈的愿望，就是和爸妈去一趟台湾。虽然不一定是今年，但最会有那么一天的。唉，想起这样的不能陪在爸妈身边，没有能力带他们出去旅游就觉得心塞。这种时候我就会特别希望自己快快变得强大。</p>
+<h4 id="u5176_u5B83"><a href="#u5176_u5B83" class="headerlink" title="其它"></a>其它</h4><p>2014年还有很多计划要做的事没有准时完成，不过没关系，再接再厉吧。</p>
+<p>2015年的计划就不列了，只要把握住“简单，热情地生活”这个核心守则，生活应该就会过得丰盈吧。</p>
+<p>期待。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>几天前还在想着该怎么跨年，像我这样单身，好朋友们都回了老家没人陪的人，实在是想不出可以安排怎样的活动。可是到了2014年的最后一天，才幡然醒悟这样的一天又有什么不同呢，就如往常一样上了一天班，没有什么特别的心情。只是在走路回家的路上进了首尔石锅吃了一锅热腾腾的拌饭心满意足的回家了。因为没有电视、网络又不是非常流畅所以连跨年演唱会网络直播也没看。最后，我竟然是在敲代码中跨进了2015。</p>
+<p>每年最后几天都会看到大量的年终总结，我也总是一边读一边回顾自己这一年都干了什么，有什么变化。直到今天，元旦假期的最后一天，我才终于开始记录自己的版本。</p>]]>
+    
+    </summary>
+    
+      <category term="总结" scheme="http://ananwbr.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[初识Core Data]]></title>
+    <link href="http://ananwbr.com/archive/2014-06-25/core-data-overview/"/>
+    <id>http://ananwbr.com/archive/2014-06-25/core-data-overview/</id>
+    <published>2014-06-25T14:11:23.000Z</published>
+    <updated>2015-10-25T15:40:07.000Z</updated>
+    <content type="html"><![CDATA[<p>Core Data一直以来都是我比较怕的一块，每次涉及到这一块内容，我总是底气不足，总觉得它是很复杂的东西我搞不定。从开始实习到现在已经两年时间了，技术水平提高了很多，但单从对这个知识点的掌握程度来看，水平提高基本是停滞的。期间曾多次决定好好研究一下，但中途都放弃了，还会以在心里默念“果然CoreData对我来说难度好高啊”来结尾。这应该是唯一一个让我这么没有耐心和决心的知识点吧。最近做的项目再一次广泛用到了Core Data，终于让我下定决心要把它搞清楚，至少消除害怕的心里。</p>
+<p>下面进入正题吧，这篇文章主要是讲一下Core Data的一些基本概念和用法。</p>
+<h2 id="Core_Data_u662F_u4EC0_u4E48"><a href="#Core_Data_u662F_u4EC0_u4E48" class="headerlink" title="Core Data是什么"></a>Core Data是什么</h2><p>我们在开发iOS应用的时候，需要把一些数据持久化存储起来，有多种方法可以做到这点，比如属性列表(Property lists)，对象归档(Object archiving)，SQlite数据库，Core Data等。而我们今天要讲的Core Data，它又不仅仅是一种数据持久化的技术。它除了数据的存取功能之外，还能管理被加载到内存中的数据。具体来说，</p>
+<ul>
+<li>它能管理模型对象所有的更改，给undo和redo操作，以及维护对象之间的相互关系提供了支持。</li>
+<li>在任意时刻只在内存中保留所有模型对象的一个子集，这对内存有限的iOS来说是非常重要的。</li>
+<li>使用一个模式(schema)来描述模型对象。我们可以在图形界面编辑器种直接定义模型类的主要特征，包括对象之间的关系。也可以很方便的设置默认值以及属性值验证。</li>
+<li>提供了对数据模型版本变迁的支持，使得我们很容易升级数据模型版本。<!--
+4.Allows you to maintain disjoint sets of edits of your objects. This is useful if you want to, for example, allow the user to make edits in one view that may be discarded without affecting data displayed in another view.
+-->
+</li>
+</ul>
+<p>简而言之，Core Data就是一个模式驱动(schema-driven)的对象图管理和数据持久化的框架。</p>
+<h2 id="Core_Data_u5806_u6808"><a href="#Core_Data_u5806_u6808" class="headerlink" title="Core Data堆栈"></a>Core Data堆栈</h2><p>Core Data使用了多个组件来完成对象图管理和持久化的工作。这些组件组合到一起就被称为Core Data堆栈了。下面就是一个简单的堆栈的图示：当然在实际应用中，使用的堆栈可能要比这个复杂的多，可能存在多个Managed Object Context</p>
+<p><img src="/images/2014/6/Core_Data_Stack.png" alt=" A simple Core Data stack"></p>
+<p>可以从图中看出，各组件的层次是很分明的。Managed Object Context负责对象图管理，Persistent Object Store负责持久化，两者之间的沟通需要通过Persistent Store Coordinator协调，另外还有一个Managed Object Model来为数据建模。</p>
+<p>接下来我们就来具体了解一下各个组件。</p>
+<h3 id="Managed_Objects_and_the_Managed_Object_Context"><a href="#Managed_Objects_and_the_Managed_Object_Context" class="headerlink" title="Managed Objects and the Managed Object Context"></a>Managed Objects and the Managed Object Context</h3><p>Managed Objects和Managed Object Context处于堆栈的顶部，也是通常我们直接会接触的对象。</p>
+<p>一个managed object是NSManagedObject或它的子类的一个实例对象。从概念上来讲，它是数据库的表中一条记录的对象化表示，是我们的应用中需要操作的数据，比如人力资源应用中的部门和员工。一个managed object总是和一个managed object context关联。</p>
+<p>一个managed object context是NSManagedObjectContext的一个实例对象。它代表了一个对象空间，是managed object生存的地方。它的主要职责就是管理内存中的managed object的生存周期，除此之外，它还负责属性验证，维护对象间关系和undo/redo等。</p>
+<p>当我们创建一个新的managed object的时候，我们将它插入到managed context中。我们也可以把数据库中的记录取出来转换成managed object放到context中。对内存中的managed object的任何操作都会被保留，直到将更改提交到持久化存储中。</p>
+<p><img src="/images/2014/6/managed_objects.png" alt="Managed objects in a context, and a table in the persistent store"></p>
+<h3 id="The_Managed_Object_Model"><a href="#The_Managed_Object_Model" class="headerlink" title="The Managed Object Model"></a>The Managed Object Model</h3><p>一个managed object model是NSManagedObjectModel的一个实例对象。它是对数据库和managed object的描述。一个model是很多entity description对象(NSEntityDescription的实例)的集合。一个entity description描述了一个实体(数据库中的一张表)的名字，对应的NSManagedObject子类的名字，以及它拥有的属性和关系。</p>
+<p>下图描述了一个entity description，数据库中的一张表和表中的一条记录对应的一个managed object之间的关系：</p>
+<p><img src="/images/2014/6/mageed_object_model.png" alt=" An entity description, a table in the database, and a managed object"></p>
+<p>Core Data就是这样使用模型将应用中的managed object映射到数据库中的记录的。需要注意的是如果我们修改了模型，那么Core Data将无法读取使用就得模型持久化存储的数据。这时候就需要用到“数据模型版本变迁”的知识，这里暂不赘述。</p>
+<h3 id="Persistent_Store_Coordinator"><a href="#Persistent_Store_Coordinator" class="headerlink" title="Persistent Store Coordinator"></a>Persistent Store Coordinator</h3><p>前面已经说过persistent store coordinator架起了persistent store和managed object context之间的桥梁，在Core Data管理数据的过程发挥了核心作用。</p>
+<p>一个persistent store coordinator是NSPersistentStoreCoordinator的一个实例对象。它管理着多个persistent object store。一个persistent object store代表持久化的数据的一个外部存储(文件)。前面我们一直在用数据库来表示外部存储，实际上Core Data也支持其他类型的文件系统。我们甚至也可以实现自定义的文件类型</p>
+<p>到目前为止我们只是看了最简单的一个堆栈。在实际应用中，我们可能会遇到更复杂的，比如有多个context，或是多个store，但它们都还是和同一个coordinator连接起来，这时候就更能体现它的核心作用了。</p>
+<p><img src="/images/2014/6/complex_stack.png" alt="A complex Core Data stack"></p>
+<p>到这里，我们就大致了解完了Core Data堆栈中的各个组件啦，下面是在应用中搭建这个堆栈的实际代码。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">//@interface</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, retain) <span class="built_in">NSManagedObjectModel</span> *managedObjectModel;  </span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, retain) <span class="built_in">NSManagedObjectContext</span> *managedObjectContext;  </span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, retain) <span class="built_in">NSPersistentStoreCoordinator</span> *persistentStoreCoordinator;  </span><br><span class="line"></span><br><span class="line"><span class="comment">//@implementation</span></span><br><span class="line"><span class="preprocessor">#pragma mark - Core Data stack</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSManagedObjectContext</span> *)managedObjectContext</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_managedObjectContext != <span class="literal">nil</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> _managedObjectContext;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSPersistentStoreCoordinator</span> *coordinator = [<span class="keyword">self</span> persistentStoreCoordinator];</span><br><span class="line">    <span class="keyword">if</span> (coordinator != <span class="literal">nil</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        _managedObjectContext = [[<span class="built_in">NSManagedObjectContext</span> alloc] init];</span><br><span class="line">        [_managedObjectContext setPersistentStoreCoordinator:coordinator];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _managedObjectContext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSManagedObjectModel</span> *)managedObjectModel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_managedObjectModel != <span class="literal">nil</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> _managedObjectModel;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSURL</span> *modelURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"ebook"</span> withExtension:<span class="string">@"momd"</span>];</span><br><span class="line">    _managedObjectModel = [[<span class="built_in">NSManagedObjectModel</span> alloc] initWithContentsOfURL:modelURL];</span><br><span class="line">    <span class="keyword">return</span> _managedObjectModel;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSPersistentStoreCoordinator</span> *)persistentStoreCoordinator</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_persistentStoreCoordinator != <span class="literal">nil</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> _persistentStoreCoordinator;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSURL</span> *storeURL = [[<span class="keyword">self</span> applicationDocumentsDirectory] URLByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@.sqlite"</span>, _bookName]];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line">    _persistentStoreCoordinator = [[<span class="built_in">NSPersistentStoreCoordinator</span> alloc] initWithManagedObjectModel:[<span class="keyword">self</span> managedObjectModel]];</span><br><span class="line">    <span class="built_in">NSDictionary</span> *options = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:</span><br><span class="line">                             [<span class="built_in">NSNumber</span> numberWithBool:<span class="literal">YES</span>], <span class="built_in">NSMigratePersistentStoresAutomaticallyOption</span>,</span><br><span class="line">                             [<span class="built_in">NSNumber</span> numberWithBool:<span class="literal">YES</span>], <span class="built_in">NSInferMappingModelAutomaticallyOption</span>, <span class="literal">nil</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (![_persistentStoreCoordinator addPersistentStoreWithType:<span class="built_in">NSSQLiteStoreType</span> configuration:<span class="literal">nil</span> URL:storeURL options:options error:&amp;error])</span><br><span class="line">    &#123;</span><br><span class="line">        DLog(<span class="string">@"Unresolved error %@, %@"</span>, error, [error userInfo]);</span><br><span class="line">        abort();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSFetchRequest</span></span><br><span class="line">    <span class="keyword">return</span> _persistentStoreCoordinator;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#pragma mark - Application's Documents directory</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSURL</span> *)applicationDocumentsDirectory</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> [[[<span class="built_in">NSFileManager</span> defaultManager] URLsForDirectory:<span class="built_in">NSDocumentDirectory</span> inDomains:<span class="built_in">NSUserDomainMask</span>] lastObject];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>本篇文章主要介绍了Core Data的功能，堆栈以及各组间，帮助我们在概念层面先理清楚它的结构。其实这几天我也看了很多Core Data的资料，还有很多知识点可以写，后面可能还会继续写几篇。对我个人来说，先宏观的学习一个知识点，了解背景，整体结构等，对后续的学习很有帮助。我开头就讲到对Core Data我还是比较怵的，每次用到的时候，都是查看文档使用那几个类和方法，虽然解决了问题但也总觉得心虚。比如前面的那段代码，以前看到就只是一段代码，现在再看的话脑子会浮现堆栈结构图。在进行数据操作的时候也可以理解内在的工作流程，如果遇到更难的问题也能在现在的认知基础上学习更深入的知识啦。</p>
+<p>今后的文章主题，不再刻意去找了。当前学习了什么知识点，有哪些收获，就及时记录下来吧。</p>
+<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.objc.io/issue-4/core-data-overview.html" target="_blank" rel="external">Core Data Overview</a></li>
+<li><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html" target="_blank" rel="external">Core Data Programming Guide</a></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Core Data一直以来都是我比较怕的一块，每次涉及到这一块内容，我总是底气不足，总觉得它是很复杂的东西我搞不定。从开始实习到现在已经两年时间了，技术水平提高了很多，但单从对这个知识点的掌握程度来看，水平提高基本是停滞的。期间曾多次决定好好研究一下，但中途都放弃了，还会以]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[写在毕业一周年]]></title>
+    <link href="http://ananwbr.com/archive/2014-06-23/graduation-anniversary/"/>
+    <id>http://ananwbr.com/archive/2014-06-23/graduation-anniversary/</id>
+    <published>2014-06-23T13:01:01.000Z</published>
+    <updated>2015-10-25T15:40:50.000Z</updated>
+    <content type="html"><![CDATA[<p>去年的今天，我们毕业了。我是最后一个离开寝室的，和室友一一拥抱告别，看着她们离开，原以为不会有那么多情绪的我，还是哭成了一个傻逼。我知道，这一别，见面就不是那么容易了，其他三人一人留杭，另外两人都回家乡发展了。我不用像她们走的那么远，我只是把所有家当都运到了滨江的一个很小的出租房里。那天房间还没有通网。我一个人出去溜达了一圈，买了碗凉皮当晚饭。现在还是会看到那个凉皮阿姨，每次看到她，我都会想起那天的心情。</p>
+<p>不过那时候我以为一年会很久，我想一年时间够我做很多事吧。没想到一转眼就过去了。今天收到邮件说要写年中总结了，不知道是不是要加薪了。我还记得去年年底写的年终总结，那时候显然比现在更有热情，也总结了很多事，和所有初入职场对未来抱有很多憧憬的新人一样，毫无保留地将自己的想法泄于文字中。可是在这工作一周年之际，我的脑子里开始出现很多不同的声音，它们在不停相互撕扯，我甚至需要花费一些心里把它们拉开。</p>
+<p>我渴望改变。可是很遗憾，我不是那种仅靠内心驱动就可以勇敢做出改变的人。我需要一个不一样的外部环境来推动我，给我勇气。以前有同学说我长了一张自信的脸。但只有我自己知道这并非事实的全部。我给别人的那些自信，坚定，自律等等印象其实已经是我内心经过无数次的撕扯后才有的结果。比如现在我想换个环境，可是又觉得凭自己的现在的能力办不到。我的第一想法可能是那就先别去做了，再修炼一段时间有了更多的资本再去尝试。在最开始的时候我的确被自己说服了。比如我的大学四年的基调从来不是高昂的。因为在大一刚开始的时候我就因为最好的朋友不在身边的孤单衍生出了不够积极的态度。在别人在各种社团活动中游刃有余的时候，我泡在图书馆告诉自己就把大学当成潜伏期吧。我也差点被自己蒙骗过去了，觉得这是自己有主张，有目标的表现。但现在回头看会觉得，这是给当时自我逃避的我的一种心里安慰吧，把害怕融入新环境，交往新朋友的情绪包装成了自己可以接受的东西。归根到底，那就是一种害怕改变的懦弱。如果大学可以重来，我想用更积极的态度迎接新生活。</p>
+<p>好了，不扯大学了，毕竟过去的时光已经永远回不去了。不过毕业后的这一年，倒是可以再回顾一下。</p>
+<p>去年的五月份在同学们都定好了单位找好了房子的时候，我还没确定要去上海看看呢还是留在杭州发展。又因为不想太早开始工作所以一直拖延着投简历这事。潜意识里我认为自己只要投出简历就会得到工作的。这样看来我对自己还是挺有信心的，又显然与内心的某些自卑的情绪产生了冲突。后来是迫于23号就要被清扫出校的压力，我投出了唯一的简历。上天也算眷顾我，我被录取了。很多人都劝我再多投几家，有个比较，能做出最好的选择。可是我这个人如果有了一个目标就会变成一根筋，之前实习找单位也是这样。最后我来到了这家公司。</p>
+<p>关于这家公司最好的一点是不加班，虽然每天到点了还是会磨蹭十几分钟，但基本上大家都蛮早就走了。一年来只加过一次班，应用赶着提交到App Store，于是在国庆放假的前夕工作到十一点多。回到住的地方已经过了门禁了，把房东阿姨叫醒开门才进入。这样的经历反而成了一段回忆。</p>
+<p>之前实习的时候过过苦日子，所以后来变得特别容易满足。现在因为下班时间早，还能干很多自己的事，感觉生活质量提高了不少。我有时间煮饭，运动，学习，做自己的项目了。其实有时间还是其次，最重要的是我不再像实习时那样因为加班每天充满都是负能量。心态变好了，干劲十足。</p>
+<p>在工作方面，这一年也参与了很多项目。基本上公司的几个最主要的应用都有我贡献的代码。另外也主导了几个商业项目。我觉得技术学习和积累还是得靠自己，项目经验主要是让我更清楚一个真实项目的推进过程，在这个过程和负责不同部分的同事之间如何交流，对整个项目的进度自己内心也能有一定把握。刚开始工作的时候，我总是有一种战战兢兢的感觉，什么时候该做什么事，哪个问题需要和哪个同事协作解决之类的问题总是让我不够淡定。现在就变得从容多了，知道发测试、提交的时间点后自己也能合理的安排开发进度。一个项目结束后没有收到任务指派先主动问师傅有什么可做的，没有的话自己找点事做比如代码重构或是学习。以前没活干的时候我真的非常不安，觉得自己拿了工资不干点事良心上过不去。现在就觉得如果有活的话管理人员才不会放过我这个资源吧。我在等待安排的同时趁机学点新的知识武装自己。</p>
+<p>除了公司的项目，自己业余做的项目也提交到App Store了。虽然年初做的计划是要上3个个人应用的，但是前段时间一直拖延症犯最后能上线我已经感到很欣慰了。只是没有推广又是收费应用没什么下载量。不过接下去我会继续开发新的功能。只要对一个用户产生积极的影响，它的使命也就达成了。</p>
+<p>当然这一年还有一些其他的成果和感悟，本来想写在这篇里的，最后发现有些点单独拎出来也能成文，所以就放到后面再来记录吧，这篇就有点虎头蛇尾的感觉了……</p>
+<p>总得来说，这一年没有荒废，往后我也会努力做一个快乐的程序员:]</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>去年的今天，我们毕业了。我是最后一个离开寝室的，和室友一一拥抱告别，看着她们离开，原以为不会有那么多情绪的我，还是哭成了一个傻逼。我知道，这一别，见面就不是那么容易了，其他三人一人留杭，另外两人都回家乡发展了。我不用像她们走的那么远，我只是把所有家当都运到了滨江的一个很小的]]>
+    </summary>
+    
+      <category term="总结" scheme="http://ananwbr.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Objective-C Runtime: Part II]]></title>
+    <link href="http://ananwbr.com/archive/2014-06-17/objective-c-runtime-part-ii/"/>
+    <id>http://ananwbr.com/archive/2014-06-17/objective-c-runtime-part-ii/</id>
+    <published>2014-06-17T12:35:55.000Z</published>
+    <updated>2015-10-25T15:40:54.000Z</updated>
+    <content type="html"><![CDATA[<p>在<a href="http://ananwbr.com/blog/2014/06/08/objective-c-runtime-part-i/">上一篇文章</a>中我们已经对Objective-C的runtime有了一定的了解，包括消息发送，一些基本概念，可调用的函数等。今天这篇文章就来讲讲基于runtime有哪些有趣的动态编程技术。</p>
+<h3 id="Classes_And_Selectors_From_Strings"><a href="#Classes_And_Selectors_From_Strings" class="headerlink" title="Classes And Selectors From Strings"></a>Classes And Selectors From Strings</h3><p>先来看看最基本的动态用法。我们可以使用Cocoa中的<code>NSClassFromString</code>和<code>NSSelectorFromString</code>函数生成类和selector。如下：</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Class</span> stringclass = NSClassFromString(@<span class="string">"NSString"</span>);</span><br></pre></td></tr></table></figure>
+<p>该方法返回了一个类，然后就可以给这个类发送消息啦。</p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="label">NSString</span> *myString = [<span class="keyword">stringclass </span><span class="keyword">stringWithString:@"Hello </span>World<span class="string">"];</span></span><br></pre></td></tr></table></figure>
+<p>但是有人会问为什么要这么做呢，明明有更简单直接的方法呀。说的没错，但是也存在某些场景会使这些函数变得很有用。比如检查某个类是否存在。如果这个类在运行时不存在那么<code>NSClassFromString</code>就会返回nil。</p>
+<p>另外还有种场景是需要根据一些输入条件才能确定某个类或selector做一些操作。比如我们需要根据动物不同的种类显示不同的信息，当然我们可以分别判断类型再调用不同的方法，也可以直接根据种类名直接生成selector调用。后者的好处是便于扩展，以后要增加别的动物类型不需要修改if语句只需要增加相应的方法就行了。</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="tag">-</span> (void)<span class="tag">showAnimal</span>:(id)<span class="tag">animal</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="tag">if</span>([[animal species] <span class="attribute">isEqualToString</span>:@<span class="string">"Dog"</span>]) &#123;</span><br><span class="line">        <span class="attr_selector">[self showDog:[animal name]</span>];</span><br><span class="line">    &#125; <span class="tag">else</span> <span class="tag">if</span>([[animal species] <span class="attribute">isEqualToString</span>:@<span class="string">"Dog"</span>]) &#123;</span><br><span class="line">        <span class="attr_selector">[self showCat:[animal name]</span>];</span><br><span class="line">    &#125; <span class="tag">else</span> <span class="tag">if</span> ([[animal species] <span class="attribute">isEqualToString</span>:@<span class="string">"Bird"</span>]) &#123;</span><br><span class="line">        <span class="attr_selector">[self showBird:[animal name]</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">-</span> (void)<span class="tag">showAnimalDynamic</span>:(id)<span class="tag">animal</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr_selector">[self performSelector:NSSelectorFromString([NSString stringWithFormat:@"show%@:", [animal species]</span>]) <span class="tag">withObject</span>:<span class="attr_selector">[animal name]</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">-</span> (void)<span class="tag">showDog</span>:(NSString *)<span class="tag">aDog</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">-</span> (void)<span class="tag">showCat</span>:(NSString *)<span class="tag">aCat</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">-</span> (void)<span class="tag">showBird</span>:(NSString *)<span class="tag">aBird</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<!--
+### 相关联的对象(Associated Objects)
+-->
+<h3 id="Method_Swizzling"><a href="#Method_Swizzling" class="headerlink" title="Method Swizzling"></a>Method Swizzling</h3><p>前面我们已经知道了组成方法的两个部分：selector和IMP。前者是一个方法的标识符，后者是指向具体的函数的指针。非常关键的一点是selector和IMP的对应关系是可以被改变的，比如可以把多个secletor映射到同一个IMP。</p>
+<p>基于这种特性我们还可以做Method Swizzling。就是将两个方法的具体实现互换。有人可能又会问，为什么要这样做呀。为了回答这个问题我们先来回顾一下在Objective-C中扩展类的两种方法。第一种就是继承（subclassing）。继承允许我们在子类中重写父类中的方法，并且可以在改方法中调用父类的实现。但是这意味着我们必须使用该子类的实例对象。当我们想要继承的是NSArray这样<a href="https://mikeash.com/pyblog/friday-qa-2010-03-12-subclassing-class-clusters.html" target="_blank" rel="external">类簇</a>的时候，就比较麻烦了。第二种是类别（category），这也是我们给一个已有类添加方法的常用方式。但是采用了这种方式而我们又需要覆盖原有的方法，那么在这个方法中是无法调用原来的实现的。</p>
+<p>如果我们不想通过子类化重写一个方法又希望能调用原来的实现该怎么办呢，这时候Method Swizzling就要一展身手啦。通常的做法是通过类别给类添加一个方法（当然它也完全可以放在不同的类里），然后通过<code>method_exchangeImplementations()</code>这个runtime函数交换新增方法和原始方法的具体实现。下面我们就通过一个具体的例子来看看这个过程：重写NSMutableArray的<code>addObject:</code>方法使它在每次添加新对象的时候能打印这个对象。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSString</span> (<span class="title">Swizzle</span>)</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load</span><br><span class="line">&#123;</span><br><span class="line">    Method originalMethod = class_getInstanceMethod([<span class="built_in">NSString</span> class], <span class="keyword">@selector</span>(description));</span><br><span class="line">    Method loggingMethod = class_getInstanceMethod([<span class="built_in">NSString</span> class], <span class="keyword">@selector</span>(loggingDescription));</span><br><span class="line">    method_exchangeImplementations(originalMethod, loggingMethod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)loggingDescription</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"logging description"</span>);</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> loggingDescription];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>我们来分析一下上面的代码。首先需要注意的是我们是在<code>load</code>方法中做了交换的操作。每个类和类别的<code>load</code>方法只有在它们被加载进runtime环境的时候被调用一次，可参考<a href="http://wufawei.com/2013/06/load-initialize/" target="_blank" rel="external">这篇文章</a>。如果我们希望重写的方法在该类的整个生命周期都可用，那么此时就是最好的时机。如果只是想暂时的交换，那放在任何地方都是可以的。</p>
+<p>我们还会注意到在<code>logAddObject:</code>中有一个明显的无限递归。这个是Method Swizzling的缺点之一，如果我们忘记了方法的实现交换过那么我们可能会想不明白。记住很重要的一点：在{}之间的代码是IMP，在{}之前的是selector。正常情况下selector和IMP的映射情况就如代码中看到的那样，但是一旦交叉后，这个selector就会映射到另一个IMP。希望下面的图能帮助我们弄清楚一点。</p>
+<p><img src="/images/2014/6/class-diagram.png" alt="Method Swizzling"></p>
+<h3 id="Dynamic_Subclassing/isa_Swizzling"><a href="#Dynamic_Subclassing/isa_Swizzling" class="headerlink" title="Dynamic Subclassing/isa Swizzling"></a>Dynamic Subclassing/isa Swizzling</h3><p>在上篇文章中我们在讲runtime函数的时候已经知道我们可以从头开始创建一个新的类。虽然这种特性不是很常用到，但一旦用起来还是很有威力的。它允许我们创建一个新的子类，并添加新的功能。</p>
+<p>但是这样的子类又有什么用呢。我们需要再次强调一点：Objective-C中的对象有一个叫做isa的变量指向它的类。而这个变量是可以改变的，它可以被修改成指向另一个类而不需要重新创建。这样做虽然不能真正改变对象的示例变量的布局，但我们可以给一个对象增加新的实例变量和方法。下面这一行简单的代码就可以做到改变对象的类了：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">object_setClass</span><span class="params">(myObject, [MySubclass class])</span></span></span><br></pre></td></tr></table></figure>
+<p>在Cocoa框架中，<a href="https://developer.apple.com/library/ios/documentation/cocoa/conceptual/KeyValueObserving/KeyValueObserving.html" target="_blank" rel="external">KVO(Key Value Observing)</a>就是基于这个特性实现的。当我们开始观察一个对象时，Cocoa创建了这个对象的类的子类，然后将这个对象的isa指针指向这个新的子类。可参考<a href="https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html" target="_blank" rel="external">Mike Ash的Friday Q&amp;A系列的这篇文章</a>了解更多的细节。</p>
+<h3 id="Dynamic_Method_Resolution"><a href="#Dynamic_Method_Resolution" class="headerlink" title="Dynamic Method Resolution"></a>Dynamic Method Resolution</h3><p>前面我们已经讲过了objc_msgSend()背后的工作流程，现在假设一下如果在方法列表中没有找到对应的方法会怎么样呢。事实上runtime是不会轻易放弃的，它还会给有一系列的流程要走。在它放弃之前，我们还有机会做一些不就。</p>
+<p>第一个步骤叫做动态方法解析。通常，runtime在解析一个方法的时候会查找到与selector对应的方法并调用。有时候我们希望某个方法在运行时被用到的时候再去创建，因为它在创建之前可能需要先得到runtime的一些信息。在这种情况下我们希望runtime可以在要用到这个方法的时候告诉我们然后我们再创建该方法。</p>
+<p>为了达到这样的目的，我们需要重写<code>+resolveInstanceMethod:</code>或<code>+resolveClassMethod:</code>方法。这些方法接收了所需要的方法对应的selector为参数，允许我们给类添加方法。如果我们添加了方法那就得放回<code>YES</code>，这样runtime就不会继续进行下一个步骤。下面是一个简单的例子:</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">+ (<span class="built_in">BOOL</span>)resolveInstanceMethod:(SEL)sel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromSelector</span>(sel) hasPrefix:<span class="string">@"set"</span>]) &#123;</span><br><span class="line">        class_addMethod(<span class="keyword">self</span>, sel, (IMP)autoSetter, <span class="string">"v@:@"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        class_addMethod(<span class="keyword">self</span>, sel, (IMP)autoGetter, <span class="string">"@@:"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Cocoa中，CoreData用到了这种技术。</p>
+<h3 id="Message_Forwarding"><a href="#Message_Forwarding" class="headerlink" title="Message Forwarding"></a>Message Forwarding</h3><p>如果前一步的方法返回了NO，那么runtime会继续下一步步骤：消息转发。和动态方法解析提供了在运行时动态添加方法的机会不同，消息转发是重定向消息。主要有两种用法，第一种是将消息传递给其他能响应该消息的对象，第二种是将不同的消息导向同一个方法。</p>
+<p>消息转发自己也有两步要走。首先，runtime会调用对象的<code>-forwardingTargetForSelector:</code>方法。这个方法效率高，如果我们只是希望将消息传给另一个对象，那使用这个方法就够了。但是如果我们希望在转发消息前对消息做一些修改，那我们就得用到<code>-forwardInvocation:</code>方法了。这种情况下runtime会将消息包装成一个<code>NSInvocation</code>，将它作为该方法的参数。等我们处理完<code>NSInvocation</code>对象，只需简单调用该对象的<code>-invokeWithTarget:</code>的方法，把它传递给新的目标对象。相比而言，第二步的开销会比较大。</p>
+<p>在Cocoa种有多处用到了消息转发，最关键的两处是代理(Proxies)和响应链(Responder Chain)。拿响应连来说，Cocoa就是靠着它将事件和action传递给了正确的能处理的对象的。比如当我们按了Cmd-C的时候，会触发一个<code>-copy:</code>的消息。Cocoa首先找到第一响应者(First Responder)，通常是一个激活状态的UI控件，如果它不能响应这个消息，那么这个消息就被转发给下一个响应者(Next Responder)。它会一直沿着响应链传递下去，直到找到能处理的对象，或者走到末端也没有这样的对象那就产生了一个错误。</p>
+<p>动态方法解析和消息转发的流程如下图所示：<br><img src="/images/2014/6/message_forwarding.png" alt="消息转发"></p>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>终于写完了这一篇，总体而言runtime的部分对我来说还是很有难度，在这里也只是用语言讲了些概念，没有深入到源代码。但知识就是一点点深入的，这两篇文章让我在原来的水品上深入了一步，以后如果要用到更深的内容，我想我还会花时间继续研究的。</p>
+<p>原来是想完全按照自己的知识结构来写的，写到后面发现自己功力不够，所以在文章整体结构上就遵循了<a href="http://pilky.me/21/" target="_blank" rel="external">这篇文章</a>，也可以说是在它的基础上假如了自己的一点思考。接下去我会继续挑一些知识点来写，权当是为自己过去这一年在技术学习上所花的时间做一个总结吧。</p>
+<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://lianxu.me/2012/11/10-cocoa-objc-newbie-problems/#2" target="_blank" rel="external">10个迷惑新手的Cocoa&amp;Objective-c开发问题</a></li>
+<li><a href="http://pilky.me/21/" target="_blank" rel="external">Dynamic Tips &amp; Tricks With Objective-C</a></li>
+<li><a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">Classes and metaclasses</a></li>
+<li><a href="https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html" target="_blank" rel="external">Friday Q&amp;A 2009-01-23</a></li>
+<li><a href="http://www.amazon.cn/Effective-Objective-C-2-0-52-Specific-Ways-to-Improve-Your-IOS-and-OS-X-Programs-Galloway-Matt/dp/0321917014/ref=sr_1_2?ie=UTF8&amp;qid=1403432239&amp;sr=8-2&amp;keywords=effective+objective-c+2.0" target="_blank" rel="external">Effective Objective-C 2.0</a></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在<a href="http://ananwbr.com/blog/2014/06/08/objective-c-runtime-part-i/">上一篇文章</a>中我们已经对Objective-C的runtime有了一定的了解，包括消息发送，一些基本概念，可调用的函数等]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Objective-C Runtime: Part I]]></title>
+    <link href="http://ananwbr.com/archive/2014-06-08/objective-c-runtime-part-i/"/>
+    <id>http://ananwbr.com/archive/2014-06-08/objective-c-runtime-part-i/</id>
+    <published>2014-06-08T13:04:22.000Z</published>
+    <updated>2015-10-25T15:40:57.000Z</updated>
+    <content type="html"><![CDATA[<!--
+    背景
+    runtime文件结构
+    Messages
+    Objects, Classes & Metaclasses
+    Methods, Selectors and IMPs
+    Other Runtime Functionality
+    Associated object
+    Classes And Selectors From Strings
+    Method Swizzling
+    Dynamic Subclassing/isa Swizzling
+    Dynamic Method Resolution
+    Message Forwarding
+    Using Blocks As Method IMPs
+    总结
+        优缺点
+-->
+<p>下周要做个组内分享。本来是想着正好iOS8出来了，可以挑个新特性学习一下。结果没想到Apple出了大招，新语言Swift横空出世了。这几天微博上不断出现Swift相关的文章，大牛们果然学习热情和能力都是超越常人。在短时间内弄明白一个新语言还能写出高质量的文章显然是我等无法企及的。不过也很庆幸自己在这个欣欣向荣的领域里，有这么多充满激情的前辈，虽说不能并肩同行但就算在后面跟着他们的脚步也是颇有兴致的。</p>
+<p>既然在短时间内没有能力深入学习新的语言和特性，那就还是来讲讲Objective-C runtime了。虽然Swift在未来的某一天会取代Objective-C，但目前看来后者还会是主力开发语言，深入学习依然有价值。</p>
+<p>本篇文章就讲讲是什么使得Objective-C具有了动态特性(runtime)，以及对这种动态特性的应用。</p>
+<p>##背景</p>
+<p>我个人的学习习惯是当要深入学习某一个知识点的时候我需要一个问句作为思维脑图的初始节点。在runtime这块，<a href="http://lianxu.me/2012/11/10-cocoa-objc-newbie-problems/" target="_blank" rel="external">lianxu的这篇文章</a>给我提供了这个问句：如果让你（设计）实现一个计算机语言，你要如何下手？</p>
+<p>文中提到了3种不同的层次，以下是一个简单的概括，具体的细节可细读lianxu的文章：</p>
+<p>第一种是传统的面向过程的语言，例如C语言。这种语言的编译器在编译的时候将代码里的函数名称转化成一个相对内存地址，把调用这个函数的语句转换成一个jmp跳转指令。一切在编译时就已经确定了。</p>
+<p>第二种是面向对象的语言，是在第一种语言基础上做了改进，增加了类的部分，例如C++。增加了类的部分意味着编译器需要多绕个弯，在严格的C编译器上增加一层类处理的机制，把一个函数限制在它处在的class环境里，每次请求一个函数调用，先找到它的对象, 其类型,返回值，参数等等，确定了这些后再jmp跳转到需要的函数。虽然多了灵活性，但仍然是静态语言。</p>
+<p>第三种是动态语言，它将第二种的类的实现部分抽象出来，做成一套完整运行阶段的检测环境。这种语言的函数调用在编译期不能确定内存地址，只有到了运行时才能根据runtime环境中的情况做出跳转。Objective-C就是这样的动态语言。</p>
+<p>简而言之，Objective-C就是C的超集+runtime。初学者可能只看到了Objective-C在C的基础上增加的一些额外的关键字和语法，但真正使得这个语言如此强大的是它的runtime，虽然小巧，却无比灵活。</p>
+<h2 id="The_Runtime"><a href="#The_Runtime" class="headerlink" title="The Runtime"></a>The Runtime</h2><p><strong>在开始深入学习之前，我们需要建立这样一个概念：runtime的核心是消息发送机制。</strong></p>
+<h3 id="Messages"><a href="#Messages" class="headerlink" title="Messages"></a>Messages</h3><!--
+When you think of invoking some code, you think of calling a method. In some languages, this allows for the compiler to perform extra optimisations and error checking as it is a direct and clear relationship between what is being called and what is being invoked. With message sending, this distinction is less clear. You don't need to know if an object will respond to a message in order to send it. You send off the message and it might get handled by the object. Or it could be passed along to another object. A message doesn't need to map to a single method, an object can potentially handle several messages that it funnels through to a single method implementation.
+
+In Objective-C, this messaging is handled by the objc_msgSend() runtime function and its cousins. This function takes a target, a selector and a list of arguments. In fact at a conceptual level, the compiler simply converts all your message sends to calls to objc_msgSend(). For example, the following are functionally equivalent:
+
+[array insertObject:foo atIndex:5];
+objc_msgSend(array, @selector(insertObject:atIndex:), foo, 5);
+-->
+<p>当我们想要执行一段代码的时候，我们通常会调用一个方法。在有些语言中，由于调用的方法和实际执行的代码之间是直接、清楚的关系，所以编译器会做一些额外的优化和错误检查。而在基于消息发送机制的语言中，这种关系变得不再那么清晰。当我们给一个对象发送消息的时候，我们不需要知道该对象是否能响应这个消息。消息发送之后，可能会被这个对象处理，也可能会被转给另一个对象。另外，一个消息并不需要映射到一个单一的方法，而一个对象也可以处理映射到同一个方法实现的不同消息。</p>
+<p>在Objective-C中，这种消息机制是通过“objc_msgSend()”runtime函数以及其他一组相似的函数来处理的。我们可以看一下这个函数的声明，它需要一个target，一个selector和一个参数列表：</p>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">/** </span><br><span class="line">		* <span class="type">Sends</span> a message <span class="keyword">with</span> a simple <span class="keyword">return</span> value to an instance <span class="keyword">of</span> a class.</span><br><span class="line"> * </span><br><span class="line"> * @param self A <span class="type">pointer</span> to the instance <span class="keyword">of</span> the class that <span class="keyword">is</span> to receive the message.</span><br><span class="line"> * @param op <span class="type">The</span> selector <span class="keyword">of</span> the <span class="keyword">method</span> that handles the message.</span><br><span class="line"> * @param ... </span><br><span class="line"> *   A variable argument list containing the arguments to the <span class="keyword">method</span>.</span><br><span class="line"> * </span><br><span class="line"> * @<span class="keyword">return</span> <span class="type">The</span> <span class="keyword">return</span> value <span class="keyword">of</span> the <span class="keyword">method</span>.</span><br><span class="line"> * </span><br><span class="line"> * @note <span class="type">When</span> it encounters a <span class="keyword">method</span> call, the compiler generates a call to one <span class="keyword">of</span> the</span><br><span class="line"> *  functions \c objc_msgSend, \c objc_msgSend_stret, \c objc_msgSendSuper, <span class="keyword">or</span> \c objc_msgSendSuper_stret.</span><br><span class="line"> *  <span class="type">Messages</span> sent to an <span class="keyword">object</span>’s superclass (<span class="keyword">using</span> the \c super keyword) are sent <span class="keyword">using</span> \c objc_msgSendSuper; </span><br><span class="line"> *  other messages are sent <span class="keyword">using</span> \c objc_msgSend. <span class="type">Methods</span> that have data structures <span class="keyword">as</span> <span class="keyword">return</span> values</span><br><span class="line"> *  are sent <span class="keyword">using</span> \c objc_msgSendSuper_stret <span class="keyword">and</span> \c objc_msgSend_stret.</span><br><span class="line"> */	</span><br><span class="line"> <span class="type">OBJC_EXPORT</span> id objc_msgSend(id self, <span class="type">SEL</span> op, ...)</span><br><span class="line">   __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);</span><br></pre></td></tr></table></figure>
+<p>其实在概念层面上，编译器只是简单的将所有消息发送转换成了对objc_msgSend()函数的调用。所以，下面两种方式在功能上来讲是一样的：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">[array <span class="string">insertObject:</span>foo <span class="string">atIndex:</span><span class="number">5</span>];</span><br><span class="line">objc_msgSend(array, <span class="annotation">@selector</span>(<span class="string">insertObject:</span><span class="string">atIndex:</span>), foo, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>除了能给对象发送消息，还可以给类发送消息。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[anObject dosomething:something]</span><span class="comment">;</span></span><br><span class="line"><span class="title">[AnClass dosomethong:something]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>下面我们就来详解一下上面两条消息中的主角object和Class，看一下Objective-C的对象模型。</p>
+<p>###Objects, Classes &amp; Metaclasses<br>&lt;!–<br>In most OOP languages you have the concepts of classes and of objects. Classes are blueprints from which objects are formed. However, in Objective-C, classes are themselves objects, which can respond to messages, which is why you have the distinction between class and instance methods. In concrete terms, an object in Objective-C is a struct, who’s first member is called isa and is a pointer to its class. This is the definition from objc/objc.h</p>
+<p>The object’s class is what holds the list of methods it implements, as well as a pointer to the superclass. Now that makes sense for objects, but classes are also objects. This means a class also has an isa variable, so what does it point to? Well this is where the 3rd type comes in: metaclasses. A metaclass is to a class, what a class is to an object, i.e. it holds the list of methods it implements, as well as the super metaclass. To get a more complete understanding of how objects, classes and metaclasses fit together, read this post by Greg Parker which explains them incredibly well.<br>–&gt;<br>在大多数面向对象编程（OOP）语言中都有类（class）和对象（object）的概念。类给对象提供了生成模板。但在Objective-C中，有点不同，类本身也是对象，也可以响应消息，因此也就有了类方法和实例方法的区别。具体而言，Objective-C中的一个对象是一个结构体（struct），它的第一个成员是一个叫isa的指针，指向它的类。我们可以在。bjc/objc.h中看到定义：</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">/// Represents an<span class="instruction"> instance </span>of a class.</span><br><span class="line">struct objc_object &#123;</span><br><span class="line">    Class isa  OBJC_ISA_AVAI<span class="class">LABILITY;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>对象的类持有该对象的方法列表，也持有一个指向父类的指针。我们也说过类本身也是对象，这意味着类也有一个isa的变量，它又指向哪里呢。这时候第三种类型元类（metaclass）该登场啦。其实元类对于类来说就如类对于对象一样，它持有类的方法列表和一个指向父元类的指针。这三者之间的关系可以参考下图：</p>
+<p><img src="/images/2014/6/class-diagram.png" alt="Object,Class和Metaclass之间的关系"></p>
+<!--
+What about the metaclass? Is it metaclasses all the way down? No. A metaclass is an instance of the root class's metaclass; the root metaclass is itself an instance of the root metaclass. The isa chain ends in a cycle here: instance to class to metaclass to root metaclass to itself. The behavior of metaclass isa pointers rarely matters, since in the real world nobody sends messages to metaclass objects.
+
+More important is the superclass of a metaclass. The metaclass's superclass chain parallels the class's superclass chain, so class methods are inherited in parallel with instance methods. And the root metaclass's superclass is the root class, so each class object responds to the root class's instance methods. In the end, a class object is an instance of (a subclass of) the root class, just like any other object.
+
+Confused? The diagram may help. Remember, when a message is sent to any object, the method lookup starts with that object's isa pointer, then continues up the superclass chain. "Instance methods" are defined by the class, and "class methods" are defined by the metaclass plus the root (non-meta) class.
+-->
+<p>从上图可以看出，metaclass并不是无限制的传递下去的，isa指针链会在一个循环中终止：instance-&gt;class-&gt;metaclass-&gt;root metaclass-&gt;root metaclass。由于在现实世界中没有人会给元类发送消息，所以它的isa指向哪里并不重要。Objective-C甚至试图隐藏了metaclass的信息，比如<code>[NSObject class]</code>和<code>[NSObject self]</code>返回的结果一样，但正常情况下前者应该返回<code>NSObject-isa</code>指向的元类。</p>
+<p>以上只是简单的介绍了Objective-C的对象模型，如果还想深入了解，推荐细读<a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">Greg Parker的这篇文章</a>，也是上图的出处。</p>
+<p>讲完了message左边的target部分，再来看看右边的method部分吧。</p>
+<p>###Methods, Selectors and IMPs<br><!--最后要整理一下整个流程--><br>&lt;!–<br>So we know that the runtime sends messages to objects. We also know that an object’s class holds a list of its methods. So how do those messages map to methods and how are methods actually implemented?</p>
+<p>The answer to the first question is pretty simple. The method list in a class is essentially a dictionary, where selectors are the keys and IMPs are the values. An IMP is simply a pointer to the method’s implementation in memory. The really important thing though, is that this connection between the selector and the IMP is determined at runtime, not compile time. This allows us to play around with it, as we’ll see later.</p>
+<p>The IMP is usually a pointer to a function, where the first argument is of type id and called self, the second argument is of type SEL and is called _cmd and subsequent arguments are the method arguments. This is where the self and _cmd variables are declared when you use them inside a method. Below is an example of a method and a potential IMP for it:</p>
+<ul>
+<li>(id)doSomethingWithInt:(int)aInt {}<br>id doSomethingWithInt(id self, SEL _cmd, int aInt) {}<br>–&gt;<br>现在我们已经知道runtime会给对象发送消息，也知道一个对象的类持有该对象的方法列表。那么消息是如何映射到方法，方法的具体实现又是什么呢。</li>
+</ul>
+<p>对第一个小问的答案其实很简单：类持有的方法列表本质上是一个以selector和IMP作为键值对的dictionary。一个IMP是一个指向内存中该方法具体实现的指针。不过真正重要的一点也是我们需要建立的概念是这种selector和IMP之间的对应关系是在运行时才确定的，而不是编译器。这样的特性也给我们提供了施展各种黑魔法的机会，后面我们会讲到更具体的例子。</p>
+<p>我们还是再深入地了解一下IMP吧。通常它是一个指向带有特定参数的函数的指针：第一个参数是id类型叫做self，第二个参数是SEL类型叫做_cmd，随后跟着方法的参数。这也是对我们在方法中使用的self和_cmd变量的生命。以下就是一个方法和它可能对应的IMP的例子：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)doSomethingWithInt:(<span class="keyword">int</span>)aInt &#123;&#125;</span><br><span class="line"><span class="keyword">id</span> doSomethingWithInt(<span class="keyword">id</span> <span class="keyword">self</span>, SEL _cmd, <span class="keyword">int</span> aInt) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在了解了各种概念之后，我们来整理一下整个消息发送的流程。</strong><br><!--
+Remember, when a message is sent to any object, the method lookup starts with that object's isa pointer, then continues up the superclass chain. "Instance methods" are defined by the class, and "class methods" are defined by the metaclass plus the root (non-meta) class.
+--><br>当我们想要调用一段代码时，我们给一个对象发送消息。编译器把这个消息转换成对objc_msgSend()函数的调用。程序运行时，runtime环境根据对象的isa指针找到它的类从而找到方法列表，再根据seloctor得到对应的IMP，最后跳转到该IMP指向的具体实现。如果在isa指向的类中没有找到该方法，那runtime还会沿着该类的父类链查找。同理，给一个类发送消息也是如此。我们要清楚class定义了实例方法，metaclass和root class定义了类方法。</p>
+<p>下面的图可以帮助我们更好的理解这个流程。</p>
+<p><img src="/images/2014/6/message_sending.png" alt="消息发送流程"></p>
+<p>###Other Runtime Functionality</p>
+<p>现在我们已经了解了object，class，selector，IMP和消息发送等概念了，可能有人会问，那runtime到底能做什么呢。其实runtime的功能归纳起来就两点：</p>
+<ol>
+<li>类和对象的创建，修改和内省</li>
+<li>消息发送</li>
+</ol>
+<p>前文中我们已经涉及到消息发送的内容了，但它只是runtime功能很小的一部分。我们可以来看一下objc/runtime.h和objc/message.h头文件，发现所有的函数的函数名都以它所作用的对象为前缀的。下面就来了解一些有哪些前缀以及相关的函数。</p>
+<p>####class<br>以class为前缀的函数是用来类修改和内省的。</p>
+<p>比如<code>class_addIvar</code>，<code>class_addMethod</code>，<code>class_addProperty</code>，<code>class_addProtocol</code>，<code>class_addProtocol</code>等允许我们给类添加各种结构。</p>
+<p><code>class_copyIvarList</code>，<code>class_copyMethodList</code>，<code>class_copyProtocolList</code>和 <code>class_copyPropertyList</code>等用来得到类中各种类型的结构的列表。</p>
+<p>而<code>class_getClassMethod</code>，<code>class_getClassVariable</code>，<code>class_getInstanceMethod</code>，<code>class_getInstanceVariable</code>，<code>class_getMethodImplementation</code>和<code>class_getProperty</code>等函数会根据给定的名字返回对应的结构。</p>
+<p>除此之外，也有很多更常用的内省函数被封装成Cocoa方法，</p>
+<p>比如<code>class_conformsToProtocol</code>，<code>class_respondsToSelector</code>和<code>class_getSuperclass</code>等。甚至还可以用<code>class_createInstance</code>函数创建一个类的实例对象。</p>
+<p>####ivar<br>以ivar为前缀的函数用来得到一个示例变量的名字，内存便宜和Objective-C编码类型等信息。</p>
+<p>####method<br>以method为前缀的函数大部分是用来内省的，</p>
+<p>比如<code>method_getName</code>，<code>method_getImplementation</code>，<code>method_getReturnType</code>等。还有一些是用来对方法进行修改的，比如<code>method_setImplementation</code>和<code>method_exchangeImplementations</code>，对于这两个函数后面还有更深入的学习。</p>
+<p>####objc<br>以objc为前缀的函数层次就比较高了。它包括了一组objc_msgSend函数用来处理核心的消息发送公功能。它还有诸如<code>objc_getAssociatedObject</code>，<code>objc_setAssociatedObject</code>和<code>objc_removeAssociatedObjects</code>等函数用来处理相关参考（associated references，后面会再讲到）。由于这类函数处于整个结构的顶部，我们还可以在运行时通过<code>objc_copyProtocolList</code>，<code>objc_getClassList</code>，<code>objc_getProtocol</code>，<code>objc_getClass</code>等得到更高层次的信息。</p>
+<p>####object<br>以object为前缀的函数被对象用来修改和内省。我们可以get和set一个对象的示例变量的值。使用<code>object_copy</code>和<code>object_dispose</code>可以复制对象和释放对象的内存。我们还可以得到对象的类，但最有趣的是我们甚至可以使用<code>object_setClass</code>在运行时去改变这个对象的类。后面我们会看到这种用法的威力。</p>
+<p>####property<br>属性存储了相当多的数据。以property为前缀的参数除了得到名字外，还能通过<code>property_getAttributes</code>得到诸如属性的返回类型，它是原子或非原子，使用的内存管理方式，自定义的getter和setter的名字，它的实现是否是动态实现的，支持它的示例变量的名字以及它是否是一个若引用等信息。</p>
+<p>####protocol<br>协议和类有点像，但比类精简一点，很多方法是一样的。我们可以通过以protocol为前缀的方法得到某个协议的方法，属性和协议列表并检查它是否遵循了其它的协议。</p>
+<p>####sel<br>最后还有一些以sel为前缀的函数可以得到selecor的名字，注册一个selector名字以及检查selector是否相等。</p>
+<p>##结束语<br>呼~松一口气。第一部分终于讲完啦。原来没有分上下篇，想一气呵成，不过写起来的篇幅超过预想，所以就先停在这吧。</p>
+<p>现在我们已经一定程度掌握了Objective-C runtime能做什么，怎么做等内容。下一篇文章会来讲讲基于runtime有哪些有趣的动态编程技术。相信比这一章的理论知识会更有意思吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<!--
+    背景
+    runtime文件结构
+    Messages
+    Objects, Classes & Metaclasses
+    Methods, Selectors and IMPs
+    Other Runtime Functionality
+]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS7多任务增强（3）]]></title>
+    <link href="http://ananwbr.com/archive/2013-08-23/multitasking-enhancements-in-ios-7-part3/"/>
+    <id>http://ananwbr.com/archive/2013-08-23/multitasking-enhancements-in-ios-7-part3/</id>
+    <published>2013-08-23T13:36:00.000Z</published>
+    <updated>2015-10-25T15:41:00.000Z</updated>
+    <content type="html"><![CDATA[<p>今天终于做了分享了。分享之前还挺紧张的，不过开讲之后思路跟上了，又因为准备还算充分，所以整个过程还比较流畅。其实分享还是挺有趣的。借着分享的机会可以深入一个话题然后再和小伙伴们分享，讨论。是个学习、自我巩固、查漏补缺的好机会。</p>
+<p>下面几点就是在分享过程中小伙伴们提出的疑问而我自己也不够确定的地方。后来又查看了相关知识，整理了一下给他们发了邮件。顺便也记录在这里。</p>
+<h2 id="u591A_u4EFB_u52A1_u589E_u5F3A_u7684_u51E0_u70B9_u8865_u5145"><a href="#u591A_u4EFB_u52A1_u589E_u5F3A_u7684_u51E0_u70B9_u8865_u5145" class="headerlink" title="多任务增强的几点补充"></a>多任务增强的几点补充</h2><ol>
+<li><p>关于<br> application:performFetchWithCompletionHandler:<br> application:didReceiveRemoteNotification:fetchCompletionHandler:<br> application:handleEventsForBackgroundURLSession:completionHandler:<br> 这三个方法可用的时间，文档中有这么一段话：</p>
+<blockquote>
+<p>When this method is called, your app has up to 30 seconds of wall-clock time to perform the download operation and call the specified completion handler block. In practice, your app should call the handler block as soon as possible after downloading the needed data. If you do not call the handler in time, your app is suspended. More importantly, the system uses the elapsed time to calculate power usage and data costs for your app’s background downloads.</p>
+</blockquote>
+<p> 也就是说，是执行完所有任务只有30秒的时间。就算你是异步执行，如果你没有在规定的时间内调用completion handler block告诉系统你已经完成任务，那么系统就会判定你已经超时，这时候就会挂起你的应用。另外系统会根据执行任务所用的时间来计算应用消耗的电量和流量。这些计算结果会影响应用被调度的机会。消耗越少，以后可能被调度到的机会就越大。</p>
+</li>
+<li><p>补充：在Debug应用的Background Fetch模式的时候，需要考虑两种情况：</p>
+<ul>
+<li>应用未启动，此时系统会启动应用并进入后台。选择一个Scheme然后Edit-&gt;左侧栏Run SimpleBackground…-&gt;Options-&gt;勾选Launch Due to a Background Fetch Event，这时候再在模拟器启动的话，应用会直接进入后台。</li>
+<li><p>应用处于睡眠状态（在后台），此时系统会唤醒应用。Debug-&gt;Simulate Background Fetch<br>从Debug有两种方式说明，应用即使没启动的时候也会被调度。<br>但是如果在设置（Settings）的Background App Refresh中关掉了，或者这个应用是从App Switcher中被用户手动终止的，那么就算的之前注册了后台模式，也没有机会被调度到。</p>
+<p>我之前的疑惑点是，应用处于未启动的状态，有哪几种情况呢。<br>1、从未启动：那它也没有向系统注册过后台模式，不会被调度。<br>2、启动过但被用户从App Swicher中终止，此时系统会尊重用户选择，也不会调度该应用。<br>3、启动过被系统强制退出：这时候应该有机会被调度吧。<br>4、还有其它情况吗？<br>如果没有其它情况，那说明Launch Due to a Background Fetch Event只会发生在第三种情况。<br>如果你们还知道其他情况，记得告诉我。</p>
+</li>
+</ul>
+</li>
+<li><p>关于Background Transfer Service<br>要说明一下这个部分并不是后台模式的一种，不管在foreground还是background，都可以创建NSURLSession并提交任务。经常与fetch和remote-notification模式结合使用。iOS 7之前的应用可以通过Background Task Completion在后台继续运行一段时间来下载，但如果因为各种原因而导致应用被退出了（被用户杀掉，内存不足或超时被系统杀掉等），那么下载是得不到保证的。iOS 7的后台传输服务则可以让系统去下载，出错或下完后通知并唤醒应用来处理。另外，为了避免浪费流量，该服务只会在 WiFi 环境下才进行传输。</p>
+<p> 关于NSURLSession和NSURLSessionTask，是分别有NSURLSessionDelegate和NSURLSessionTaskDelegate。参考文档中的这段：</p>
+<blockquote>
+<p>If a URL session finishes its work when your app is <strong>not running</strong>, the system launches your app in the background so that it can process the event. In that situation, use the provided identifier to create a new NSURLSessionConfiguration and NSURLSession object. You must configure the other options of your NSURLSessionConfiguration object in the same way that you did when you started the uploads or downloads. Upon creating and configuring the new NSURLSession object, that object calls the appropriate delegate methods to process the events.</p>
+<p>If your app already has a session object with the specified identifier and is <strong>running or suspended</strong>, you do not need to create a new session object using this method. Suspended apps are moved into the background. As soon as the app is running again, the NSURLSession object with the identifier receives the events and processes them normally.</p>
+<p>At <strong>launch time</strong>, the app does not call this method if there are uploads or downloads in progress but not yet finished. If you want to display the current progress of those transfers in your app’s user interface, you must recreate the session object yourself. In that situation, cache the identifier value persistently and use it to recreate your session object.</p>
+</blockquote>
+<p> 当NSURLSession里的所有任务都完成时    </p>
+<ul>
+<li>如果此时应用没在运行，那么系统会启动应用（参考上面第2点）进入bakground状态，此时我们需要根据identifier重建session对象，然后该对象会调用合适的delegate方法处理时间。</li>
+<li><p>如果此时应用在Suspended状态，那么系统让应用进入Background状态，调用application:handleEventsForBackgroundURLSession:completionHandler:方法，然后该identifier代表的session对象就会收到事件从而调用合适的delegate方法。</p>
+<p>更多的情况可参考《What’s New in Foundation Networking》这个session。具体细节有待研究。</p>
+</li>
+</ul>
+</li>
+<li><p>关于系统如何判断是哪种通知，应该是根据content-available这参数来的。</p>
+</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">//<span class="type">Normal</span> <span class="type">Remote</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          alert: <span class="decorator">&#123;...&#125;</span></span><br><span class="line">     &#125;</span><br><span class="line">//<span class="type">Remote</span> <span class="type">Push</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          content-available: <span class="number">1</span></span><br><span class="line">          alert: <span class="decorator">&#123;...&#125;</span></span><br><span class="line">     &#125;</span><br><span class="line">//<span class="type">Silent</span> <span class="type">Push</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          content-available: <span class="number">1</span></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>这周时间比较紧张，上班时间完全专心于新项目的开发。需要处理一些以前没遇到过的情况，也是个学习的好机会。但是这周工作之余的时间安排的不是很好。下了班总感觉很累，没有精力继续研究。这种情况下就干脆早点躺床上看书去了。我在想是不是上周六两点左右才睡的后遗症。我是老了么，一次熬夜就这么损。除了心理上的疲惫还有身体上的疼痛。因为最近几天不是下雨就是刮很大的风本来想的下班后跑步一直没有执行，于是周三就在室内跳了操，做了几个卷腹，结果一直腰酸背疼。看来最近体能也差了。好怀念三、四月份那会儿还在学校的时候晚上去操场跑步40分钟+20分钟拉伸之后大汗淋漓的感觉。那时候一天不出去运动就心里痒痒。结果因为回家休息断了之后要重新开始还是有点困难。</p>
+<p>趁着周末好好调整一下~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天终于做了分享了。分享之前还挺紧张的，不过开讲之后思路跟上了，又因为准备还算充分，所以整个过程还比较流畅。其实分享还是挺有趣的。借着分享的机会可以深入一个话题然后再和小伙伴们分享，讨论。是个学习、自我巩固、查漏补缺的好机会。</p>
+<p>下面几点就是在分享过程中小伙伴们]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS7多任务增强（2）]]></title>
+    <link href="http://ananwbr.com/archive/2013-08-18/multitasking-enhancements-in-ios-7-part2/"/>
+    <id>http://ananwbr.com/archive/2013-08-18/multitasking-enhancements-in-ios-7-part2/</id>
+    <published>2013-08-18T13:59:00.000Z</published>
+    <updated>2015-10-25T15:41:04.000Z</updated>
+    <content type="html"><![CDATA[<!--
+提纲：
+* 苹果的广告 
+* 改变的东西
+* 用户界面的改变，调度的时间（基于系统对用户行为的观察）和时机（对设备资源，硬件的检测）
+* 新增的东西
+-->
+<p>最近写作的热情高涨，真是个好现象。一直觉得能坚持写博客的人都很了不起。有时候偶然进到一个人的博客，发现那个人已经连续写了五六年了，就会很想从头开始翻。明明是不认识的人，却莫名很有好感。真希望自己也能积累很多文字，如果能给人带来一点正面的能量，那我也会感觉更加幸福。</p>
+<p>如果每天都写一篇文章的话，这样的篇头语也算是日记了~</p>
+<p>写前一篇的文章的时候是想写新特性的，结果只讲完了预备知识。现在终于进入正题啦。</p>
+<h2 id="iOS7_u591A_u4EFB_u52A1_u589E_u5F3A"><a href="#iOS7_u591A_u4EFB_u52A1_u589E_u5F3A" class="headerlink" title="iOS7多任务增强"></a>iOS7多任务增强</h2><p>先来看看苹果官网是怎么介绍多任务增强的吧。</p>
+<p><img src="/images/2013/8/multitasking_introduction.png" alt="官网介绍"></p>
+<p>从图中我们可以感受到的最直观的变化是多任务管理界面（也可以叫它应用切换器，洋名“App Switcher”）。还是双击Home键，就可唤出该界面。现在不仅能看到后台应用的图标，还能看到每个应用的预览。（作为开发者需要注意隐藏一些敏感信息）如果想终止某个应用，只要在这个应用的预览图上往上一滑就行了。比起长按再删除，那是方便了太多了。</p>
+<p>另外，从图片的文案中我们也可以得出一个关键字：<strong>智能</strong>。可以从两方面来解读这个词：</p>
+<ul>
+<li>调度的时间：系统会跟踪用户行为，比如启动应用的时间和频率，得出用户的使用规律。比如每天7点我一起床就会打开微博应用，系统经过一段时间的观察之后知道了我的使用规律，它就会在7点前让应用去更新内容，这样我一睁开眼打开应用不用刷新就能看到一夜积累的微博啦。（玩微博好几年了现在还挺控~）</li>
+<li>调度的时机：系统也会检查当前的设备情况，比如设备是否激活，网络和电量情况，来智能分配每个应用的获取频率和时间。举个例子，当网络情况良好时，就是获取信息的良机。它还能协调多个应用的更新，所以有网络时，多个应用都可以同时收益。</li>
+</ul>
+<p>总得来说，不管是UI设计还是用户体验都有不小的提升。</p>
+<!--
+Translated by Tinyfool:http://tiny4cocoa.com/thread/show/88/
+
+下面，让我们聊聊多任务。
+iOS 7构建在有着工业级强度的OS X的坚实基础上。
+它包含了大量的功能强大的多任务处理能力。
+但是我们把这些能力暴露给App的时候，必须非常小心谨慎，
+因为我们想提供更长的使用时间。
+在iOS 4我们给某些特定类型的App提供了多任务处理能力，
+例如，后台播放音乐的App，接收VOIP来电，允许他们运行在后台。
+现在在iOS 7我们高兴的宣布，我们让所有App都有了多任务能力，
+同时还保持电池使用时间。
+（持久不息的掌声……）
+那么，究竟是什么样子呢？
+好，设想有一个App你整天都持续在使用，SNS App之类的，
+你总是在签到，
+iOS 7会监测到你的行为模式，
+会给这个App提供频繁的后台活动机会使其信息保持即使的更新。
+然后我们看你使用的另外一种App，
+也许你只是在早晨、早晨的时候、或者晚上下班以后打开他们，
+iOS 7也会注意到他们，
+会给这些App在合适的时机后台激活，
+这样在你用的时候，他们里面的信息也将是刚刚更新过的。
+在这种智能规划之外，
+iOS 7还提供了机遇更新机制，
+用户每天平均激活iPhone几十次，
+这就给App提供了非常好的机会，
+系统已经点亮，让App可以在后台更新内容。
+它还能根据无线网络情况调节，
+你的网络情况很好时，就是获取信息的良机。
+它还能协调多个App的更新，
+所以你有网络的时候，多个App都可以同时获益。
+最后，iOS 7还可以用Push通知激活后台更新，
+所以，当你打开一个通知时，App的信息已经更新了。
+iOS 7还有非常棒的新界面，在运行的App之间切换，
+现在你可以双击Home键进入后台，
+在后台App之间滑动，点击就可以进入。
+这就是iOS 7的多任务功能。
+-->
+<p>上面讲的都是作为普通用户就可以体验到的变化。但作为开发者，我们需要知道背后是什么样的机制，有哪些API支撑着这些新特性，了解更多的细节。</p>
+<p><strong>首先来看看iOS7对已有的多任务的改变</strong>。WWDC的keynote上列出了以下四点：</p>
+<ul>
+<li>Background Task Completion</li>
+<li>App Switcher（应用切换器）<ul>
+<li>新的用户界面突出了应用程序的快照</li>
+<li>应该确保用户重新回到应用时界面看起来良好，可参考“State Restoration”这个视频</li>
+<li>在应用快照上向上滑移除该应用，在iOS6移除应用表示停止应用运行，在iOS7中还意味着停止应用在后台运行</li>
+<li>在后台更新快照</li>
+</ul>
+</li>
+<li>Location Service<ul>
+<li>在系统的设置应用中可以配置是否允许某个应用在后台执行任务</li>
+<li>系统会尊重App Switcher中的操作，如果用户移除了某个检测位置的应用，当位置变化时，系统不会启动该应用</li>
+</ul>
+</li>
+<li>Newsstand<ul>
+<li>在系统的设置应用中可以配置是否允许某个报刊杂志应用在后台更新数据</li>
+<li>系统会尊重App Switcher中的操作，如果用户移除了某个报刊杂志应用，当有内容更新时，系统不会启动该应用</li>
+<li>继续使用Newsstand API，有</li>
+</ul>
+</li>
+</ul>
+<p>下面我们来重点看一下第一点。在<a href="http://ananwbr.com/blog/2013/08/13/multitasking-enhancements-in-ios7/">前一篇文章</a>中我们讲过，用户进入后台时可以通过调用<code>UIApplication</code>类的<code>beginBackgroundTaskWithExpirationHandler:</code>方法向系统请求额外的时间来处理一些诸如上传或下载，完成数据库操作这样的任务。在iOS6中，如果此时用户锁屏了，那么系统会等待任务执行完才进入睡眠状态。而在iOS7中，任务会被暂停，系统会很快进入睡眠状态。直到设备收到事件被唤醒（例如定时事件、推送、位置更新等），后台任务才能继续运行。这就导致了处理过程变成断断续续的，因此如果任务中包含了网络传输的内容推荐使用NSURLSession来处理（即下文中的 Background Transfer Service）。</p>
+<p>总结一下后台任务（Background Task Completion）的变化：</p>
+<ul>
+<li>当设备锁屏时，后台任务不再连累设备保持醒着的状态，而是很快进入睡眠状态</li>
+<li>应用还是会有几分钟的时间执行任务，但执行过程不能保证是连续的</li>
+</ul>
+<p><strong>接下来看看iOS7中有哪些新增的API</strong>。</p>
+<ul>
+<li>Background Fetch</li>
+<li>Remote Notification</li>
+<li>Background Transfer Service</li>
+</ul>
+<h4 id="u540E_u53F0_u83B7_u53D6_uFF08Background_Fetch_uFF09"><a href="#u540E_u53F0_u83B7_u53D6_uFF08Background_Fetch_uFF09" class="headerlink" title="后台获取（Background Fetch）"></a>后台获取（Background Fetch）</h4><!--
+it's a periodic way to for your application to get launched into the background to update it's content. It's based on when the user actually user your application so that your fetch opportunities can be as fresh as possible.
+This basically just gives your application a chance to launch whenever you send it a push notification crafted in a certain way, it can actually wake up your application in the background with a silent push notification. So that if there's something immediate that needs to happen inside of the application but doesn't need to bother the user, you can do that too.
+so this will allow you to enqueue large uploads and downloads for iOS to continue in the background after the user leaves your application and can continue across reboots and just handles all of that for you.
+-->
+<p>先来回想一下我们平常使用微博的场景。每次打开微博的时候，不管是应用自动更新还是用户手动下拉更新都需要花费一些时间去等待更新完毕。但在iOS7中，新增的后台模式Background Fetch可以让应用在打开之前先更新内容，这样用户进入应用时无需等待就可以看到更新啦。</p>
+<p>接下来看看如何让应用程序具备这种功能。</p>
+<ol>
+<li>在<code>Info.plist</code>中设置<code>UIBackgroundModes</code>的值为<code>fetch</code>。或在Xcode中Capibility下勾选该模式。</li>
+<li><p>设置最小的后台获取时间间隔。</p>
+ <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:</span><br><span class="line">UIApplicationBackgroundFetchIntervalMinimum]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>在这里`minimumBackgroundFetchInterval`的值有可以有三种：
+
+* UIApplicationBackgroundFetchIntervalNever：默认为该值，不会去做获取操作
+* UIApplicationBackgroundFetchIntervalMinimum：最小时间间隔，在这个间隔内应用不会去做获取操作，但过了这个时间后的任意时候，应用都有可能做获取操作
+* 自定义    ，单位为秒
+</code></pre><ol>
+<li><p>在app delegate中实现’application:performFetchWithCompletionHandler:‘方法，该方法大概有30秒的时间执行任务，比如获取数据并更新界面。当任务完成时，<strong>必须</strong>调用<code>completionHandler</code>并传递结果参数告诉系统这次获取操作的结果。结果参数值包括下面三种：</p>
+<ul>
+<li>UIBackgroundFetchResultNewData：表示有新数据，系统会生成新的应用快照供App Switcher使用</li>
+<li>UIBackgroundFetchResultNoData：无数据</li>
+<li>UIBackgroundFetchResultFailed：获取失败</li>
+</ul>
+</li>
+</ol>
+<p>另外，在Debug该功能的时候，需要考虑两种情况：</p>
+<ul>
+<li>应用未启动，此时系统会启动应用并进入后台。Scheme-&gt;Run Section-&gt;Launch Due to a<br>Background Fetch Event</li>
+<li>应用处于睡眠状态，此时系统会唤醒应用。Debug-&gt;Simulate Background Fetch</li>
+</ul>
+<p>总结：系统会根据用户习惯，设备情况等在最佳时机不定期地唤醒或启动注册过Fetch后台模式的应用，使应用在后台下载更新。适用于社交、新闻、天气类需要经常更新的应用。<br><!--Apps that regularly require new content can register with the system and be woken up or launched periodically to download that content in the background. To register, include theUIBackgroundModes key with the fetch value in your app’s Info.plist file and set the minimum time you want between fetch operations using thesetMinimumBackgroundFetchInterval: method. You must also implement the application:performFetchWithCompletionHandler: method in your app delegate to perform any downloads.--></p>
+<h4 id="u8FDC_u7A0B_u901A_u77E5_uFF08Remote_Notifications_uFF09"><a href="#u8FDC_u7A0B_u901A_u77E5_uFF08Remote_Notifications_uFF09" class="headerlink" title="远程通知（Remote Notifications）"></a>远程通知（Remote Notifications）</h4><p>在iOS6中，当系统收到远程通知时，它会马上通知用户（Alert，Banner…）。如果需要获取消息相关的内容时，还需要用户点击进入应用后，才开始执行任务。这时候用户需要等待。过程如下图所示：</p>
+<p><img src="/images/2013/8/RemoteNotificationiOS6.png" alt="iOS6远程通知"></p>
+<p>而在iOS7中，提供了新的后台模式Remote Notification。当应用注册了这种模式，那么当系统收到相应的远程通知时，会先让应用在后台执行任务，任务完成后再通知用户。此时用户点击进入应用后无需等待直接就可以看到内容啦。过程如下图所示：</p>
+<p><img src="/images/2013/8/RemoteNotificationiOS7.png" alt="iOS7远程通知"></p>
+<p>另外，还有一点值得注意的是，iOS7的远程通知还支持Silent Remote Notification。当用户收到该类型的远程通知时，只会让应用在后台执行任务。任务完成后也不会通知用户。过程如下图所示：</p>
+<p><img src="/images/2013/8/SilentRemoteNotification.png" alt="Silent远程通知"></p>
+<p>接下来看看如果实现这种后台模式吧。</p>
+<ol>
+<li>在<code>Info.plist</code>中设置<code>UIBackgroundModes</code>的值为<code>remote-notification</code>。或在Xcode中Capibility下勾选该模式。</li>
+<li>在推送通知中设置<code>content-available</code>标记</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">//remote notification</span><br><span class="line">aps &#123;</span><br><span class="line">    content-available: <span class="number">1</span></span><br><span class="line">    alert: <span class="decorator">&#123;...&#125;</span>      &#125;</span><br><span class="line">  //silent remote notification</span><br><span class="line">aps &#123;</span><br><span class="line">    content-available: <span class="number">1</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在app delegate中实现<code>application:didReceiveRemoteNotification:fetchCompletionHandler:</code>方法，该方法大概有30秒的时间执行任务，比如获取数据并更新界面。当任务完成时，<strong>必须</strong>调用<code>completionHandler</code>并传递结果参数告诉系统这次获取操作的结果。结果参数值参考前文Background Fetch中的说明。</li>
+</ol>
+<p>关于Silent Remote Notification还有很重要的一点需要知道的是，它的推送速率是受到限制的。因为普通的推送对用户来说是可见的，如果太过频繁让用户觉得很烦人，那么它可以选择关闭通知。但Silent Remote Notification对用户来说是不可见的，也就无法管理。所以iOS和服务器为此做了速率限制。服务器不是阻止你推送通知，而是当速率过快时，会先存储通知，当等到了合适的时候再向用户推送，比如有其他普通的通知要推送时。不过这一切iOS系统和推送服务器会处理，我们只需要知道有这么个机制就可以了。</p>
+<p>总结：当有新的内容需要更新时，可以给用户推送通知。当应用收到通知时，可以在后台获取新内容。获取到了之后系统再显示通知（Alert，Banner…）。如果是Silent通知，则不提醒用户。普通的远程通知适用于及时短信，图片短信，视频短信，邮件等应用。Silent远程通知适用于文件同步，“Read it later”等应用。<br><!--
+Apps that use push notifications to notify the user that new content is available can now use those notifications to initiate background download operations. To support this mode, include the UIBackgroundModes key with the remote-notification value in your app’s Info.plist file. Your app delegate must also implement theapplication:didReceiveRemoteNotification:fetchCompletionHandler: method.
+--></p>
+<h4 id="u540E_u53F0_u4F20_u8F93_u670D_u52A1_uFF08Background_Transfer_Service_uFF09"><a href="#u540E_u53F0_u4F20_u8F93_u670D_u52A1_uFF08Background_Transfer_Service_uFF09" class="headerlink" title="后台传输服务（Background Transfer Service）"></a>后台传输服务（Background Transfer Service）</h4><p>在iOS6中，当应用进入后台时可以请求额外的时间进行文件传输的操作。但因为时间有限，不能传输大的文件。iOS7针对这一点做了增强，提供了后台传输服务。这样一来，文件的传输工作由iOS系统来操作，就算应用退出了或设备重启过，文件传输仍然可以进行。因此，文件传输不会受到时间的限制，任何时候应用不管是在前台还是后台都可以提交任务，当任务完成或出错或需要认证时会唤醒应用。</p>
+<ol>
+<li><p>创建一个后台NSURLSession对象，然后将上传或下载的任务（NSURLSessionTask）交给它，如下图所示：</p>
+<p> <img src="/images/2013/8/BackgroundTransferService.png" alt="后台传输服务"></p>
+</li>
+</ol>
+<ol>
+<li>在app delegate中实现<code>application:handleEventsForBackgroundURLSession:completionHandler:</code>方法，在该方法中可以根据identifier重新得到NSURLSession对象，然后处理新的内容，并做一些更新界面的操作。当操作完成时，<strong>必须</strong>调用<code>completionHandler</code>，告诉系统界面已经更新可以生成新的快照。</li>
+</ol>
+<p>还有一点需要知道，后台传输只会在WIFI环境下工作。</p>
+<p>总结：后台传输服务允许应用上传或下载大的文件、内容，没有时间限制，就算应用退出或设备重启传输工作仍能继续进行。可以和后台获取和远程通知的后台模式结合使用，适用于照片，视频，文件等内容的上传和下载。</p>
+<!--
+• Limited time to run in background
+• Background completion tasks initiated from the background • Seamless background experience
+• Data Protection and Keychain
+• Efficient battery life usage
+• Cellular data usage
+• Removed from the App Switcher
+• Background App Refresh Settings
+-->
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>终于结束了这篇文章。一来是很久没写文章了，二来以前没怎么写过这类文章，所以写起来还是有点吃力，且速度也慢。本来这周就要做分享的，结果因为没来得及写完，于是向师傅请求再往后推一推，实在是挺不好意思的。祝<br>我下周的分享的能顺利完成吧。</p>
+<p>另外，下周要投入更加紧张的新项目了。可能会遇到一些从来没遇到过的问题。可能自己的表现会让人觉得不是很满意。不管怎样，我都会尽自己最大的努力去完成的。</p>
+<p>除了工作8小时之外，下周准备开始看Core Text和Text Kit的内容了。期待一下~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<!--
+提纲：
+* 苹果的广告 
+* 改变的东西
+* 用户界面的改变，调度的时间（基于系统对用户行为的观察）和时机（对设备资源，硬件的检测）
+* 新增的东西
+-->
+<p>最近写作的热情高涨，真是个好现象。一直觉得能坚持写博客的人都很了不起。有时候偶然进到一个人的博客，发现那个]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS7多任务增强（1）]]></title>
+    <link href="http://ananwbr.com/archive/2013-08-13/multitasking-enhancements-in-ios7/"/>
+    <id>http://ananwbr.com/archive/2013-08-13/multitasking-enhancements-in-ios7/</id>
+    <published>2013-08-13T13:11:00.000Z</published>
+    <updated>2015-10-25T15:41:07.000Z</updated>
+    <content type="html"><![CDATA[<p>参与的上一个项目上线后，忽然就有了几天空闲的时间。前一篇文章提到过要分享的事，因为赶项目一直没有进行。正好趁着这几天专心研究一下。这次主要把焦点放在iOS7多任务增强上，决定先把官方文档读一读。在<a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS7.html#//apple_ref/doc/uid/TP40013162-SW1" target="_blank" rel="external">《What’s new in iOS 7》</a>这篇文档中，推荐我们阅读《iOS App Programming Guide》的<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW3" target="_blank" rel="external">“App States and Multitasking”</a>章节了解更多相关内容。结果在接触到多任务增强的内容之前，花了很多时间边阅读边翻译应用状态的部分。虽然弄清楚这部分的知识也很必要，但是因为最初的目的是尽快学习新增的内容以做分享，所以这样缓慢的进度也让我很着急。另外，在阅读的过程中总会碰到相关却还不太清楚的知识点，比如在读到<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW14" target="_blank" rel="external">“The Main Run Loop”</a>的时候我又找了另一篇文档学习<a href="http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW1" target="_blank" rel="external">“run loops”</a>的知识。就像越滚越大的雪球，需要学习的相关知识也越来越多，又因为自己还不够快的学习速度，等我真正开始研究新增的特性时，已经过去了四天。不过最后证明，有了前面几天的铺垫，后面的学习进度更快了。当然选对学习材料也很重要，除了官方文档之外，我还花了很多时间在网上收集资料，最后发现，其实WWDC提供的视频+Keynote+Sample才是利器，能帮助我们更快更全面的了解重点内容，有谁比苹果的工程师更了解新特性呢。虽然这几天进度慢啃得很辛苦也走了点弯路，却也让我找到了学习状态和更好的方法，让我对今后的学习更有信心。今天是七夕，没有情人的我，就靠这些感悟愉悦一下心情吧：P。</p>
+<p>话不多说了，下面开始本文的重点内容吧。</p>
+<p>目录：</p>
+<ul>
+<li>预备知识</li>
+<li>iOS7多任务增强 </li>
+</ul>
+<h2 id="u9884_u5907_u77E5_u8BC6"><a href="#u9884_u5907_u77E5_u8BC6" class="headerlink" title="预备知识"></a>预备知识</h2><p>在开始将新增特性之前，还是先简单地说说下面两点吧</p>
+<ul>
+<li>iOS应用的状态（App States）</li>
+<li>iOS6中的多任务</li>
+</ul>
+<h4 id="iOS_u5E94_u7528_u72B6_u6001"><a href="#iOS_u5E94_u7528_u72B6_u6001" class="headerlink" title="iOS应用状态"></a>iOS应用状态</h4><p>对于一个iOS应用来说，知道自己当前是运行在前台还是后台是很重要的。由于iOS设备的系统资源更加有限，应用需要根据这种状态信息，针对不同的状态做不同的操作。另外，操作系统也会限制你的应用运行在后台时能做的事，以达到提高电池的续航能力，提升用户对跑在前台的应用的用户体验的目的。当你的应用在前台和后台两种模式之间转换时，系统会通知你的应用。当接收到通知时，就是改变应用行为的机会啦。<br>在任何时刻，应用的状态都逃不出以下几种：</p>
+<ul>
+<li>不在运行（Not Running）：应用未启动或已启动但被终止</li>
+<li>非活跃（Inactive）：应用跑在前台但当前不能接收事件（可能在执行其它代码）。应用通常只在这种状态停留很短的时间然后转到其他状态</li>
+<li>活跃（Active）：跑在前台而且可以接收事件 </li>
+<li>后台（Background）：应用跑在后台执行代码。大多数应用在被挂起之前会短暂进入这个状态。不过应用可以请求额外的执行时间从而保留在这个状态久一点。另外，如果应用运行后直接进入后台会进入该状态，而不是非活跃状态</li>
+<li>睡眠（Suspended）：应用在后台但不执行代码。系统在把应用放到该状态之前不会通知应用。当进入睡眠状态时时，应用还保留在内存中但不执行代码。当低内存的时候处于睡眠状态的应用可能会被终止，此时系统也不会通知应用</li>
+</ul>
+<p>这几种状态之间的变化如下图所示：</p>
+<p><img src="/images/2013/8/app_states_change.png" alt="状态改变"></p>
+<p>状态的改变总是伴随这app delegate对象方法的调用：</p>
+<ul>
+<li><code>application:willFinishLaunchingWithOptions:</code>——启动时的第一个执行代码的机会</li>
+<li><code>application:didFinishLaunchingWithOptions:</code>——在应用展示给用户之前做最后的初始化</li>
+<li><code>applicationDidBecomeActive:</code>——让应用知道它即将成为前台应用程序，可以在此做最后的准备</li>
+<li><code>applicationWillResignActive:</code>——让应用知道它马上就要离开前台了</li>
+<li><code>applicationDidEnterBackground:</code>——让应用知道它运行在后台可能在将来某个时间将休眠</li>
+<li><code>applicationWillEnterForeground:</code>——应用将离开后台回到前台，但还不是活跃状态</li>
+<li><code>applicationWillTerminate:</code>——让应用知道它将被终止，如果应用在睡眠状态被终止则不会调用该方法</li>
+</ul>
+<p>我们重点讨论的就是当应用处于后两种状态时，应用应该做什么以及可以做什么。其它的状态暂时不详谈。</p>
+<p>当用户按了主屏（Home）键或睡眠/唤醒（锁屏/解屏）键，或系统启动了另一个应用时，当前运行在前台的应用会转变为非活跃状态然后进入后台状态。这些状态变化会调用<code>applicationWillResignActive:</code>和<code>applicationDidEnterBackground:</code>方法。</p>
+<p>过程如图所示：</p>
+<p><img src="/images/2013/8/foreground_to_background.png" alt="前台进入后台"></p>
+<p>这时候难题出现了。<br>一方面，当应用进入后台时，应该在<code>applicationDidEnterBackground:</code>方法中考虑以下操作：</p>
+<ul>
+<li>为系统截图做准备。当<code>applicationDidEnterBackground:</code>方法返回时，系统会给应用当前的用户界面截个图。然后用这张图做过渡动画。如果应用当前界面上有敏感信息的视图，可以在该方法返回前把这部分隐藏起来。</li>
+<li>保存用户数据和应用状态信息。当应用进入后台的时候所有未保存的改变都要写到磁盘。因为你的应用在后台的时候可能会被杀掉。你可以将这些操作放到一个背景线程中。</li>
+<li>尽可能释放内存</li>
+</ul>
+<p>另一方面，在<code>applicationDidEnterBackground:</code>返回前大概只有5秒的时间可以执行任务，如果超过的话应用就会被杀掉。所以应该尽快执行完任务，如果你的任务需要更多时间，那你可以调用<code>beginBackgroundTaskWithExpirationHandler:</code>方法请求额外的时间然后在一个次要的线程中开始运行费时的任务。不过，不管是否开启后台任务，<code>applicationDidEnterBackground:</code>方法都需要在5秒内返回。该方法结束后大多数应用很快会进入睡眠状态。如果应用请求了特定的后台任务（比如播放音乐）或是向系统请求了额外的执行时间那还会再运行长一点的时间。</p>
+<p>注意上面提到的“请求额外的时间”和“特定的后台任务”都属于iOS的后台技术，<strong>现在是时候介绍iOS的多任务啦！</strong></p>
+<h4 id="iOS6_u4E2D_u7684_u591A_u4EFB_u52A1"><a href="#iOS6_u4E2D_u7684_u591A_u4EFB_u52A1" class="headerlink" title="iOS6中的多任务"></a>iOS6中的多任务</h4><p>从iOS4开始，在用户按了Home键使应用离开屏幕后，大多数应用很快就会进入睡眠状态。此时应用虽然还在内存中，但它已经没有权利执行代码了。不过，如前面提到的，如果应用请求了特定的后台任务或是向系统请求了额外的执行时间，那它还可以在后台多运行一会儿。下面就来了解一下有哪些特定的后台任务以及如何请求额外的执行时间吧。</p>
+<p>在详解之前，iOS6中可用的5种基本后台模式：</p>
+<ul>
+<li>播放音频：应用可以继续在后台播放和/或录制音频。</li>
+<li>接收位置更新：当设备的位置发生变化时，应用可以获得回调。</li>
+<li>下载报刊杂志：Newsstand应用可以在后台下载内容</li>
+<li>提供Voice-over-IP（VoIP）服务：VoIP允许用户通过网络而不是蜂窝数据打电话 </li>
+<li>执行有限长度的任务：应用可以在有限时间内运行任何代码</li>
+</ul>
+<p>前面四种模式在本篇文章中不作详述，有兴趣的同学可以参考优质教程网站RayWenderlich上的<a href="http://www.raywenderlich.com/29948/backgrounding-for-ios#" target="_blank" rel="external">这篇教程</a>，它非常详细地讲解了如果使用运用这些模式。我们只把重点放在最后一种模式上。</p>
+<p>当应用转入后台时，应用可以向系统请求额外的时间以完成一些重要的工作。这时候可以调用<code>UIApplication</code>类的<code>beginBackgroundTaskWithExpirationHandler:</code>方法。这个方法可以延迟应用进入睡眠状态，为应用争取更多的时间完成诸如“将用户信息写到磁盘”或“从网络服务器端下载一个重要文件”等任务。</p>
+<p>具体代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (<span class="typename">void</span>)<span class="string">applicationDidEnterBackground:</span>(UIApplication *)application</span><br><span class="line">&#123;</span><br><span class="line">    bgTask = [application <span class="string">beginBackgroundTaskWithExpirationHandler:</span>^&#123;</span><br><span class="line">        <span class="comment">// Clean up any unfinished task business by marking where you</span></span><br><span class="line">        <span class="comment">// stopped or ending the task outright.</span></span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;];</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Start the long-running task and return immediately.</span></span><br><span class="line">    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Do the work associated with the task, preferably in chunks.</span></span><br><span class="line"> </span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码展示了当应用进入后台时如何开始一个会长时间运行的任务。大家可能注意到了，结束后台任务的代码<code>[application endBackgroundTask:bgTask];</code>被调用了两次。第一处是在时间到期处理块中调用的，这是考虑了任务过长以至于请求的额外时间用完了任务还是没完成的情况.如果不调用，应用将被终止。在创建了一个任务之后，再将该任务提交到一个派遣队列中异步执行。不要忘了<code>applicationDidEnterBackground:</code>方法还是得在规定的时间内返回的。</p>
+<p>这里还有几点需要注意：</p>
+<ul>
+<li>任何<code>beginBackgroundTaskWithExpirationHandler:</code>方法的调用都需要有对应的<code>endBackgroundTask:</code>方法来标记任务的结束。因为应用只有有限的时间执行任务，时间用完的时候如果任务没有被标记为已经结束那么系统就会终止应用。</li>
+<li>一个应用可以同时有多个后台任务。每个任务在创建的时候会返回一个任务标识，在该任务结束的时候必须将自己的标识符传给<code>endBackgroundTask:</code>方法。</li>
+<li>每次创建任务的时候都传一个时间到期处理块给<code>beginBackgroundTaskWithExpirationHandler:</code>方法。当该处理块被执行时，应用可以执行任务的时间已经所剩无几了，因此应该尽快执行清理代码并将任务标记为结束。如果你想知道应用具体剩的时间，可以访问<code>UIApplication</code>的<code>backgroundTimeRemaining</code>属性。</li>
+</ul>
+<p>另外有人可能会问调用这个方法最多可以得到多少的额外时间呢。这个数值其实是不确定的，它由iOS系统决定。但我们可以通过<code>backgroundTimeRemaining</code>属性查看某个时刻的具体数值。一般情况下，基于观察得出的时间长度是10分钟。不过要再次重申，官方文档中也没有给出一个大概的数值，所以不要依赖这个最大时间数值。</p>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>关于iOS6中的多任务就讲这么多啦。不管什么时候都要记住，官方文档+WWDC视频+Keynote永远是我们学习的好伙伴。如果有什么不理解或想继续深入学习的，可以行动起来啦。</p>
+<p>明天终于要写iOS7中的新特性啦~撒花~</p>
+<!--
+How much time you get after your app gets backgrounded is determined by iOS. There are no guarantees on the time you’re granted, but you can always check the backgroundTimeRemaining property of UIApplication. This will tell you how much time you have left.
+The general, observation-based consensus is that usually, you get 10 minutes. Again, there are no guarantees and the API documentation doesn’t even give a ballpark number – so don’t rely on this number. You might get 5 minutes or 5 seconds, so your app needs to be prepared for anything!
+
+Technically, this is not a background mode at all, as you don’t have to declare that your app uses this mode in Info.plist. Instead, it’s an API that lets you run arbitrary code for a finite amount of time when your app is in the background. Well… whatever!
+
+The way to use the beginBackgroundTaskWithExpirationHandler: method is to call it before starting the task you want to protect. Every call to this method must be balanced by a corresponding call to the endBackgroundTask: method to mark the end of the task. Because apps are given only a limited amount of time to finish background tasks, you must call this method before time expires; otherwise the system will terminate your app. To avoid termination, you can also provide an expiration handler when starting a task and call the endBackgroundTask: method from there. (You can use the value in the backgroundTimeRemaining property of the app object to see how much time is left.)
+
+Important: An app can have any number of tasks running at the same time. Each time you start a task, the beginBackgroundTaskWithExpirationHandler: method returns a unique identifier for the task. You must pass this same identifier to the endBackgroundTask: method when it comes time to end the task.
+
+Listing 3-3 shows how to start a long-running task when your app transitions to the background. In this example, the request to start a background task includes an expiration handler just in case the task takes too long. The task itself is then submitted to a dispatch queue for asynchronous execution so that the applicationDidEnterBackground: method can return normally. The use of blocks simplifies the code needed to maintain references to any important variables, such as the background task identifier. The bgTask variable is a member variable of the class that stores a pointer to the current background task identifier and is initialized prior to its use in this method.
+
+Listing 3-3  Starting a background task at quit time
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // Clean up any unfinished task business by marking where you
+        // stopped or ending the task outright.
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+
+    // Start the long-running task and return immediately.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        // Do the work associated with the task, preferably in chunks.
+
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    });
+}
+Note: Always provide an expiration handler when starting a task, but if you want to know how much time your app has left to run, get the value of the backgroundTimeRemaining property of UIApplication.
+In your own expiration handlers, you can include additional code needed to close out your task. However, any code you include must not take too long to execute because, by the time your expiration handler is called, your app is already very close to its time limit. For this reason, perform only minimal cleanup of your state information and end the task.
+-->
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>参与的上一个项目上线后，忽然就有了几天空闲的时间。前一篇文章提到过要分享的事，因为赶项目一直没有进行。正好趁着这几天专心研究一下。这次主要把焦点放在iOS7多任务增强上，决定先把官方文档读一读。在<a href="https://developer.apple.com/li]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS界面设计规范]]></title>
+    <link href="http://ananwbr.com/archive/2013-08-10/ios-human-interface-guidelines-ui-design-basics/"/>
+    <id>http://ananwbr.com/archive/2013-08-10/ios-human-interface-guidelines-ui-design-basics/</id>
+    <published>2013-08-10T14:05:00.000Z</published>
+    <updated>2015-10-25T15:41:10.000Z</updated>
+    <content type="html"><![CDATA[<p>时间过得真快，入职五周了。第一周周五的时候师傅问我最近有没有学习iOS7的东西，我很惭愧的回答最近看的比较少。因为那段时间忙着毕业的事，真正毕业后又给自己放了两周的假回家休息去了，完全不在学习的状态。然后师傅让我近期学习一下准备组内分享吧。刚入职就接到这任务实在是有点诚惶诚恐。怕自己一只小菜鸟到时候说的都是他们知道的，肯定是尽给挑刺的。不过我属于有压力就有动力型的。况且就算他不交代任务我也是准备入职后就要给自己充充电了，近期应该会启动个人项目了。</p>
+<p>说来惭愧，在我刚开始学习iOS编程的时候就知道<a href="https://developer.apple.com/library/prerelease/ios/design/index.html#//apple_ref/doc/uid/TP40013289" target="_blank" rel="external">《iOS界面设计规范》</a>这份文档的重要性，虽然那时候的学习材料是全英文的，但当我开始读这份文档时，还是没有坚持读下去的耐心，毕竟和读母语材料比起来速度还是慢不少。在过去的几年里，我有意培养自己阅读英文文档的能力，书或材料如果有英文版本，我会尽量读原版，中文版会偶尔作为参考。最近觉得自己不管是理解分析能力还是速度都有了很大的提高。不过，由于最近需要看的材料太多，而这份文档并不是最主要的，于是就选择翻译的版本。在此，非常感谢那些无私奉献自己的时间和精力，为更多人带来便利的<a href="http://www.weibo.com/c7210" target="_blank" rel="external">译者</a>。虽然他自称是搬运工，但还是要感谢一下。也希望自己有一天也有能力参与其中。</p>
+<p>这边文章是在读完“基础UI”部分后做的笔记，供自己不时的快速浏览掌握重点，更详细的内容可以阅读<a href="http://beforweb.com/node/215" target="_blank" rel="external">这里</a>。</p>
+<h2 id="iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI"><a href="#iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI" class="headerlink" title="iOS界面设计规范-基础UI"></a>iOS界面设计规范-基础UI</h2><h4 id="1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09"><a href="#1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09" class="headerlink" title="1、为iOS7而设计（Design for iOS 7）"></a>1、为iOS7而设计（Design for iOS 7）</h4><p>iOS7涵盖了三个方面的设计主题思想：依从，清晰，纵深</p>
+<ul>
+<li>依从于内容<ul>
+<li>充分利用全屏空间</li>
+<li>慎用拟物化视觉元素</li>
+<li>让半透明的视觉元素透露其背后的内容</li>
+</ul>
+</li>
+<li>提供清晰的视觉效果<ul>
+<li>充分运用留白</li>
+<li>通过色彩简化UI（选一种关键的颜色）</li>
+<li>使用系统字体，确保清晰易读</li>
+<li>拥抱无边的按钮（搭配一种关键色或系统色，表达一个可交互的UI元素）</li>
+</ul>
+</li>
+<li>利用纵深进行沟通<ul>
+<li>iOS7会在不同的层面上显示内容，以体现内容的层级和位置关系，这有利于用户理解屏幕上各种元素之间的关联 </li>
+</ul>
+</li>
+</ul>
+<h4 id="2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09"><a href="#2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09" class="headerlink" title="2、iOS应用解析（iOS App Anatomy）"></a>2、iOS应用解析（iOS App Anatomy）</h4><p>UIKit框架提供的视图可分为四大类</p>
+<ul>
+<li>栏（Bars）：包含与上下文内容情景相关的信息，告诉用户他们当前在应用当中所处的位置；同时还包含相关的导航功能，或是可以由用户发起的操作</li>
+<li>内容视图（Content Views）：包含当前应用所特有的内容，并支持相关的交互行为，例如滚屏、插入、删除、对列表条目进行重新排序，等等</li>
+<li>控制元素（Controls）：产生行为或显示信息</li>
+<li>临时视图（Temporary views）：临时性的向用户呈现重要信息，或提供额外的功能及选项</li>
+</ul>
+<p>除了定义UI元素以为，UIKit框架还定义了那些可以完成诸如手势识别、绘制、辅助支持、打印支持等功能的对象。</p>
+<h4 id="3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09"><a href="#3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09" class="headerlink" title="3、启动与退出（Starting and Stopping）"></a>3、启动与退出（Starting and Stopping）</h4><ul>
+<li>即刻启动（用户在一到两分钟内对应用做出评估）<ul>
+<li>尽可能避免使用无意义的启动画面（欢迎画面）或其他类似的启动体验</li>
+<li>应用安装完成后，不要让用户必须进行设置才能使用。取而代之地：<ul>
+<li>将解决方案聚焦在80%的用户需求上</li>
+<li>尽可能地从其它来源获取信息</li>
+<li>如果确实需要用户进行安装设置，尽量让他们在你的应用内部进行输入</li>
+</ul>
+</li>
+<li>尽可能晚些让用户登录</li>
+<li>一般来说，要按照默认的屏幕定向方式启动应用。iPhone：竖屏。iPad，设备当前所处的状态就是其默认定向方式。</li>
+<li>可以提供一张与应用首屏看上去几乎一致的启动图片</li>
+<li>如果可能，不要让用户在初次加载应用时阅读免责声明或必须对用户进行确认</li>
+<li>在应用重启后，要恢复到用户退出时的状态，让他们可以在中断的地方继续使用</li>
+</ul>
+</li>
+<li>时刻准备着退出<ul>
+<li>iOS应用永远不会有用来执行关闭或退出的操作，用户退出的方式就是切换到另外一个应用、回到系统主界面，或是使设备进入睡眠模式<ul>
+<li>及时地、尽可能频繁地保存用户数据</li>
+<li>退出时，尽可能在细节层面保存当前的状态</li>
+</ul>
+</li>
+<li>永远不要以程序化的方式自动退出iOS应用。如果出入某些原因，你的应用无法按预期正常工作，你需要告诉用户当前情况。取决于问题严重性，有两种选择：<ul>
+<li>通过一个能够吸引用户注意力的界面描述当前问题，并提出执行建议</li>
+<li>如果只有一部分功能不可用了，可以在用户用到这些功能的时候，通过一个单独的界面或是弹出提示（alert）来告诉他们当前的情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4_u3001_u5E03_u5C40_uFF08Layout_uFF09"><a href="#4_u3001_u5E03_u5C40_uFF08Layout_uFF09" class="headerlink" title="4、布局（Layout）"></a>4、布局（Layout）</h4><p>布局所关乎的远不止“界面元素在屏幕上看上去如何”这么简单。通过布局，你可以让用户知道哪些东西是最重要的，他们有哪些事情可做，内容之间具有怎样的关联。取决于设备类型和横竖屏定向方式，同一款应用布局界面也可能会有不同的模式。</p>
+<ul>
+<li>确保交互元素具有足够大的尺寸，以便用户可以很容易的与内容和功能进行交互。可点区域尽量不小于44*44像素</li>
+<li>将重要的内容和功能放在权重更高的位置上，使用户的注意力更好的聚焦在主要任务上（前半频，左侧）</li>
+<li>利用视觉表现形式的权重和平衡，向用户展示界面元素之间的相对重要程度（尺寸）</li>
+<li>通常情况下，要防止UI元素在外观上具有不统一的表现形式</li>
+<li>确保界面中的主要内容在默认尺寸下可以被阅读和理解</li>
+</ul>
+<h4 id="5_u3001_u5BFC_u822A_uFF08Navigation_uFF09"><a href="#5_u3001_u5BFC_u822A_uFF08Navigation_uFF09" class="headerlink" title="5、导航（Navigation）"></a>5、导航（Navigation）</h4><p>总体上讲，导航可以分为三种类型，其中每一类都很好的适用于一种特定类型的应用：</p>
+<ul>
+<li>树形信息结构的应用</li>
+<li>扁平化信息结构的应用</li>
+<li>由内容或体验所驱动的应用</li>
+</ul>
+<p>通过UIKit框架当中定义的一些标准UI控件，可以轻松的创建属性导航或扁平化结构的导航，此外，还有些控件可以帮你创建以内容为中心的导航模式。</p>
+<ul>
+<li>通过导航栏（navigation bar），为用户提供一种能够轻松的在树形信息结构大过年周前后行进的导航方式</li>
+<li>通过标签栏（tab bar）展示整体内容或功能之下的若干个同级分类项</li>
+<li>通过分页控件（page control）来暗示多个条目或内容视图的存在</li>
+<li>一般来讲，最好让每个界面都有唯一的入口。如果用户可以在不同的上下文当中访问到同一个界面，请考虑使用一种临时化的视图，例如模态视图（modal view），动作表单（action sheet）或是警告提示（alert）。</li>
+</ul>
+<h4 id="6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09"><a href="#6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09" class="headerlink" title="6、模态情境（Modal Context）"></a>6、模态情境（Modal Context）</h4><p>模态，一种用来承载特定内容、功能或体验的模式，比如警告框，模态视图和分享界面。它可以帮助用户完成某些任务，或在不受干扰的情况获取信息，但会暂时性的强迫用户停止与应用其他部分的互动。通常，仅在这些情况下考虑创建模态情境：</p>
+<ul>
+<li>非常有必要吸引用户的注意力</li>
+<li>必须完成某些任务，或明确的放弃某项操作，否则用户数据将进入不稳定的状态</li>
+</ul>
+<p>在使用模态时，应该注意一下几点：</p>
+<ul>
+<li>保持模态任务的简单、简短、易聚焦</li>
+<li>始终提供一种明显而安全的退出方式</li>
+<li>如果主任务需要一系列层极化的模态视图，那么要确保用户知道当他们再模态视图中点击“完成”按钮后发生什么</li>
+<li>使用警告框来传递那些必不可少的重要信息，通常还要提供可执行的功能选项</li>
+<li>尊重用户对于是否接受通知信息所做的设定</li>
+</ul>
+<h4 id="7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09"><a href="#7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09" class="headerlink" title="7、交互性与反馈（Interactivity and Feedback）"></a>7、交互性与反馈（Interactivity and Feedback）</h4><ul>
+<li>用户习惯于标准手势<ul>
+<li>人们会使用诸如点击、拖拽、开合等手势与iOS设备及应用进行交互。他们会希望所有应用当中的手势操作模式保持一致<ul>
+<li>通过点击（tap）来按压或选择一个对象</li>
+<li>通过拖拽（drag）来滚屏或移动对象（将其从界面一边拖向另一边）</li>
+<li>通过滑动（flick）来快速滚屏或移动对象</li>
+<li>使用一个手指进行轻扫（swipe），可以展现更多内容。例如列表的删除功能，从界面顶端展开通知中心</li>
+<li>通过双击（double tap）将内容或图片放大并治愈屏幕中央；如果当前内容已呈最大状态，则将其缩小至默认尺寸</li>
+<li>通过双指张开（pinch open）或闭合（pinch close）对内容进行放大或缩小</li>
+<li>通过长按（Touch and hold）在可编辑或可选择的文字上显示放大镜，用来定位光标</li>
+<li>通过摇晃（shake）机身执行撤销或重做的操作</li>
+</ul>
+</li>
+<li>使用手势时要注意<ul>
+<li>不要为标准手势赋予不同的行为</li>
+<li>不要重复创建与标准手势具有相同作用的自定义手势</li>
+<li>可以将复杂的手势作为完成任务的快捷方式，而不是唯一的方式</li>
+<li>不要定义新的手势，除非你的应用是游戏</li>
+<li>对于iPad，要考虑使用多指手势</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>反馈有助于理解（iOS用户习惯于接受各种反馈。这些反馈可以帮助他们了解当前的状态，发现接下来可以做什么，或是预计自己的操作会产生怎样的结果）<ul>
+<li>尽可能将状态或其他的相关反馈信息整合到UI当中</li>
+<li>避免不必要的警告提示</li>
+</ul>
+</li>
+<li>信息输入方式要简单易行（无论是点击元素还是使用键盘，输入信息都需要耗费用户的时间和注意力。）<ul>
+<li>使用选择让输入更轻松</li>
+<li>在合适的情况下，从iOS获取信息</li>
+<li>给予用户有价值的反馈，来平衡向他们索取信息的要求</li>
+</ul>
+</li>
+</ul>
+<h4 id="8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09"><a href="#8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09" class="headerlink" title="8、术语和措辞（Terminology and Wording）"></a>8、术语和措辞（Terminology and Wording）</h4><p>应用当中所显示的任何一个词汇都是你与用户之间交流对话的一部分。要将这些多看做是帮助人们提升舒适感的机会。</p>
+<ul>
+<li>确保你所使用的术语能够被用户理解</li>
+<li>使用非正式的、友善的语气，但不要过于随便</li>
+<li>像报纸编辑一样思考，留意那些多余的、非必要的词语</li>
+<li>在交互控件旁边使用剪短的标题或含义明确的图标</li>
+<li>在描述日期信息是，一定要做到准确</li>
+<li>在App Store中撰写优秀的产品描述文案，尽可能创造机会与潜在用户进行沟通<ul>
+<li>更正所有的拼写、语法和标点当中的错误</li>
+<li>尽量少使用全部大写字母的词语</li>
+<li>考虑对特定的bug修正进行描述</li>
+</ul>
+</li>
+</ul>
+<h4 id="9_u3001_u52A8_u753B_uFF08Animation_uFF09"><a href="#9_u3001_u52A8_u753B_uFF08Animation_uFF09" class="headerlink" title="9、动画（Animation）"></a>9、动画（Animation）</h4><p>漂亮而精致的动画效果遍及iOS各处，它们使应用体验更具动态性，更加吸引人。惊喜恰当的动画效果可以：</p>
+<ul>
+<li>传达状态</li>
+<li>增强用户对直接操作（direct manipulation）的感知</li>
+<li>通过视觉化的方式像用户呈现操作结果</li>
+</ul>
+<p>在使用动画时应该注意以下几点：</p>
+<ul>
+<li>要谨慎的使用动画效果，特别是在非沉浸型应用当中</li>
+<li>尽可能与iOS内置应用的动画模式保持一致</li>
+<li>在你的应用当中保持动画效果的一致性</li>
+<li>多数情况下，要在你的自定义动画效果中力争实现仿真效果</li>
+</ul>
+<h4 id="10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29"><a href="#10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29" class="headerlink" title="10、文字排版与配色（Typography and Color)"></a>10、文字排版与配色（Typography and Color)</h4><ul>
+<li>文字必须易读：最首要的是，要确保文字排版的清晰易读。iOS7当中的动态文字（Dynamic Type）可以实现<ul>
+<li>在每种字号下都能自动调整文字的粗细、字间距和行高</li>
+<li>针对语义上有所区别的文本模块，例如Body、Footnote或Headline1等，可以自动指定不同的文字样式风格</li>
+<li>文字可以根据用户在动态文字及可访问性设置当中指定的字号来自动调整</li>
+</ul>
+</li>
+<li>色彩可以增进沟通<ul>
+<li>考虑定义一种基本色</li>
+<li>色彩是具有沟通能力的，但不总是以你希望的方式来实现</li>
+<li>多数情况下，不要让用户因为色彩而分神</li>
+</ul>
+</li>
+</ul>
+<h4 id="11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29"><a href="#11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29" class="headerlink" title="11、图形与图标（Icons and Graphics)"></a>11、图形与图标（Icons and Graphics)</h4><ul>
+<li>应用图标<ul>
+<li>应用图标是产品品牌的重要组成部分</li>
+<li>最好的应用图标都是独特、简洁和吸引人的</li>
+<li>应用图标在不同的尺寸规格下都应该表现良好</li>
+</ul>
+</li>
+<li>其他图标（iOS提供了很多小图标用来再标签栏、工具栏和导航栏当中代表常见的任务或内容类型。也可以在需要表现自定义行为或内容类型时使用定制化的图标）</li>
+<li>图形<ul>
+<li>支持Retina屏幕</li>
+<li>按照原始的长宽比例显示照片和图形，另外放大比率不要超过100%</li>
+<li>不要在你的设计当中使用那些代表苹果公司产品的图形</li>
+</ul>
+</li>
+</ul>
+<h4 id="12_u3001_u54C1_u724C_uFF08Branding_uFF09"><a href="#12_u3001_u54C1_u724C_uFF08Branding_uFF09" class="headerlink" title="12、品牌（Branding）"></a>12、品牌（Branding）</h4><p>当你需要在应用中明确的向用户展示品牌信息的时候，要记住一下两点：</p>
+<ul>
+<li>将品牌元素中的色彩或图形进行必要的精炼，通过一种非侵入式的方式整合到应用当中</li>
+<li>不要从用户所关注的内容当中挤兑空间来展示品牌信息</li>
+</ul>
+<p>Note：应用图标是个例外，它完全聚焦在品牌识别性上。因为用户会很频繁的看到你的图标，所以要多花些时间再图标的设计上，增强其对于用户目光的可识别性，这是很重要的</p>
+<h4 id="13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09"><a href="#13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09" class="headerlink" title="13、与iOS的系统整合（Integrating with iOS）"></a>13、与iOS的系统整合（Integrating with iOS）</h4><ul>
+<li>使用标准UI<ul>
+<li>尽可能使用UIKit框架定义的各种标准UI元素。使用标准UI控件而非自定义元素，你和你的用户都会收益：<ul>
+<li>如果iOS本身经过重新设计，那么标准的UI元素再系统更新时随时可以随之自动更新，而自定义的UI元素不会</li>
+<li>人们会自动了解怎样使用你的应用，因为他们已经习惯于标准的UI元素</li>
+</ul>
+</li>
+<li>为了充分发挥系统标准UI元素的价值，你必须：<ul>
+<li>在使用任何一个标准UI元素的时候都要依照设计规范的指导</li>
+<li>通常，不要为标准的交互行为创建自定义UI控件</li>
+<li>不要为系统预设的按钮和图标赋予其它含义</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对横竖屏的响应<ul>
+<li>让用户再横竖屏的状态下都能聚焦于最重要的内容</li>
+<li>通常，要让应用能够运行在各种定向模式当中<ul>
+<li>应用再启动时只按照默认支持的定向方式进行加载，忽略当前设备的屏幕方向</li>
+<li>避免在界面中通过UI元素提示人们调转设备屏幕</li>
+<li>同时支持两种子状态</li>
+</ul>
+</li>
+<li>如果对于你的应用来说，调转屏幕方向是用户输入方式的一部分，那么你可以通过特定的方式进行定制化的处理</li>
+<li>在iPhone上，判断用户再调转屏幕方向时的需求所在，并进行响应</li>
+<li>在iPad上，尽量支持所以的定向方式，满足用户的期待</li>
+<li>在为iPad应用设计横竖屏响应规则时，遵循以下几点规范：<ul>
+<li>考虑改变辅助信息或功能的展示方式</li>
+<li>避免无意义的布局变化</li>
+<li>如果可能，再切换横竖屏时尽量避免对信息内容样式的重新定义</li>
+<li>为横竖屏各提供一张单独的启动图片</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弱化文件和文档的处理过程<ul>
+<li>在iOS中，用户不应该被要求与文件直接打交道，特别不该去面对任何会让他们联想到文件数据源或存储位置一类信息的东西，例如：<ul>
+<li>确认打开或保存文件的对话框</li>
+<li>关于文件访问权限的信息</li>
+</ul>
+</li>
+<li>尽量让人们在不需要打开桌面端iTunes的情况下管理各种文档，如果你的应用需要提供创建及编辑文档的功能，那么可以尝试提供某种“文档选择器”。理想情况下，这样的文档选择器应该：<ul>
+<li>具有高度的图形化外观</li>
+<li>让人们使用最少量的手势完成目标操作</li>
+<li>提供新建文档的功能</li>
+</ul>
+</li>
+<li>给用户一张安全感，让他们知道自己的工作始终会被保存，除非他们主动取消保存或进行删除</li>
+</ul>
+</li>
+<li>必要的时候提供设置方式<ul>
+<li>尽量避免将用户打发到系统的“设置”当中进行操作</li>
+<li>如果有必要，让用户尽量再你的应用内部进行设置</li>
+<li>如果需要，尽量在应用的主界面中提供设置选项</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>时间过得真快，入职五周了。第一周周五的时候师傅问我最近有没有学习iOS7的东西，我很惭愧的回答最近看的比较少。因为那段时间忙着毕业的事，真正毕业后又给自己放了两周的假回家休息去了，完全不在学习的状态。然后师傅让我近期学习一下准备组内分享吧。刚入职就接到这任务实在是有点诚惶诚]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://ananwbr.com/tags/iOS/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我终于有家啦-利用Octopress搭建个人博客]]></title>
+    <link href="http://ananwbr.com/archive/2013-08-07/welcome-to-my-new-home/"/>
+    <id>http://ananwbr.com/archive/2013-08-07/welcome-to-my-new-home/</id>
+    <published>2013-08-07T15:22:00.000Z</published>
+    <updated>2015-10-25T15:42:42.000Z</updated>
+    <content type="html"><![CDATA[<p>一直以来都想搭建个人博客。虽然之前发表在网络上的文字并不多，但前前后后也换过几个平台。初中毕业的暑假，怀揣作家梦的我在51空间开了第一个小窝，写过几篇矫揉造作的文章，没有人送鲜花，也没有人扔鸡蛋，一切都是自娱自乐。后来因为QQ空间的社交性，又开始写文章，用青春期的文笔，写一些现在看来是为赋新词强说愁的文字吧。再后来只想找个安静的地方默默抒发感情，在Lofter上每周一记。这时候的想法相对成熟，更多的是对人生、对未来的思考。另外也在豆瓣，还一些我都忘了名字的网站上写过零零碎碎的文字。</p>
+<p>在选择软件工程这个专业之前，我一直觉得自己文科比较强，回顾自己过去写过的文章也都是偏文艺范。直到上了大学之后，才知道有很多技术牛人坚持写技术博客。为了表现我在专业方面的追求，一直想脱离现成的平台，搭建自己的博客。最狂热的时候应该是大三开始学操作系统那会儿。看了Linux的书，教你如何搭建自己的服务器，再加上学过JavaEE，HTML+CSS，就想着动手试着做自己的网站。可惜到了毕业也没做成。</p>
+<p>直到最近开始工作了，出于某些原因，终于觉得搭建自己的博客的很有必要。在重温了池建强老师的<a href="http://macshuo.com/?p=547" target="_blank" rel="external">《趣谈个人建站》</a>这篇文章后就开始动手了。虽然有样本参照，网上也能找到其他的资源，但建站的过程也不顺利。罪魁祸首就是住的地方的网络差到令人发指。不过好在每天总还是有那么一段时间能够连通外面的世界。</p>
+<h2 id="u4E0B_u9762_u5C31_u6765_u56DE_u987E_u4E00_u4E0B_u6240_u505A_u7684_u5DE5_u4F5C_uFF1A"><a href="#u4E0B_u9762_u5C31_u6765_u56DE_u987E_u4E00_u4E0B_u6240_u505A_u7684_u5DE5_u4F5C_uFF1A" class="headerlink" title="下面就来回顾一下所做的工作："></a>下面就来回顾一下所做的工作：</h2><h4 id="1-_u8D2D_u4E70_u57DF_u540D"><a href="#1-_u8D2D_u4E70_u57DF_u540D" class="headerlink" title="1.购买域名"></a>1.购买域名</h4><p>最开始的时候我也不是很清楚IP地址（IP Adress），域名（Domain Name）和DNS（Domain Name Service）之间是什么关系。后来看到这样的比喻才觉得了然于心：博客或站点就是我们在网络中的家，IP地址就是标识家的位置的经纬度。如果有人想往家里寄快递，总不能报经纬度吧，这时候域名就派上用场了，它相当于门牌号。不过与现实世界门牌号与地址一对一不同，一个IP地址可以对应多个域名。那DNS又是什么。它就好比专门指路的服务亭。虽然你知道了门牌号（域名），可是你还是不知道怎么走。这时候你就要问DNS，如果他知道这个域名对应的IP地址，就会马上给你指路，如果不知道，就反馈到上级，直到找到为止，再给你指路。同时，他会把这个IP地址记录下来，下次再有人问起，就可以马上帮上忙啦。</p>
+<p>理清了这个几个概念，那我们就去买房子吧。提供域名购买的厂商很多。由于在国内购买需要提供材料备案，比较麻烦，而再国外网站购买的话就只要动动鼠标。最后我根据很多人的推荐，选择了<a href="http://www.godaddy.com" target="_blank" rel="external">Godaddy</a>。进入它的网站后，搜索域名，选好之后就可以加入购物车去付款啦，一般价格在几美元到十几美元不等。没有信用卡可以选择支付宝支付，非常方便。</p>
+<p>购买好域名之后需要把域名和IP地址绑定起来。Godaddy默认提供了DNS服务，但据说再国内访问不太稳定。最后我选择了国内免费的DNS提供商<a href="https://www.dnspod.cn" target="_blank" rel="external">DNSPod</a>。这时候需要到Godaddy控制面板修改DNS，具体操作可参考<a href="https://support.dnspod.cn/Kb/showarticle/tsid/42/" target="_blank" rel="external">DNSPod提供的帮助</a>。这里假设你已经购买了空间，拥有一个公网IP地址，只要在DNSPod上<a href="https://support.dnspod.cn/Kb/showarticle/tsid/30/" target="_blank" rel="external">添加一个A记录，将域名和IP地址绑定</a>。</p>
+<h4 id="2-_u5229_u7528Octopress_u548CGithub_u642D_u5EFA_u4E2A_u4EBA_u535A_u5BA2"><a href="#2-_u5229_u7528Octopress_u548CGithub_u642D_u5EFA_u4E2A_u4EBA_u535A_u5BA2" class="headerlink" title="2.利用Octopress和Github搭建个人博客"></a>2.利用Octopress和Github搭建个人博客</h4><p>前面提到过我是在读了<a href="http://macshuo.com/?p=547" target="_blank" rel="external">《趣谈个人建站》</a>之后开始建站的，原本也打算购买一个VPS（Virtual Private Server），后来在Google“搭建个人博客”的时候，发现了<a href="http://octopress.org" target="_blank" rel="external">Octopress</a>。这是基于<a href="https://github.com" target="_blank" rel="external">Github</a>(想了解Github可<a href="http://www.worldhello.net/gotgithub/index.html" target="_blank" rel="external">参考这里</a>)提供的Github Pages服务的博客生成框架，基于<a href="http://git-scm.com" target="_blank" rel="external">Git</a>来管理文章（想了解Git可阅读<a href="http://nettedfish.sinaapp.com/blog/2013/08/05/deep-into-git-with-diagrams/" target="_blank" rel="external">这篇文章</a>），采用<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown语法</a>来写文章（推荐使用<a href="http://mouapp.com" target="_blank" rel="external">Mou编辑器</a>）。</p>
+<p>关于如何安装Octopress网上有很多文章。比如很优质的网站<a href="http://beyondvincent.com" target="_blank" rel="external">破船之家</a>最近也搬到Octopress了，可以参考他的<a href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/" target="_blank" rel="external">相关文章</a>，包括除了常规安装之外其他诸如添加评论功能，域名解析等内容。还可以参考<a href="http://easypi.github.io/blog/2013/01/05/using-octopress-to-setup-blog-on-github/" target="_blank" rel="external">这篇文章</a>。这里就不再赘述。安装完成之后你一定还会想换个不一样的主题吧，那就去<a href="http://opthemes.com" target="_blank" rel="external">这里</a>找找吧。<br><a href="!--如果还想添加中文标签，可参考[这里](http://txgcwm.github.io/blog/2013/07/21/octopresstian-jia-zhong-wen-biao-qian-gong-neng/)。--">!--如果还想添加中文标签，可参考[这里](http://txgcwm.github.io/blog/2013/07/21/octopresstian-jia-zhong-wen-biao-qian-gong-neng/)。--</a></p>
+<p>所有这些安装和配置都完成后，开始<a href="http://octopress.org/docs/blogging/" target="_blank" rel="external">写博客</a>吧。</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>搭建这个博客我前前后后花了两个星期，主要原因就是要和前面提到过的住的地方糟糕的网络做斗争（这让我更加有努力工作换个好房子住的斗志：D）。虽然过程有点痛苦，但结果还是令人欣喜的。终于能通过带有个人标识的域名访问我在网上的家了。为了这个家能按我的个人品位装修，我以后应该还会学学前端的知识，自己动手装修，会更有意思。除了视觉之外，我也会多写文章，让家里充满属于我的独特气息。</p>
+<p>这真是一段有趣的记忆，也会是一个全新的开始！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>一直以来都想搭建个人博客。虽然之前发表在网络上的文字并不多，但前前后后也换过几个平台。初中毕业的暑假，怀揣作家梦的我在51空间开了第一个小窝，写过几篇矫揉造作的文章，没有人送鲜花，也没有人扔鸡蛋，一切都是自娱自乐。后来因为QQ空间的社交性，又开始写文章，用青春期的文笔，写一]]>
+    </summary>
+    
+      <category term="工具" scheme="http://ananwbr.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="技术" scheme="http://ananwbr.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[假期结束]]></title>
+    <link href="http://ananwbr.com/archive/2013-05-28/2013-5-28-where-is-my-gap-year/"/>
+    <id>http://ananwbr.com/archive/2013-05-28/2013-5-28-where-is-my-gap-year/</id>
+    <published>2013-05-28T14:58:00.000Z</published>
+    <updated>2015-10-25T15:42:49.000Z</updated>
+    <content type="html"><![CDATA[<p>前段时间我把毕业旅行当作任务来看待。结果还是因为没人陪自己一个人又不敢出去而不了了之了。现在要回学校了，找工作，答辩，可能还要找房子，各种事要忙起来了。朋友们又一个个邀我去旅行了。我开始后悔五月份没有把工作搞定。现在也不用这么焦急。我也后悔这几天没把项目完成。不过后悔也没用，还是往前看吧。<br>回家待了一个月，心想着的是工作之前再陪爸妈一会儿。但是每天还是一人在房间独处的时间居多。真希望自己是个会撒娇的女儿。<br>明天得回学校了，现在越长大越恋家。略有点伤感。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前段时间我把毕业旅行当作任务来看待。结果还是因为没人陪自己一个人又不敢出去而不了了之了。现在要回学校了，找工作，答辩，可能还要找房子，各种事要忙起来了。朋友们又一个个邀我去旅行了。我开始后悔五月份没有把工作搞定。现在也不用这么焦急。我也后悔这几天没把项目完成。不过后悔也没用]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[又是新的一年呢]]></title>
+    <link href="http://ananwbr.com/archive/2013-01-06/2013-1-6-i-have-no-job/"/>
+    <id>http://ananwbr.com/archive/2013-01-06/2013-1-6-i-have-no-job/</id>
+    <published>2013-01-06T14:56:00.000Z</published>
+    <updated>2015-11-16T12:06:40.000Z</updated>
+    <content type="html"><![CDATA[<p>辞职已经有一个半来月了。原本打算到周围城市走走看看同学的，最后只去了金华。那天一群人在旅馆喝酒吃烧烤乱舞到也是非常尽兴。另外就是花了两天时间结束了实习答辩。其它时间可以说被惰性控制着，整日只是看一些没有营养的视频，刷微博逛贴吧获取一些碎片化的信息。</p>
+<p>回家后这样混日子的生活更甚，因为不用考虑吃饭的问题，也不用自己洗衣打扫（虽然说起来这些我都应该自己做），要说有什么令人激动的事情，那也就是少女时代回归的事了。我从来没想过我还能饭上这个从前每次被提起我都会说“这种人这么多脸都分不清楚的团没意思的”的韩国组合。但是现在我却能从她们那样积极努力的追求梦乡的行为中感受到励志的意味。明明都是差不多年纪的女孩，可是她们是那样充满热情，那样努力。</p>
+<p>和别人付出一样的努力是不能成为和别人不一样的存在的。这是侑利说的。给了我很多的驱动力。刚刚看完小贤的四辑的 ThanksTo，开始喜欢她就是因为她的正直，她的执着。这个神奇的少女看很多书，尤其是自我开发方面的。她很注重健康管理，要按时睡觉，睡前一定会写日记，再做冥想。她会早起学习外语，她说 2013 年要更努力的学习英语，中文，日语。因为她要在 30 年后成为出色的外交官。就是这样怀着梦想并努力实践的她，是我学习的榜样。而其它８个女生，也都充满各自不同却同样迷人的魅力。我会一直为少女时代应援。</p>
+<p>而我自己对于 2013 年的展望，倒是和小贤挺相似。再感叹一句，她不愧是我饭的人，虽然比我还小几个月。自我管理，外语（英语，韩语），健康，读书。这些都是新的一年需要更加努力实践的。2013 年对我来说的重要性还在于今年我要毕业了。过了年我就不得不考虑工作的事。关于职业规划得重新写一篇文章。</p>
+<p>最近看书太少，获取的信息都太碎片化了。明天网上买得两本书终于到手。戒掉整日刷微博和逛贴吧，控制好时间。静下心来多看点书，多做思考，另外也得开始毕业设计的项目了。又是好久没有敲代码了，怕有点生疏了。</p>
+<p>睡觉时间到了，昨天有点失眠。晚安。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>辞职已经有一个半来月了。原本打算到周围城市走走看看同学的，最后只去了金华。那天一群人在旅馆喝酒吃烧烤乱舞到也是非常尽兴。另外就是花了两天时间结束了实习答辩。其它时间可以说被惰性控制着，整日只是看一些没有营养的视频，刷微博逛贴吧获取一些碎片化的信息。</p>
+<p>回家后这样]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[未来有无限可能]]></title>
+    <link href="http://ananwbr.com/archive/2012-08-26/2012-8-26-nothing-is-impossible/"/>
+    <id>http://ananwbr.com/archive/2012-08-26/2012-8-26-nothing-is-impossible/</id>
+    <published>2012-08-26T14:52:00.000Z</published>
+    <updated>2015-10-25T15:43:10.000Z</updated>
+    <content type="html"><![CDATA[<p>我常常很羡慕那些有某种才艺的人，比如画画。心想如果我小时候也开始学习这项才艺的话，那现在一定也可以做到吧。却从来没想过为什么现在不开始学习呢。大概潜意识里总觉得我都二十多岁了，现在才开始太迟了。</p>
+<p>可是细细一想到底是谁规定一个人一定要在二十多岁就取得那种被这个社会认可的成功的。事实上，也没有这么这么规定。可是我们总是在意别人的眼光。也希望自己在被人问起是能说出一个足够体面的工作，令人羡慕的工资。</p>
+<p>就是因为这样太看重面子了，所以推着自己急促的往前走。明明是可以慢下来好好享受的过程，也因为那些来自自己臆想出来的投射在自己身上的外人的眼光，而不知不觉加快步伐。结果是自己想要的倒还好，就怕最后精疲力竭时也不知道自己这般劳碌是为了什么。</p>
+<p>最近在微博上发现了几个人，他们都是懂生活之人，知道如果让自己在这忙碌的生活中，依然能找到令自己静下心来的方式。其中有一个小女孩的妈妈，她说每年年初就会定下新的一年的学习主题，这样每一年都可以做一些新的尝试。看到有人评论说，他也让自己每年完成一下以前没做过的事，可是最后他质疑这样做是否有意义。我想，如果在这个过程中体会倒了不同的心情，就是有意义的吧。</p>
+<p>我也不希望在二十多岁的时候就限制了我未来的无限可能。虽然目前的职业是程序员，谁说三十岁的时候就不能是一个翻译。但关键是现在也不能放弃学习。每天学习一点新的东西。日积月累，某一天，总会水到渠成。只不过是慢一点，晚一点而已。没什么大不了吧。</p>
+<p>我不会只是羡慕别人过着多精彩的人生。我也会努力去创造。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我常常很羡慕那些有某种才艺的人，比如画画。心想如果我小时候也开始学习这项才艺的话，那现在一定也可以做到吧。却从来没想过为什么现在不开始学习呢。大概潜意识里总觉得我都二十多岁了，现在才开始太迟了。</p>
+<p>可是细细一想到底是谁规定一个人一定要在二十多岁就取得那种被这个社]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[最后一个在校上课的学期要结束了]]></title>
+    <link href="http://ananwbr.com/archive/2012-06-02/2012-6-2-my-last-term-will-finish-soon/"/>
+    <id>http://ananwbr.com/archive/2012-06-02/2012-6-2-my-last-term-will-finish-soon/</id>
+    <published>2012-06-02T14:50:00.000Z</published>
+    <updated>2015-11-16T12:07:54.000Z</updated>
+    <content type="html"><![CDATA[<p>每个学期临近期末的时候都会特别繁忙。不用考试的课程，也不像其它专业那样交个论文就行，一般都要求做个大型实验。这个学期学的是 JavaEE ，最后的大作业是用 SSH 框架做个网站。若是以前，我会利用课余时间，更加深入学习本学期的课程。但这学期实在是目标明确的几乎所有专心学习的时间都花在了 iOS 的学习上，所以对这门课的关心投入太少，对这个大作业也是烦的透顶。</p>
+<p>最近越来越深切地感受到，每个人都不可避免地要做自己不喜欢做的事。最悲哀的是明明知道自己不喜欢，在做的过程中少不了痛苦，却依然因为要完成任务而不得不硬着头皮做下去。但幸好，也是在这样的对比中，才更加明白自己喜欢做什么。好像忽然分出身来站在自己身边，看到自己在做喜欢的事情的时候的那种原本不自知的专注和满足。</p>
+<p>回首即将过去的这个学期，还算是幸福的。除了最后一个星期，开始为大作业烦恼，其他时间都算是在做自己喜欢的事。不过，烦恼也就是在不知道做什么的时候烦恼一下而已。后来花了点时间思考，最后决定为之前已完成的 APP 写服务器端接口然后开工之后，实现的速度还是挺快的。今天上午也终于完成了这个项目的文档，总算结束了这件事。而且整个大学生生涯的课程也在昨天六一儿童节的晚上上完了。算了一下从小学开始读了十四年的书终于在这么一个本该装装嫩却一直在赶文档而且晚上还有课的一天结束了，心中还是很有感慨的。现在剩下的就是学校规定的四个月的实习和毕业设计的事儿，我的学生生涯就要结束了。</p>
+<p>最近让大三学生精神紧张的找实习的事儿也算是告一段落了。虽然有些同学还在纠结到底是去那个公司好呢，是看当前的待遇呢还是看在公司长远的发展呢，但终归是找到了份实习。只有我这种看似目标明确，自信满满其实内心也有些许慌张的人还没有一张Offer在手。不过等下周二考完测试就开始投简历吧。刚刚本来只是想完成就业指导课的简历的作业的，没想到最后成了针对我一直很想去的那家公司的专门的简历。到时候得再修改一下就可以投出去了。</p>
+<p>看他们找实习的经历，自己也有一些思考。有几个专业牛人之前一直在钻研Java的东西也从不怀疑自己将来会做 Java 开发，但收到某大公司的 Offer 之后，决定把已搁置很久的 C++ 捡起来，还要再学习 C# 。室友本已确定要去的公司笃定要做DBA连三方协议都差不多要签了最后被那个大公司录取，纠结了小段时间也决定投入大公司做 C++/C# 开发。还有人因为没有告知HR直接不去面试，最后那个公司反应到学院要求书面道歉的，他在那纠结到底是不是公司小题大作了，自己有没有必要写道歉信。也有人到现在也还在纠结薪酬问题决定不下而有些人却令人意外地坚定地要去一个工资低于一般水平很多却顶着“规模大”的光环的公司。我在想像我这样脑子里只放了一家公司，而且一定要找 iOS 实习的人到底是该说专注呢还是一根筋。好吧，暂且还是往好的地方想吧，只是在我的臆想之中，那样的我会过得比较快乐。</p>
+<p>到了大三下，考试什么的大家真的也没有那么上心了。基本上都算是找到实习了，还有多少人那么在意绩点呢。毕竟对于大部分人来说当初想考个高分是为了现在找工作好找些。但事实证明简历上就算全是高分也不会收到预期的效果。</p>
+<p>但是，那个奖学金还是不错的。二等的话还能交两次 iOS Developer Program 的年费。嗯，所以决定明天去图书馆把书啃一下。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>每个学期临近期末的时候都会特别繁忙。不用考试的课程，也不像其它专业那样交个论文就行，一般都要求做个大型实验。这个学期学的是 JavaEE ，最后的大作业是用 SSH 框架做个网站。若是以前，我会利用课余时间，更加深入学习本学期的课程。但这学期实在是目标明确的几乎所有专心学习]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[该找实习了]]></title>
+    <link href="http://ananwbr.com/archive/2012-05-11/2012-5-11-its-time-to-get-an-internship/"/>
+    <id>http://ananwbr.com/archive/2012-05-11/2012-5-11-its-time-to-get-an-internship/</id>
+    <published>2012-05-11T14:46:00.000Z</published>
+    <updated>2015-10-25T15:43:24.000Z</updated>
+    <content type="html"><![CDATA[<p>说好的一周一记，耽搁很久了。期间，内心有过一阵混乱。</p>
+<p>好像几个月前，辅导员就发了短信，说今年实习生形式不太好，让我们早点行动。上个学期学院安排了实习双向选择，来了八十多家公司。在现场，大家都很踊跃地投简历。我其实是没带简历去的，因为前一天看了一下这些公司的情况，并没有符合我的意向的。然后当时就很尴尬。只要遇上一个熟人，就问我投了几份简历了，投了哪些公司，有让你去笔试吗等等问题。我都没好意思说其实我连简历都没带，我就是去看看。有几个同学知道我的情况之后就劝我说你还是投几家吧，虽然不太符合你也可以先投投别的职位嘛，不一定非要做那个。</p>
+<p>招聘会结束后，大家就更敏感了。时不时要检查一下手机，看看有没有面试通知。那些关于某某同学又拿到某大公司offer的新闻传播的总是特别快。还有实习工资也成了日常讨论的话题。</p>
+<p>其实我本来很平和的，总觉得我还可以静下心来在最后的一个多月里好好学习，多多实践。人吧，就是这样，很容易受外在因素的影响。招聘会后的几天里我内心也就开始变得有点不安，心想着我是不是现在也必须要四处求职了。如果再过一个月，是不是那些实习岗位都被别人抢走了。在其他人的眼里，我表现出来的是淡定过头了吧，是自以为很厉害吧。</p>
+<p>不过还好，这些天还是努力让自己内心更平和一点。之前在微博上认识了一个前辈。他让我好好学，按自己心里所想生活。他的有一句让我很有触动。他说你要努力让自己成为公司想要的人，而不是你去求公司要你的人。是啊，如果自己有实力，总会有人赏识吧。</p>
+<p>我不希望自己的人生是被别人推着走的，太急促，其实并不知道自己的方向是什么。我想要走得平稳一点，从容地把握自己的方向。虽然可能会有点缓慢，但知道自己每走一步，都在离自己想要的生活更近一步，这样就让我觉得很幸福了。</p>
+<p>那些总怕我找不到实习的人，虽然也没有什么恶意，但他们的语气让我觉得他们是想告诉我，生活不会如你所想的那么美好，找实习不会如你所想的那么顺利，还是每个公司都试试吧。我讨厌这样的想法。我不想为了实习而实习。下次再有人用很惋惜的语气对我说话的话，我得让我对我多一点信心了，我不是在逃避什么，不是在幻想什么，只是我也有我自己的考量。</p>
+<p>写下这篇文中，也算是给处在非常时期的自己打打气吧。</p>
+<p>在这个还没到拼天赋的社会，勤奋才是关键吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>说好的一周一记，耽搁很久了。期间，内心有过一阵混乱。</p>
+<p>好像几个月前，辅导员就发了短信，说今年实习生形式不太好，让我们早点行动。上个学期学院安排了实习双向选择，来了八十多家公司。在现场，大家都很踊跃地投简历。我其实是没带简历去的，因为前一天看了一下这些公司的情况]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[油菜花开了]]></title>
+    <link href="http://ananwbr.com/archive/2012-04-07/2012-4-7-i-wanna-take-a-trip/"/>
+    <id>http://ananwbr.com/archive/2012-04-07/2012-4-7-i-wanna-take-a-trip/</id>
+    <published>2012-04-07T14:41:00.000Z</published>
+    <updated>2015-10-25T15:43:31.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/2012/4/flower.jpg" alt="油菜花开得正艳"></p>
+<p>前段日子一直想去婺源，拉上两三好友，或者仅仅是自己独自上路，去看看那片艳丽的油菜花田。</p>
+<p>身边的同学好像最近受各种项目的羁绊，连去太子湾赏赏郁金香，也觉得是在浪费时间。在大学里没有找到一个志同道合的伴，很是遗憾。</p>
+<p>附图里是学校的油菜花地，现在正是开得最艳丽的时候。接近傍晚的时候，余晖洒落在这块地里，甚是好看。今天是周六，很多家长带了小孩来也有。每次都会这样的场景所感染，和他们一起感受幸福。都觉得在旁边看着他们傻笑的我，实在是很傻。</p>
+<p>刚刚中断了写作，和老妈通了电话，免不了说到实习的事，家里的事。我不是那种会撒娇的，可以被称为父母贴心的小棉袄的女儿。一般的对话总是涉及很多严肃的事。不过不管怎样，我总是那个可以令他们骄傲的小女儿吧。至少之前的二十年我做的不错，希望以后我也可以做到。另外，虽然我们在直接交谈的时候没有表现太多的亲昵，但是有时候发的短信可是可以肉麻到让我起鸡皮疙瘩的地步。</p>
+<p>老爸老妈，我爱你们。</p>
+<p>下午在图书馆看了《小强升职记》，收获颇多。明天得写篇文。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/2012/4/flower.jpg" alt="油菜花开得正艳"></p>
+<p>前段日子一直想去婺源，拉上两三好友，或者仅仅是自己独自上路，去看看那片艳丽的油菜花田。</p>
+<p>身边的同学好像最近受各种项目的羁绊，连去太子湾赏赏郁金]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[大概是寂寞了]]></title>
+    <link href="http://ananwbr.com/archive/2012-03-15/2012-3-15-about-dream/"/>
+    <id>http://ananwbr.com/archive/2012-03-15/2012-3-15-about-dream/</id>
+    <published>2012-03-15T14:36:00.000Z</published>
+    <updated>2015-11-16T12:09:48.000Z</updated>
+    <content type="html"><![CDATA[<p>就在刚才，我拿出纸和笔，想要写下我的人生理想。我给条目标号，可是写到 3 的时候，我竟然想不起我还有什么是想实习的。前两条分别为和朋友、家人一起旅行和看几场演唱会。忽然觉得自己的人生如此的单薄。在写完“ 3 ”提笔的瞬间，我忽然觉得很恍惚。我到底是为了什么而活。</p>
+<p>这几天心情很浮躁，急功近利。我讨厌这样的心态。明明还很年轻，为什么总觉得时间不够。好像我必须在 23 岁之前就一定要找好人生的方向，好像这个方向一定不能改变。可是未来不是充满了无限可能吗，这样的人生才有意义不是吗。</p>
+<p>11 岁的时候转学到临村更好的学校，13 岁的时候到镇上中学，16岁 的时候到县城上高中，19 岁的时候到省城上大学。从小就梦想着走出一直生长的土地，走到更远的地方，发现更广阔的世界，体验不同的人生。可是，怎么 22 岁的时候，脑海中偶尔也会闪过“回自己的城市，找份安定的工作，过平淡的生活”这样的想法。明明知道自己不是一个会甘心只过安稳日子的人，为什么越是长大，却有了越来越多与最初背离的想法。</p>
+<p>最近喜欢的一些明星都是和自己年级相仿的人。虽不是同年，但身边也有和他们同岁数的人。最近经常感叹这么年轻的他们却和我们过着完全不同的日子。名誉，财富，都已收获。可是，我们也往往忽略了这背后他们所付出的努力。他们也不是只靠外貌，靠运气，随随便便就成功的，他们也经历了我们可能永远无法体会的痛苦，才有了今天的成就。</p>
+<p>外貌是父母给的，我无法自己改变。虽然也会想为什么我的脸型不好看，五官不精致，身材不好。但是这些也只是想想而已。“外在美不重要，内在美才重要”这种话我是不同意的。但鉴于我自身状况，也只能这样安慰自己。既然父母亲创造了这样的我，也倾尽自己所能给我最好的生活，我还有什么不满足的呢。</p>
+<p>有一件很不好意思的事。前几天吃完饭回寝室的路上，突然脑海中浮现一个场景。以后别人问我谈过恋爱吗。我回答说还没有。自己想想都觉得不可思议。上周刚过完21周岁的我，到现在，居然还有没有过一场值得回忆的初恋。虽然有让我难以忘记的人，但却不能称之为初恋，只是我自己心底的秘密。还是觉得有点悲伤。如果是两个人，会更有勇气出去旅行，欣赏这个美好的世界。</p>
+<p>有人说我寂寞了。好吧。我承认，是有点。上面这段话有点错乱。讲到这个话题，觉得自己真糗。我也很期待谈恋爱的自己。身边的朋友都说难以想象那样的。说实话，我也不知道会怎样。随缘吧。随缘。。。</p>
+<p>其实，我真的很烦恼。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>就在刚才，我拿出纸和笔，想要写下我的人生理想。我给条目标号，可是写到 3 的时候，我竟然想不起我还有什么是想实习的。前两条分别为和朋友、家人一起旅行和看几场演唱会。忽然觉得自己的人生如此的单薄。在写完“ 3 ”提笔的瞬间，我忽然觉得很恍惚。我到底是为了什么而活。</p>
+<]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为美好生活奋斗]]></title>
+    <link href="http://ananwbr.com/archive/2012-03-11/2012-3-11-fight-for-beautiful-life/"/>
+    <id>http://ananwbr.com/archive/2012-03-11/2012-3-11-fight-for-beautiful-life/</id>
+    <published>2012-03-11T14:32:00.000Z</published>
+    <updated>2015-11-16T12:09:15.000Z</updated>
+    <content type="html"><![CDATA[<p>看了对野百合的采访之后，有很多想法。她说作为一个女人没有很大的野心，希望未来也可以做自己喜欢的 APP ,过自己喜欢的生活。我不知道她生长在怎样的环境，受怎样的教育，经历过什么，才到达了现在。很羡慕她，不管是生活状态，还是心态。她简短的回答，让我看到了自己未来的某种可能。无意把她的经历写成励志故事，但至少我还是受到了些许鼓励，这就足够了。有些负面的信息还是忽略吧，人生这么短，好像没有时间浪费在考虑无关紧要的事情上。我要做好自己，付出更多的努力，换取将来想要的生活。</p>
+<p>昨天骑着自行车出去，绕了远路，骑了 18 公里左右到了西湖。又绕了西湖走了半圈，中间还骑上了龙井路，后段全是上坡。在我推着车一步一步艰辛地爬坡时，只见那些装备齐全的骑行者直接骑着就上去了。下山之后找了个地儿休息，吃着零食，听着歌，真觉得这样的时光很美好。我想我爱上骑行了。如果以后我在杭州工作，我也要买辆车，一到周末就骑到西湖转转。</p>
+<p>现在，未来对我来讲都是美好。</p>
+<p>关于实习，目前没着落。之前问了学长，说目前不招实习生了。鉴于目前还有课，其实也没有认真找，还处于充电状态。每天都有收获，比如今天看文档，很多东西又豁然开朗的感觉，真的很有满足感。照这样下去，我的英语阅读能力也会变的越来越好吧。还有目前也在看斯坦福公开课。Paul那老爷子（也不知道他几岁啊，头发是花白了）上课上的真不错啊，如果国内的大学老师也这么上课，同学们应该会更喜欢上课吧。还有一半的课程，会继续听下去。</p>
+<p>收藏了很多大牛的博客，他们在博客上写了很多技术文。开这个博的时候也有这种打算来着，可是在这么文艺的地方似乎不适合写，再者我到目前还不知道该怎么写技术博客。通常我都是拿纸笔写重点，可是无非就是把一些重要的点从文档上搬下来。然后再自己再整理一遍，画些图。这如果转化文章有些单薄，又有些繁琐。最重要的是，似乎没有自己总结的东西。这一点是我急待加强的，我需要学习如何在掌握基础之上，主动发现与探究更多其它。</p>
+<p>这段时间多少有点急功近利了。只想着快点学会，然后先做出个APP，然后去找实习。虽然说动手是很重要，但能打好坚实的基础，对以后的高级学习会更有帮助吧。而且之前我也把这个行业想的太好了，真的以为只要我学会了工作什么不用愁的。呵呵，这样的想法是有点肤浅和功利了。至少在接下去的两个月里，静下心来，好好享受专心学习的感觉，也要每周都走出去出出汗，珍惜在校上课的最后的时光吧。</p>
+<p>我会爱为梦想奋斗的同时又懂得享受生活的自己。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>看了对野百合的采访之后，有很多想法。她说作为一个女人没有很大的野心，希望未来也可以做自己喜欢的 APP ,过自己喜欢的生活。我不知道她生长在怎样的环境，受怎样的教育，经历过什么，才到达了现在。很羡慕她，不管是生活状态，还是心态。她简短的回答，让我看到了自己未来的某种可能。无]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[老妈来电说...]]></title>
+    <link href="http://ananwbr.com/archive/2012-03-04/2012-3-4-talk-to-my-mom/"/>
+    <id>http://ananwbr.com/archive/2012-03-04/2012-3-4-talk-to-my-mom/</id>
+    <published>2012-03-04T14:31:00.000Z</published>
+    <updated>2015-11-16T12:10:18.000Z</updated>
+    <content type="html"><![CDATA[<p>到了一周一记的时间。</p>
+<p>傍晚接到老妈的电话。很明显，越是接近毕业，讨论的话题就越来越多得设计到将来得职业选择上。在她得观念中，学习成绩好得学生理应被公司直接“请”过去。但现在早已不是大学生值钱到被争夺的年代。虽然也会有优秀到这种程度得学生，但显然，我并不属于此列。每次听她念叨着“要是被（公司）请走就好了”，我都会有一种我要更加努力的想法。</p>
+<p>今天和老妈的通话还收获了一点很重要的信息，从小一起长大的但后来上了不同高中再是不同大学而渐渐疏于联络的伙伴居然真的就订婚了，而且已经跟男方一起生活。寒假的时候有些耳闻，但没好意思向她本人证实，也抱着“如果这是真的她应该会通知我们吧”的想法。这好像是第一个定下终身大事的朋友，让我再一次真切的感受到了我们已经长到了可以谈婚论嫁的年纪。可是明明，经历了那么多艰苦奋斗，我才刚要开始目标明确的追求我想要的生活，属于自己的，自由自在的生活。和另一个人生活在一起，意味着要承担更多的责任，是不是太早将自己束缚在“家庭”这个地方了呢。可是，这或许就是她追求的人生吧。</p>
+<p>这件事情的另一个点是老妈末了加了一句“那个男生家里很有钱”。我努力揣测她说话的语气。我不知道这句话是不是说明了朋友接下去的幸福生活。我不知道老妈是不是觉得这就是一个女孩子最好的归宿。逢年过节亲戚们聚在一起总是会说到谁谁家的女儿嫁了个有钱人，然后家里的经济条件也跟着改善。我问过老妈是不是心里也总希望我能嫁个有钱人，然后帮着改善家里。虽然她每次都会说只要我幸福就好，虽然就算我没有嫁到大富大贵之家也会尽我所能照顾他们，但是我想作为一个母亲总还是自己的女儿将来能够衣食无忧吧。</p>
+<p>老妈和她的朋友现在总会聊到儿女的终身大事，似乎暗中也在比较谁家的女儿能找到更好的归宿。还小的时候，比较的是谁的学习成绩比较好。在这一方面我的确收获了很多夸赞，也让老爸老妈长了脸。可是现在呢，似乎嫁的好才是值得炫耀的事情。</p>
+<p>读了十几年的书，希望的就是将来能过上好生活。为了实现这样的愿望，我还在努力奋斗中。我并不是排斥那些因为嫁了个有钱人而一下子变的有优越感的人，因为她们能做到说明也有自己的优势。在这件事情上我的确也有过“将来会令爸妈失望”的顾虑。但是转念一想，还算年轻的我又何必为了这种事情浪费时间呢。我其实是相信缘分的。遇到什么样的人，冥冥之中上天自有安排。而且谁说通过我自己的努力，我不能给自己想要的生活，不能让爸妈过上好生活呢。</p>
+<p>大概是因为寒假里听了太多这类事情，再加上朋友的事，有点受刺激了吧。我很清楚有种生活并不适合我，我还会沿着自己设定的方向一如既往的走下去。</p>
+<p>还有件事值得说一说。和一高中同学聊天。说到毕业后去留的问题。我让她也留在杭州跟我分担房租吧。她突然说和我一起住会有压力，她说她可以预见我们的工资的差距。虽然目前连我自己都不知道将来会拿怎样的工资，但是我是却感受到从现在开始这么好的朋友之间也会考虑收入差距的问题。说实话，有点小伤感。</p>
+<p>但将来不管怎样，我都会努力不会让这种原因影响朋友之间的感情。我不够的我会继续努力。他们有不足的也会提供帮助。</p>
+<p>这是我的初衷，虽然不能保证，但至少会一直提醒自己。</p>
+<p>本来要总结这周的学习状况的。抒发一下情感也好。</p>
+<p>晚安。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>到了一周一记的时间。</p>
+<p>傍晚接到老妈的电话。很明显，越是接近毕业，讨论的话题就越来越多得设计到将来得职业选择上。在她得观念中，学习成绩好得学生理应被公司直接“请”过去。但现在早已不是大学生值钱到被争夺的年代。虽然也会有优秀到这种程度得学生，但显然，我并不属于此列]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://ananwbr.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="生活" scheme="http://ananwbr.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>

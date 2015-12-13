@@ -1,0 +1,576 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/styles.css"><title>ANANWBR's</title></head><body><div class="container"><div class="columns page-header"><h1>ANANWBR's</h1></div><div class="columns"><div class="navigation"><nav class="menus-main"><a href="/" class="favicon"><img alt="ANANWBR's" src="/favicon.png"></a><a href="/">Home</a></nav></div></div><div class="columns"><div class="block-body column three-fourths"><article><header><h2><a href="/archive/2013-08-23/multitasking-enhancements-in-ios-7-part3/">iOS7多任务增强（3）</a></h2></header><div class="article-meta clearfix"><time class="left">2013-08-23</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><p>今天终于做了分享了。分享之前还挺紧张的，不过开讲之后思路跟上了，又因为准备还算充分，所以整个过程还比较流畅。其实分享还是挺有趣的。借着分享的机会可以深入一个话题然后再和小伙伴们分享，讨论。是个学习、自我巩固、查漏补缺的好机会。</p>
+<p>下面几点就是在分享过程中小伙伴们提出的疑问而我自己也不够确定的地方。后来又查看了相关知识，整理了一下给他们发了邮件。顺便也记录在这里。</p>
+<h2 id="u591A_u4EFB_u52A1_u589E_u5F3A_u7684_u51E0_u70B9_u8865_u5145"><a href="#u591A_u4EFB_u52A1_u589E_u5F3A_u7684_u51E0_u70B9_u8865_u5145" class="headerlink" title="多任务增强的几点补充"></a>多任务增强的几点补充</h2><ol>
+<li><p>关于<br> application:performFetchWithCompletionHandler:<br> application:didReceiveRemoteNotification:fetchCompletionHandler:<br> application:handleEventsForBackgroundURLSession:completionHandler:<br> 这三个方法可用的时间，文档中有这么一段话：</p>
+<blockquote>
+<p>When this method is called, your app has up to 30 seconds of wall-clock time to perform the download operation and call the specified completion handler block. In practice, your app should call the handler block as soon as possible after downloading the needed data. If you do not call the handler in time, your app is suspended. More importantly, the system uses the elapsed time to calculate power usage and data costs for your app’s background downloads.</p>
+</blockquote>
+<p> 也就是说，是执行完所有任务只有30秒的时间。就算你是异步执行，如果你没有在规定的时间内调用completion handler block告诉系统你已经完成任务，那么系统就会判定你已经超时，这时候就会挂起你的应用。另外系统会根据执行任务所用的时间来计算应用消耗的电量和流量。这些计算结果会影响应用被调度的机会。消耗越少，以后可能被调度到的机会就越大。</p>
+</li>
+<li><p>补充：在Debug应用的Background Fetch模式的时候，需要考虑两种情况：</p>
+<ul>
+<li>应用未启动，此时系统会启动应用并进入后台。选择一个Scheme然后Edit-&gt;左侧栏Run SimpleBackground…-&gt;Options-&gt;勾选Launch Due to a Background Fetch Event，这时候再在模拟器启动的话，应用会直接进入后台。</li>
+<li><p>应用处于睡眠状态（在后台），此时系统会唤醒应用。Debug-&gt;Simulate Background Fetch<br>从Debug有两种方式说明，应用即使没启动的时候也会被调度。<br>但是如果在设置（Settings）的Background App Refresh中关掉了，或者这个应用是从App Switcher中被用户手动终止的，那么就算的之前注册了后台模式，也没有机会被调度到。</p>
+<p>我之前的疑惑点是，应用处于未启动的状态，有哪几种情况呢。<br>1、从未启动：那它也没有向系统注册过后台模式，不会被调度。<br>2、启动过但被用户从App Swicher中终止，此时系统会尊重用户选择，也不会调度该应用。<br>3、启动过被系统强制退出：这时候应该有机会被调度吧。<br>4、还有其它情况吗？<br>如果没有其它情况，那说明Launch Due to a Background Fetch Event只会发生在第三种情况。<br>如果你们还知道其他情况，记得告诉我。</p>
+</li>
+</ul>
+</li>
+<li><p>关于Background Transfer Service<br>要说明一下这个部分并不是后台模式的一种，不管在foreground还是background，都可以创建NSURLSession并提交任务。经常与fetch和remote-notification模式结合使用。iOS 7之前的应用可以通过Background Task Completion在后台继续运行一段时间来下载，但如果因为各种原因而导致应用被退出了（被用户杀掉，内存不足或超时被系统杀掉等），那么下载是得不到保证的。iOS 7的后台传输服务则可以让系统去下载，出错或下完后通知并唤醒应用来处理。另外，为了避免浪费流量，该服务只会在 WiFi 环境下才进行传输。</p>
+<p> 关于NSURLSession和NSURLSessionTask，是分别有NSURLSessionDelegate和NSURLSessionTaskDelegate。参考文档中的这段：</p>
+<blockquote>
+<p>If a URL session finishes its work when your app is <strong>not running</strong>, the system launches your app in the background so that it can process the event. In that situation, use the provided identifier to create a new NSURLSessionConfiguration and NSURLSession object. You must configure the other options of your NSURLSessionConfiguration object in the same way that you did when you started the uploads or downloads. Upon creating and configuring the new NSURLSession object, that object calls the appropriate delegate methods to process the events.</p>
+<p>If your app already has a session object with the specified identifier and is <strong>running or suspended</strong>, you do not need to create a new session object using this method. Suspended apps are moved into the background. As soon as the app is running again, the NSURLSession object with the identifier receives the events and processes them normally.</p>
+<p>At <strong>launch time</strong>, the app does not call this method if there are uploads or downloads in progress but not yet finished. If you want to display the current progress of those transfers in your app’s user interface, you must recreate the session object yourself. In that situation, cache the identifier value persistently and use it to recreate your session object.</p>
+</blockquote>
+<p> 当NSURLSession里的所有任务都完成时    </p>
+<ul>
+<li>如果此时应用没在运行，那么系统会启动应用（参考上面第2点）进入bakground状态，此时我们需要根据identifier重建session对象，然后该对象会调用合适的delegate方法处理时间。</li>
+<li><p>如果此时应用在Suspended状态，那么系统让应用进入Background状态，调用application:handleEventsForBackgroundURLSession:completionHandler:方法，然后该identifier代表的session对象就会收到事件从而调用合适的delegate方法。</p>
+<p>更多的情况可参考《What’s New in Foundation Networking》这个session。具体细节有待研究。</p>
+</li>
+</ul>
+</li>
+<li><p>关于系统如何判断是哪种通知，应该是根据content-available这参数来的。</p>
+</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">//<span class="type">Normal</span> <span class="type">Remote</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          alert: <span class="decorator">&#123;...&#125;</span></span><br><span class="line">     &#125;</span><br><span class="line">//<span class="type">Remote</span> <span class="type">Push</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          content-available: <span class="number">1</span></span><br><span class="line">          alert: <span class="decorator">&#123;...&#125;</span></span><br><span class="line">     &#125;</span><br><span class="line">//<span class="type">Silent</span> <span class="type">Push</span> <span class="type">Notification</span></span><br><span class="line">     aps &#123;</span><br><span class="line">          content-available: <span class="number">1</span></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>这周时间比较紧张，上班时间完全专心于新项目的开发。需要处理一些以前没遇到过的情况，也是个学习的好机会。但是这周工作之余的时间安排的不是很好。下了班总感觉很累，没有精力继续研究。这种情况下就干脆早点躺床上看书去了。我在想是不是上周六两点左右才睡的后遗症。我是老了么，一次熬夜就这么损。除了心理上的疲惫还有身体上的疼痛。因为最近几天不是下雨就是刮很大的风本来想的下班后跑步一直没有执行，于是周三就在室内跳了操，做了几个卷腹，结果一直腰酸背疼。看来最近体能也差了。好怀念三、四月份那会儿还在学校的时候晚上去操场跑步40分钟+20分钟拉伸之后大汗淋漓的感觉。那时候一天不出去运动就心里痒痒。结果因为回家休息断了之后要重新开始还是有点困难。</p>
+<p>趁着周末好好调整一下~</p>
+</div></article><article><header><h2><a href="/archive/2013-08-18/multitasking-enhancements-in-ios-7-part2/">iOS7多任务增强（2）</a></h2></header><div class="article-meta clearfix"><time class="left">2013-08-18</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><!--
+提纲：
+* 苹果的广告 
+* 改变的东西
+* 用户界面的改变，调度的时间（基于系统对用户行为的观察）和时机（对设备资源，硬件的检测）
+* 新增的东西
+-->
+<p>最近写作的热情高涨，真是个好现象。一直觉得能坚持写博客的人都很了不起。有时候偶然进到一个人的博客，发现那个人已经连续写了五六年了，就会很想从头开始翻。明明是不认识的人，却莫名很有好感。真希望自己也能积累很多文字，如果能给人带来一点正面的能量，那我也会感觉更加幸福。</p>
+<p>如果每天都写一篇文章的话，这样的篇头语也算是日记了~</p>
+<p>写前一篇的文章的时候是想写新特性的，结果只讲完了预备知识。现在终于进入正题啦。</p>
+<h2 id="iOS7_u591A_u4EFB_u52A1_u589E_u5F3A"><a href="#iOS7_u591A_u4EFB_u52A1_u589E_u5F3A" class="headerlink" title="iOS7多任务增强"></a>iOS7多任务增强</h2><p>先来看看苹果官网是怎么介绍多任务增强的吧。</p>
+<p><img src="/images/2013/8/multitasking_introduction.png" alt="官网介绍"></p>
+<p>从图中我们可以感受到的最直观的变化是多任务管理界面（也可以叫它应用切换器，洋名“App Switcher”）。还是双击Home键，就可唤出该界面。现在不仅能看到后台应用的图标，还能看到每个应用的预览。（作为开发者需要注意隐藏一些敏感信息）如果想终止某个应用，只要在这个应用的预览图上往上一滑就行了。比起长按再删除，那是方便了太多了。</p>
+<p>另外，从图片的文案中我们也可以得出一个关键字：<strong>智能</strong>。可以从两方面来解读这个词：</p>
+<ul>
+<li>调度的时间：系统会跟踪用户行为，比如启动应用的时间和频率，得出用户的使用规律。比如每天7点我一起床就会打开微博应用，系统经过一段时间的观察之后知道了我的使用规律，它就会在7点前让应用去更新内容，这样我一睁开眼打开应用不用刷新就能看到一夜积累的微博啦。（玩微博好几年了现在还挺控~）</li>
+<li>调度的时机：系统也会检查当前的设备情况，比如设备是否激活，网络和电量情况，来智能分配每个应用的获取频率和时间。举个例子，当网络情况良好时，就是获取信息的良机。它还能协调多个应用的更新，所以有网络时，多个应用都可以同时收益。</li>
+</ul>
+<p>总得来说，不管是UI设计还是用户体验都有不小的提升。</p>
+<!--
+Translated by Tinyfool:http://tiny4cocoa.com/thread/show/88/
+
+下面，让我们聊聊多任务。
+iOS 7构建在有着工业级强度的OS X的坚实基础上。
+它包含了大量的功能强大的多任务处理能力。
+但是我们把这些能力暴露给App的时候，必须非常小心谨慎，
+因为我们想提供更长的使用时间。
+在iOS 4我们给某些特定类型的App提供了多任务处理能力，
+例如，后台播放音乐的App，接收VOIP来电，允许他们运行在后台。
+现在在iOS 7我们高兴的宣布，我们让所有App都有了多任务能力，
+同时还保持电池使用时间。
+（持久不息的掌声……）
+那么，究竟是什么样子呢？
+好，设想有一个App你整天都持续在使用，SNS App之类的，
+你总是在签到，
+iOS 7会监测到你的行为模式，
+会给这个App提供频繁的后台活动机会使其信息保持即使的更新。
+然后我们看你使用的另外一种App，
+也许你只是在早晨、早晨的时候、或者晚上下班以后打开他们，
+iOS 7也会注意到他们，
+会给这些App在合适的时机后台激活，
+这样在你用的时候，他们里面的信息也将是刚刚更新过的。
+在这种智能规划之外，
+iOS 7还提供了机遇更新机制，
+用户每天平均激活iPhone几十次，
+这就给App提供了非常好的机会，
+系统已经点亮，让App可以在后台更新内容。
+它还能根据无线网络情况调节，
+你的网络情况很好时，就是获取信息的良机。
+它还能协调多个App的更新，
+所以你有网络的时候，多个App都可以同时获益。
+最后，iOS 7还可以用Push通知激活后台更新，
+所以，当你打开一个通知时，App的信息已经更新了。
+iOS 7还有非常棒的新界面，在运行的App之间切换，
+现在你可以双击Home键进入后台，
+在后台App之间滑动，点击就可以进入。
+这就是iOS 7的多任务功能。
+-->
+<p>上面讲的都是作为普通用户就可以体验到的变化。但作为开发者，我们需要知道背后是什么样的机制，有哪些API支撑着这些新特性，了解更多的细节。</p>
+<p><strong>首先来看看iOS7对已有的多任务的改变</strong>。WWDC的keynote上列出了以下四点：</p>
+<ul>
+<li>Background Task Completion</li>
+<li>App Switcher（应用切换器）<ul>
+<li>新的用户界面突出了应用程序的快照</li>
+<li>应该确保用户重新回到应用时界面看起来良好，可参考“State Restoration”这个视频</li>
+<li>在应用快照上向上滑移除该应用，在iOS6移除应用表示停止应用运行，在iOS7中还意味着停止应用在后台运行</li>
+<li>在后台更新快照</li>
+</ul>
+</li>
+<li>Location Service<ul>
+<li>在系统的设置应用中可以配置是否允许某个应用在后台执行任务</li>
+<li>系统会尊重App Switcher中的操作，如果用户移除了某个检测位置的应用，当位置变化时，系统不会启动该应用</li>
+</ul>
+</li>
+<li>Newsstand<ul>
+<li>在系统的设置应用中可以配置是否允许某个报刊杂志应用在后台更新数据</li>
+<li>系统会尊重App Switcher中的操作，如果用户移除了某个报刊杂志应用，当有内容更新时，系统不会启动该应用</li>
+<li>继续使用Newsstand API，有</li>
+</ul>
+</li>
+</ul>
+<p>下面我们来重点看一下第一点。在<a href="http://ananwbr.com/blog/2013/08/13/multitasking-enhancements-in-ios7/">前一篇文章</a>中我们讲过，用户进入后台时可以通过调用<code>UIApplication</code>类的<code>beginBackgroundTaskWithExpirationHandler:</code>方法向系统请求额外的时间来处理一些诸如上传或下载，完成数据库操作这样的任务。在iOS6中，如果此时用户锁屏了，那么系统会等待任务执行完才进入睡眠状态。而在iOS7中，任务会被暂停，系统会很快进入睡眠状态。直到设备收到事件被唤醒（例如定时事件、推送、位置更新等），后台任务才能继续运行。这就导致了处理过程变成断断续续的，因此如果任务中包含了网络传输的内容推荐使用NSURLSession来处理（即下文中的 Background Transfer Service）。</p>
+<p>总结一下后台任务（Background Task Completion）的变化：</p>
+<ul>
+<li>当设备锁屏时，后台任务不再连累设备保持醒着的状态，而是很快进入睡眠状态</li>
+<li>应用还是会有几分钟的时间执行任务，但执行过程不能保证是连续的</li>
+</ul>
+<p><strong>接下来看看iOS7中有哪些新增的API</strong>。</p>
+<ul>
+<li>Background Fetch</li>
+<li>Remote Notification</li>
+<li>Background Transfer Service</li>
+</ul>
+<h4 id="u540E_u53F0_u83B7_u53D6_uFF08Background_Fetch_uFF09"><a href="#u540E_u53F0_u83B7_u53D6_uFF08Background_Fetch_uFF09" class="headerlink" title="后台获取（Background Fetch）"></a>后台获取（Background Fetch）</h4><!--
+it's a periodic way to for your application to get launched into the background to update it's content. It's based on when the user actually user your application so that your fetch opportunities can be as fresh as possible.
+This basically just gives your application a chance to launch whenever you send it a push notification crafted in a certain way, it can actually wake up your application in the background with a silent push notification. So that if there's something immediate that needs to happen inside of the application but doesn't need to bother the user, you can do that too.
+so this will allow you to enqueue large uploads and downloads for iOS to continue in the background after the user leaves your application and can continue across reboots and just handles all of that for you.
+-->
+<p>先来回想一下我们平常使用微博的场景。每次打开微博的时候，不管是应用自动更新还是用户手动下拉更新都需要花费一些时间去等待更新完毕。但在iOS7中，新增的后台模式Background Fetch可以让应用在打开之前先更新内容，这样用户进入应用时无需等待就可以看到更新啦。</p>
+<p>接下来看看如何让应用程序具备这种功能。</p>
+<ol>
+<li>在<code>Info.plist</code>中设置<code>UIBackgroundModes</code>的值为<code>fetch</code>。或在Xcode中Capibility下勾选该模式。</li>
+<li><p>设置最小的后台获取时间间隔。</p>
+ <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:</span><br><span class="line">UIApplicationBackgroundFetchIntervalMinimum]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>在这里`minimumBackgroundFetchInterval`的值有可以有三种：
+
+* UIApplicationBackgroundFetchIntervalNever：默认为该值，不会去做获取操作
+* UIApplicationBackgroundFetchIntervalMinimum：最小时间间隔，在这个间隔内应用不会去做获取操作，但过了这个时间后的任意时候，应用都有可能做获取操作
+* 自定义    ，单位为秒
+</code></pre><ol>
+<li><p>在app delegate中实现’application:performFetchWithCompletionHandler:‘方法，该方法大概有30秒的时间执行任务，比如获取数据并更新界面。当任务完成时，<strong>必须</strong>调用<code>completionHandler</code>并传递结果参数告诉系统这次获取操作的结果。结果参数值包括下面三种：</p>
+<ul>
+<li>UIBackgroundFetchResultNewData：表示有新数据，系统会生成新的应用快照供App Switcher使用</li>
+<li>UIBackgroundFetchResultNoData：无数据</li>
+<li>UIBackgroundFetchResultFailed：获取失败</li>
+</ul>
+</li>
+</ol>
+<p>另外，在Debug该功能的时候，需要考虑两种情况：</p>
+<ul>
+<li>应用未启动，此时系统会启动应用并进入后台。Scheme-&gt;Run Section-&gt;Launch Due to a<br>Background Fetch Event</li>
+<li>应用处于睡眠状态，此时系统会唤醒应用。Debug-&gt;Simulate Background Fetch</li>
+</ul>
+<p>总结：系统会根据用户习惯，设备情况等在最佳时机不定期地唤醒或启动注册过Fetch后台模式的应用，使应用在后台下载更新。适用于社交、新闻、天气类需要经常更新的应用。<br><!--Apps that regularly require new content can register with the system and be woken up or launched periodically to download that content in the background. To register, include theUIBackgroundModes key with the fetch value in your app’s Info.plist file and set the minimum time you want between fetch operations using thesetMinimumBackgroundFetchInterval: method. You must also implement the application:performFetchWithCompletionHandler: method in your app delegate to perform any downloads.--></p>
+<h4 id="u8FDC_u7A0B_u901A_u77E5_uFF08Remote_Notifications_uFF09"><a href="#u8FDC_u7A0B_u901A_u77E5_uFF08Remote_Notifications_uFF09" class="headerlink" title="远程通知（Remote Notifications）"></a>远程通知（Remote Notifications）</h4><p>在iOS6中，当系统收到远程通知时，它会马上通知用户（Alert，Banner…）。如果需要获取消息相关的内容时，还需要用户点击进入应用后，才开始执行任务。这时候用户需要等待。过程如下图所示：</p>
+<p><img src="/images/2013/8/RemoteNotificationiOS6.png" alt="iOS6远程通知"></p>
+<p>而在iOS7中，提供了新的后台模式Remote Notification。当应用注册了这种模式，那么当系统收到相应的远程通知时，会先让应用在后台执行任务，任务完成后再通知用户。此时用户点击进入应用后无需等待直接就可以看到内容啦。过程如下图所示：</p>
+<p><img src="/images/2013/8/RemoteNotificationiOS7.png" alt="iOS7远程通知"></p>
+<p>另外，还有一点值得注意的是，iOS7的远程通知还支持Silent Remote Notification。当用户收到该类型的远程通知时，只会让应用在后台执行任务。任务完成后也不会通知用户。过程如下图所示：</p>
+<p><img src="/images/2013/8/SilentRemoteNotification.png" alt="Silent远程通知"></p>
+<p>接下来看看如果实现这种后台模式吧。</p>
+<ol>
+<li>在<code>Info.plist</code>中设置<code>UIBackgroundModes</code>的值为<code>remote-notification</code>。或在Xcode中Capibility下勾选该模式。</li>
+<li>在推送通知中设置<code>content-available</code>标记</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">//remote notification</span><br><span class="line">aps &#123;</span><br><span class="line">    content-available: <span class="number">1</span></span><br><span class="line">    alert: <span class="decorator">&#123;...&#125;</span>      &#125;</span><br><span class="line">  //silent remote notification</span><br><span class="line">aps &#123;</span><br><span class="line">    content-available: <span class="number">1</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在app delegate中实现<code>application:didReceiveRemoteNotification:fetchCompletionHandler:</code>方法，该方法大概有30秒的时间执行任务，比如获取数据并更新界面。当任务完成时，<strong>必须</strong>调用<code>completionHandler</code>并传递结果参数告诉系统这次获取操作的结果。结果参数值参考前文Background Fetch中的说明。</li>
+</ol>
+<p>关于Silent Remote Notification还有很重要的一点需要知道的是，它的推送速率是受到限制的。因为普通的推送对用户来说是可见的，如果太过频繁让用户觉得很烦人，那么它可以选择关闭通知。但Silent Remote Notification对用户来说是不可见的，也就无法管理。所以iOS和服务器为此做了速率限制。服务器不是阻止你推送通知，而是当速率过快时，会先存储通知，当等到了合适的时候再向用户推送，比如有其他普通的通知要推送时。不过这一切iOS系统和推送服务器会处理，我们只需要知道有这么个机制就可以了。</p>
+<p>总结：当有新的内容需要更新时，可以给用户推送通知。当应用收到通知时，可以在后台获取新内容。获取到了之后系统再显示通知（Alert，Banner…）。如果是Silent通知，则不提醒用户。普通的远程通知适用于及时短信，图片短信，视频短信，邮件等应用。Silent远程通知适用于文件同步，“Read it later”等应用。<br><!--
+Apps that use push notifications to notify the user that new content is available can now use those notifications to initiate background download operations. To support this mode, include the UIBackgroundModes key with the remote-notification value in your app’s Info.plist file. Your app delegate must also implement theapplication:didReceiveRemoteNotification:fetchCompletionHandler: method.
+--></p>
+<h4 id="u540E_u53F0_u4F20_u8F93_u670D_u52A1_uFF08Background_Transfer_Service_uFF09"><a href="#u540E_u53F0_u4F20_u8F93_u670D_u52A1_uFF08Background_Transfer_Service_uFF09" class="headerlink" title="后台传输服务（Background Transfer Service）"></a>后台传输服务（Background Transfer Service）</h4><p>在iOS6中，当应用进入后台时可以请求额外的时间进行文件传输的操作。但因为时间有限，不能传输大的文件。iOS7针对这一点做了增强，提供了后台传输服务。这样一来，文件的传输工作由iOS系统来操作，就算应用退出了或设备重启过，文件传输仍然可以进行。因此，文件传输不会受到时间的限制，任何时候应用不管是在前台还是后台都可以提交任务，当任务完成或出错或需要认证时会唤醒应用。</p>
+<ol>
+<li><p>创建一个后台NSURLSession对象，然后将上传或下载的任务（NSURLSessionTask）交给它，如下图所示：</p>
+<p> <img src="/images/2013/8/BackgroundTransferService.png" alt="后台传输服务"></p>
+</li>
+</ol>
+<ol>
+<li>在app delegate中实现<code>application:handleEventsForBackgroundURLSession:completionHandler:</code>方法，在该方法中可以根据identifier重新得到NSURLSession对象，然后处理新的内容，并做一些更新界面的操作。当操作完成时，<strong>必须</strong>调用<code>completionHandler</code>，告诉系统界面已经更新可以生成新的快照。</li>
+</ol>
+<p>还有一点需要知道，后台传输只会在WIFI环境下工作。</p>
+<p>总结：后台传输服务允许应用上传或下载大的文件、内容，没有时间限制，就算应用退出或设备重启传输工作仍能继续进行。可以和后台获取和远程通知的后台模式结合使用，适用于照片，视频，文件等内容的上传和下载。</p>
+<!--
+• Limited time to run in background
+• Background completion tasks initiated from the background • Seamless background experience
+• Data Protection and Keychain
+• Efficient battery life usage
+• Cellular data usage
+• Removed from the App Switcher
+• Background App Refresh Settings
+-->
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>终于结束了这篇文章。一来是很久没写文章了，二来以前没怎么写过这类文章，所以写起来还是有点吃力，且速度也慢。本来这周就要做分享的，结果因为没来得及写完，于是向师傅请求再往后推一推，实在是挺不好意思的。祝<br>我下周的分享的能顺利完成吧。</p>
+<p>另外，下周要投入更加紧张的新项目了。可能会遇到一些从来没遇到过的问题。可能自己的表现会让人觉得不是很满意。不管怎样，我都会尽自己最大的努力去完成的。</p>
+<p>除了工作8小时之外，下周准备开始看Core Text和Text Kit的内容了。期待一下~</p>
+</div></article><article><header><h2><a href="/archive/2013-08-13/multitasking-enhancements-in-ios7/">iOS7多任务增强（1）</a></h2></header><div class="article-meta clearfix"><time class="left">2013-08-13</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><p>参与的上一个项目上线后，忽然就有了几天空闲的时间。前一篇文章提到过要分享的事，因为赶项目一直没有进行。正好趁着这几天专心研究一下。这次主要把焦点放在iOS7多任务增强上，决定先把官方文档读一读。在<a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS7.html#//apple_ref/doc/uid/TP40013162-SW1" target="_blank" rel="external">《What’s new in iOS 7》</a>这篇文档中，推荐我们阅读《iOS App Programming Guide》的<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW3" target="_blank" rel="external">“App States and Multitasking”</a>章节了解更多相关内容。结果在接触到多任务增强的内容之前，花了很多时间边阅读边翻译应用状态的部分。虽然弄清楚这部分的知识也很必要，但是因为最初的目的是尽快学习新增的内容以做分享，所以这样缓慢的进度也让我很着急。另外，在阅读的过程中总会碰到相关却还不太清楚的知识点，比如在读到<a href="https://developer.apple.com/library/prerelease/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html#//apple_ref/doc/uid/TP40007072-CH4-SW14" target="_blank" rel="external">“The Main Run Loop”</a>的时候我又找了另一篇文档学习<a href="http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW1" target="_blank" rel="external">“run loops”</a>的知识。就像越滚越大的雪球，需要学习的相关知识也越来越多，又因为自己还不够快的学习速度，等我真正开始研究新增的特性时，已经过去了四天。不过最后证明，有了前面几天的铺垫，后面的学习进度更快了。当然选对学习材料也很重要，除了官方文档之外，我还花了很多时间在网上收集资料，最后发现，其实WWDC提供的视频+Keynote+Sample才是利器，能帮助我们更快更全面的了解重点内容，有谁比苹果的工程师更了解新特性呢。虽然这几天进度慢啃得很辛苦也走了点弯路，却也让我找到了学习状态和更好的方法，让我对今后的学习更有信心。今天是七夕，没有情人的我，就靠这些感悟愉悦一下心情吧：P。</p>
+<p>话不多说了，下面开始本文的重点内容吧。</p>
+<p>目录：</p>
+<ul>
+<li>预备知识</li>
+<li>iOS7多任务增强 </li>
+</ul>
+<h2 id="u9884_u5907_u77E5_u8BC6"><a href="#u9884_u5907_u77E5_u8BC6" class="headerlink" title="预备知识"></a>预备知识</h2><p>在开始将新增特性之前，还是先简单地说说下面两点吧</p>
+<ul>
+<li>iOS应用的状态（App States）</li>
+<li>iOS6中的多任务</li>
+</ul>
+<h4 id="iOS_u5E94_u7528_u72B6_u6001"><a href="#iOS_u5E94_u7528_u72B6_u6001" class="headerlink" title="iOS应用状态"></a>iOS应用状态</h4><p>对于一个iOS应用来说，知道自己当前是运行在前台还是后台是很重要的。由于iOS设备的系统资源更加有限，应用需要根据这种状态信息，针对不同的状态做不同的操作。另外，操作系统也会限制你的应用运行在后台时能做的事，以达到提高电池的续航能力，提升用户对跑在前台的应用的用户体验的目的。当你的应用在前台和后台两种模式之间转换时，系统会通知你的应用。当接收到通知时，就是改变应用行为的机会啦。<br>在任何时刻，应用的状态都逃不出以下几种：</p>
+<ul>
+<li>不在运行（Not Running）：应用未启动或已启动但被终止</li>
+<li>非活跃（Inactive）：应用跑在前台但当前不能接收事件（可能在执行其它代码）。应用通常只在这种状态停留很短的时间然后转到其他状态</li>
+<li>活跃（Active）：跑在前台而且可以接收事件 </li>
+<li>后台（Background）：应用跑在后台执行代码。大多数应用在被挂起之前会短暂进入这个状态。不过应用可以请求额外的执行时间从而保留在这个状态久一点。另外，如果应用运行后直接进入后台会进入该状态，而不是非活跃状态</li>
+<li>睡眠（Suspended）：应用在后台但不执行代码。系统在把应用放到该状态之前不会通知应用。当进入睡眠状态时时，应用还保留在内存中但不执行代码。当低内存的时候处于睡眠状态的应用可能会被终止，此时系统也不会通知应用</li>
+</ul>
+<p>这几种状态之间的变化如下图所示：</p>
+<p><img src="/images/2013/8/app_states_change.png" alt="状态改变"></p>
+<p>状态的改变总是伴随这app delegate对象方法的调用：</p>
+<ul>
+<li><code>application:willFinishLaunchingWithOptions:</code>——启动时的第一个执行代码的机会</li>
+<li><code>application:didFinishLaunchingWithOptions:</code>——在应用展示给用户之前做最后的初始化</li>
+<li><code>applicationDidBecomeActive:</code>——让应用知道它即将成为前台应用程序，可以在此做最后的准备</li>
+<li><code>applicationWillResignActive:</code>——让应用知道它马上就要离开前台了</li>
+<li><code>applicationDidEnterBackground:</code>——让应用知道它运行在后台可能在将来某个时间将休眠</li>
+<li><code>applicationWillEnterForeground:</code>——应用将离开后台回到前台，但还不是活跃状态</li>
+<li><code>applicationWillTerminate:</code>——让应用知道它将被终止，如果应用在睡眠状态被终止则不会调用该方法</li>
+</ul>
+<p>我们重点讨论的就是当应用处于后两种状态时，应用应该做什么以及可以做什么。其它的状态暂时不详谈。</p>
+<p>当用户按了主屏（Home）键或睡眠/唤醒（锁屏/解屏）键，或系统启动了另一个应用时，当前运行在前台的应用会转变为非活跃状态然后进入后台状态。这些状态变化会调用<code>applicationWillResignActive:</code>和<code>applicationDidEnterBackground:</code>方法。</p>
+<p>过程如图所示：</p>
+<p><img src="/images/2013/8/foreground_to_background.png" alt="前台进入后台"></p>
+<p>这时候难题出现了。<br>一方面，当应用进入后台时，应该在<code>applicationDidEnterBackground:</code>方法中考虑以下操作：</p>
+<ul>
+<li>为系统截图做准备。当<code>applicationDidEnterBackground:</code>方法返回时，系统会给应用当前的用户界面截个图。然后用这张图做过渡动画。如果应用当前界面上有敏感信息的视图，可以在该方法返回前把这部分隐藏起来。</li>
+<li>保存用户数据和应用状态信息。当应用进入后台的时候所有未保存的改变都要写到磁盘。因为你的应用在后台的时候可能会被杀掉。你可以将这些操作放到一个背景线程中。</li>
+<li>尽可能释放内存</li>
+</ul>
+<p>另一方面，在<code>applicationDidEnterBackground:</code>返回前大概只有5秒的时间可以执行任务，如果超过的话应用就会被杀掉。所以应该尽快执行完任务，如果你的任务需要更多时间，那你可以调用<code>beginBackgroundTaskWithExpirationHandler:</code>方法请求额外的时间然后在一个次要的线程中开始运行费时的任务。不过，不管是否开启后台任务，<code>applicationDidEnterBackground:</code>方法都需要在5秒内返回。该方法结束后大多数应用很快会进入睡眠状态。如果应用请求了特定的后台任务（比如播放音乐）或是向系统请求了额外的执行时间那还会再运行长一点的时间。</p>
+<p>注意上面提到的“请求额外的时间”和“特定的后台任务”都属于iOS的后台技术，<strong>现在是时候介绍iOS的多任务啦！</strong></p>
+<h4 id="iOS6_u4E2D_u7684_u591A_u4EFB_u52A1"><a href="#iOS6_u4E2D_u7684_u591A_u4EFB_u52A1" class="headerlink" title="iOS6中的多任务"></a>iOS6中的多任务</h4><p>从iOS4开始，在用户按了Home键使应用离开屏幕后，大多数应用很快就会进入睡眠状态。此时应用虽然还在内存中，但它已经没有权利执行代码了。不过，如前面提到的，如果应用请求了特定的后台任务或是向系统请求了额外的执行时间，那它还可以在后台多运行一会儿。下面就来了解一下有哪些特定的后台任务以及如何请求额外的执行时间吧。</p>
+<p>在详解之前，iOS6中可用的5种基本后台模式：</p>
+<ul>
+<li>播放音频：应用可以继续在后台播放和/或录制音频。</li>
+<li>接收位置更新：当设备的位置发生变化时，应用可以获得回调。</li>
+<li>下载报刊杂志：Newsstand应用可以在后台下载内容</li>
+<li>提供Voice-over-IP（VoIP）服务：VoIP允许用户通过网络而不是蜂窝数据打电话 </li>
+<li>执行有限长度的任务：应用可以在有限时间内运行任何代码</li>
+</ul>
+<p>前面四种模式在本篇文章中不作详述，有兴趣的同学可以参考优质教程网站RayWenderlich上的<a href="http://www.raywenderlich.com/29948/backgrounding-for-ios#" target="_blank" rel="external">这篇教程</a>，它非常详细地讲解了如果使用运用这些模式。我们只把重点放在最后一种模式上。</p>
+<p>当应用转入后台时，应用可以向系统请求额外的时间以完成一些重要的工作。这时候可以调用<code>UIApplication</code>类的<code>beginBackgroundTaskWithExpirationHandler:</code>方法。这个方法可以延迟应用进入睡眠状态，为应用争取更多的时间完成诸如“将用户信息写到磁盘”或“从网络服务器端下载一个重要文件”等任务。</p>
+<p>具体代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (<span class="typename">void</span>)<span class="string">applicationDidEnterBackground:</span>(UIApplication *)application</span><br><span class="line">&#123;</span><br><span class="line">    bgTask = [application <span class="string">beginBackgroundTaskWithExpirationHandler:</span>^&#123;</span><br><span class="line">        <span class="comment">// Clean up any unfinished task business by marking where you</span></span><br><span class="line">        <span class="comment">// stopped or ending the task outright.</span></span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;];</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Start the long-running task and return immediately.</span></span><br><span class="line">    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Do the work associated with the task, preferably in chunks.</span></span><br><span class="line"> </span><br><span class="line">        [application <span class="string">endBackgroundTask:</span>bgTask];</span><br><span class="line">        bgTask = UIBackgroundTaskInvalid;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码展示了当应用进入后台时如何开始一个会长时间运行的任务。大家可能注意到了，结束后台任务的代码<code>[application endBackgroundTask:bgTask];</code>被调用了两次。第一处是在时间到期处理块中调用的，这是考虑了任务过长以至于请求的额外时间用完了任务还是没完成的情况.如果不调用，应用将被终止。在创建了一个任务之后，再将该任务提交到一个派遣队列中异步执行。不要忘了<code>applicationDidEnterBackground:</code>方法还是得在规定的时间内返回的。</p>
+<p>这里还有几点需要注意：</p>
+<ul>
+<li>任何<code>beginBackgroundTaskWithExpirationHandler:</code>方法的调用都需要有对应的<code>endBackgroundTask:</code>方法来标记任务的结束。因为应用只有有限的时间执行任务，时间用完的时候如果任务没有被标记为已经结束那么系统就会终止应用。</li>
+<li>一个应用可以同时有多个后台任务。每个任务在创建的时候会返回一个任务标识，在该任务结束的时候必须将自己的标识符传给<code>endBackgroundTask:</code>方法。</li>
+<li>每次创建任务的时候都传一个时间到期处理块给<code>beginBackgroundTaskWithExpirationHandler:</code>方法。当该处理块被执行时，应用可以执行任务的时间已经所剩无几了，因此应该尽快执行清理代码并将任务标记为结束。如果你想知道应用具体剩的时间，可以访问<code>UIApplication</code>的<code>backgroundTimeRemaining</code>属性。</li>
+</ul>
+<p>另外有人可能会问调用这个方法最多可以得到多少的额外时间呢。这个数值其实是不确定的，它由iOS系统决定。但我们可以通过<code>backgroundTimeRemaining</code>属性查看某个时刻的具体数值。一般情况下，基于观察得出的时间长度是10分钟。不过要再次重申，官方文档中也没有给出一个大概的数值，所以不要依赖这个最大时间数值。</p>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>关于iOS6中的多任务就讲这么多啦。不管什么时候都要记住，官方文档+WWDC视频+Keynote永远是我们学习的好伙伴。如果有什么不理解或想继续深入学习的，可以行动起来啦。</p>
+<p>明天终于要写iOS7中的新特性啦~撒花~</p>
+<!--
+How much time you get after your app gets backgrounded is determined by iOS. There are no guarantees on the time you’re granted, but you can always check the backgroundTimeRemaining property of UIApplication. This will tell you how much time you have left.
+The general, observation-based consensus is that usually, you get 10 minutes. Again, there are no guarantees and the API documentation doesn’t even give a ballpark number – so don’t rely on this number. You might get 5 minutes or 5 seconds, so your app needs to be prepared for anything!
+
+Technically, this is not a background mode at all, as you don’t have to declare that your app uses this mode in Info.plist. Instead, it’s an API that lets you run arbitrary code for a finite amount of time when your app is in the background. Well… whatever!
+
+The way to use the beginBackgroundTaskWithExpirationHandler: method is to call it before starting the task you want to protect. Every call to this method must be balanced by a corresponding call to the endBackgroundTask: method to mark the end of the task. Because apps are given only a limited amount of time to finish background tasks, you must call this method before time expires; otherwise the system will terminate your app. To avoid termination, you can also provide an expiration handler when starting a task and call the endBackgroundTask: method from there. (You can use the value in the backgroundTimeRemaining property of the app object to see how much time is left.)
+
+Important: An app can have any number of tasks running at the same time. Each time you start a task, the beginBackgroundTaskWithExpirationHandler: method returns a unique identifier for the task. You must pass this same identifier to the endBackgroundTask: method when it comes time to end the task.
+
+Listing 3-3 shows how to start a long-running task when your app transitions to the background. In this example, the request to start a background task includes an expiration handler just in case the task takes too long. The task itself is then submitted to a dispatch queue for asynchronous execution so that the applicationDidEnterBackground: method can return normally. The use of blocks simplifies the code needed to maintain references to any important variables, such as the background task identifier. The bgTask variable is a member variable of the class that stores a pointer to the current background task identifier and is initialized prior to its use in this method.
+
+Listing 3-3  Starting a background task at quit time
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // Clean up any unfinished task business by marking where you
+        // stopped or ending the task outright.
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+
+    // Start the long-running task and return immediately.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        // Do the work associated with the task, preferably in chunks.
+
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    });
+}
+Note: Always provide an expiration handler when starting a task, but if you want to know how much time your app has left to run, get the value of the backgroundTimeRemaining property of UIApplication.
+In your own expiration handlers, you can include additional code needed to close out your task. However, any code you include must not take too long to execute because, by the time your expiration handler is called, your app is already very close to its time limit. For this reason, perform only minimal cleanup of your state information and end the task.
+-->
+</div></article><article><header><h2><a href="/archive/2013-08-10/ios-human-interface-guidelines-ui-design-basics/">iOS界面设计规范</a></h2></header><div class="article-meta clearfix"><time class="left">2013-08-10</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/iOS/">iOS</a></li></ul></div><div class="markdown-body"><p>时间过得真快，入职五周了。第一周周五的时候师傅问我最近有没有学习iOS7的东西，我很惭愧的回答最近看的比较少。因为那段时间忙着毕业的事，真正毕业后又给自己放了两周的假回家休息去了，完全不在学习的状态。然后师傅让我近期学习一下准备组内分享吧。刚入职就接到这任务实在是有点诚惶诚恐。怕自己一只小菜鸟到时候说的都是他们知道的，肯定是尽给挑刺的。不过我属于有压力就有动力型的。况且就算他不交代任务我也是准备入职后就要给自己充充电了，近期应该会启动个人项目了。</p>
+<p>说来惭愧，在我刚开始学习iOS编程的时候就知道<a href="https://developer.apple.com/library/prerelease/ios/design/index.html#//apple_ref/doc/uid/TP40013289" target="_blank" rel="external">《iOS界面设计规范》</a>这份文档的重要性，虽然那时候的学习材料是全英文的，但当我开始读这份文档时，还是没有坚持读下去的耐心，毕竟和读母语材料比起来速度还是慢不少。在过去的几年里，我有意培养自己阅读英文文档的能力，书或材料如果有英文版本，我会尽量读原版，中文版会偶尔作为参考。最近觉得自己不管是理解分析能力还是速度都有了很大的提高。不过，由于最近需要看的材料太多，而这份文档并不是最主要的，于是就选择翻译的版本。在此，非常感谢那些无私奉献自己的时间和精力，为更多人带来便利的<a href="http://www.weibo.com/c7210" target="_blank" rel="external">译者</a>。虽然他自称是搬运工，但还是要感谢一下。也希望自己有一天也有能力参与其中。</p>
+<p>这边文章是在读完“基础UI”部分后做的笔记，供自己不时的快速浏览掌握重点，更详细的内容可以阅读<a href="http://beforweb.com/node/215" target="_blank" rel="external">这里</a>。</p>
+<h2 id="iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI"><a href="#iOS_u754C_u9762_u8BBE_u8BA1_u89C4_u8303-_u57FA_u7840UI" class="headerlink" title="iOS界面设计规范-基础UI"></a>iOS界面设计规范-基础UI</h2><h4 id="1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09"><a href="#1_u3001_u4E3AiOS7_u800C_u8BBE_u8BA1_uFF08Design_for_iOS_7_uFF09" class="headerlink" title="1、为iOS7而设计（Design for iOS 7）"></a>1、为iOS7而设计（Design for iOS 7）</h4><p>iOS7涵盖了三个方面的设计主题思想：依从，清晰，纵深</p>
+<ul>
+<li>依从于内容<ul>
+<li>充分利用全屏空间</li>
+<li>慎用拟物化视觉元素</li>
+<li>让半透明的视觉元素透露其背后的内容</li>
+</ul>
+</li>
+<li>提供清晰的视觉效果<ul>
+<li>充分运用留白</li>
+<li>通过色彩简化UI（选一种关键的颜色）</li>
+<li>使用系统字体，确保清晰易读</li>
+<li>拥抱无边的按钮（搭配一种关键色或系统色，表达一个可交互的UI元素）</li>
+</ul>
+</li>
+<li>利用纵深进行沟通<ul>
+<li>iOS7会在不同的层面上显示内容，以体现内容的层级和位置关系，这有利于用户理解屏幕上各种元素之间的关联 </li>
+</ul>
+</li>
+</ul>
+<h4 id="2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09"><a href="#2_u3001iOS_u5E94_u7528_u89E3_u6790_uFF08iOS_App_Anatomy_uFF09" class="headerlink" title="2、iOS应用解析（iOS App Anatomy）"></a>2、iOS应用解析（iOS App Anatomy）</h4><p>UIKit框架提供的视图可分为四大类</p>
+<ul>
+<li>栏（Bars）：包含与上下文内容情景相关的信息，告诉用户他们当前在应用当中所处的位置；同时还包含相关的导航功能，或是可以由用户发起的操作</li>
+<li>内容视图（Content Views）：包含当前应用所特有的内容，并支持相关的交互行为，例如滚屏、插入、删除、对列表条目进行重新排序，等等</li>
+<li>控制元素（Controls）：产生行为或显示信息</li>
+<li>临时视图（Temporary views）：临时性的向用户呈现重要信息，或提供额外的功能及选项</li>
+</ul>
+<p>除了定义UI元素以为，UIKit框架还定义了那些可以完成诸如手势识别、绘制、辅助支持、打印支持等功能的对象。</p>
+<h4 id="3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09"><a href="#3_u3001_u542F_u52A8_u4E0E_u9000_u51FA_uFF08Starting_and_Stopping_uFF09" class="headerlink" title="3、启动与退出（Starting and Stopping）"></a>3、启动与退出（Starting and Stopping）</h4><ul>
+<li>即刻启动（用户在一到两分钟内对应用做出评估）<ul>
+<li>尽可能避免使用无意义的启动画面（欢迎画面）或其他类似的启动体验</li>
+<li>应用安装完成后，不要让用户必须进行设置才能使用。取而代之地：<ul>
+<li>将解决方案聚焦在80%的用户需求上</li>
+<li>尽可能地从其它来源获取信息</li>
+<li>如果确实需要用户进行安装设置，尽量让他们在你的应用内部进行输入</li>
+</ul>
+</li>
+<li>尽可能晚些让用户登录</li>
+<li>一般来说，要按照默认的屏幕定向方式启动应用。iPhone：竖屏。iPad，设备当前所处的状态就是其默认定向方式。</li>
+<li>可以提供一张与应用首屏看上去几乎一致的启动图片</li>
+<li>如果可能，不要让用户在初次加载应用时阅读免责声明或必须对用户进行确认</li>
+<li>在应用重启后，要恢复到用户退出时的状态，让他们可以在中断的地方继续使用</li>
+</ul>
+</li>
+<li>时刻准备着退出<ul>
+<li>iOS应用永远不会有用来执行关闭或退出的操作，用户退出的方式就是切换到另外一个应用、回到系统主界面，或是使设备进入睡眠模式<ul>
+<li>及时地、尽可能频繁地保存用户数据</li>
+<li>退出时，尽可能在细节层面保存当前的状态</li>
+</ul>
+</li>
+<li>永远不要以程序化的方式自动退出iOS应用。如果出入某些原因，你的应用无法按预期正常工作，你需要告诉用户当前情况。取决于问题严重性，有两种选择：<ul>
+<li>通过一个能够吸引用户注意力的界面描述当前问题，并提出执行建议</li>
+<li>如果只有一部分功能不可用了，可以在用户用到这些功能的时候，通过一个单独的界面或是弹出提示（alert）来告诉他们当前的情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4_u3001_u5E03_u5C40_uFF08Layout_uFF09"><a href="#4_u3001_u5E03_u5C40_uFF08Layout_uFF09" class="headerlink" title="4、布局（Layout）"></a>4、布局（Layout）</h4><p>布局所关乎的远不止“界面元素在屏幕上看上去如何”这么简单。通过布局，你可以让用户知道哪些东西是最重要的，他们有哪些事情可做，内容之间具有怎样的关联。取决于设备类型和横竖屏定向方式，同一款应用布局界面也可能会有不同的模式。</p>
+<ul>
+<li>确保交互元素具有足够大的尺寸，以便用户可以很容易的与内容和功能进行交互。可点区域尽量不小于44*44像素</li>
+<li>将重要的内容和功能放在权重更高的位置上，使用户的注意力更好的聚焦在主要任务上（前半频，左侧）</li>
+<li>利用视觉表现形式的权重和平衡，向用户展示界面元素之间的相对重要程度（尺寸）</li>
+<li>通常情况下，要防止UI元素在外观上具有不统一的表现形式</li>
+<li>确保界面中的主要内容在默认尺寸下可以被阅读和理解</li>
+</ul>
+<h4 id="5_u3001_u5BFC_u822A_uFF08Navigation_uFF09"><a href="#5_u3001_u5BFC_u822A_uFF08Navigation_uFF09" class="headerlink" title="5、导航（Navigation）"></a>5、导航（Navigation）</h4><p>总体上讲，导航可以分为三种类型，其中每一类都很好的适用于一种特定类型的应用：</p>
+<ul>
+<li>树形信息结构的应用</li>
+<li>扁平化信息结构的应用</li>
+<li>由内容或体验所驱动的应用</li>
+</ul>
+<p>通过UIKit框架当中定义的一些标准UI控件，可以轻松的创建属性导航或扁平化结构的导航，此外，还有些控件可以帮你创建以内容为中心的导航模式。</p>
+<ul>
+<li>通过导航栏（navigation bar），为用户提供一种能够轻松的在树形信息结构大过年周前后行进的导航方式</li>
+<li>通过标签栏（tab bar）展示整体内容或功能之下的若干个同级分类项</li>
+<li>通过分页控件（page control）来暗示多个条目或内容视图的存在</li>
+<li>一般来讲，最好让每个界面都有唯一的入口。如果用户可以在不同的上下文当中访问到同一个界面，请考虑使用一种临时化的视图，例如模态视图（modal view），动作表单（action sheet）或是警告提示（alert）。</li>
+</ul>
+<h4 id="6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09"><a href="#6_u3001_u6A21_u6001_u60C5_u5883_uFF08Modal_Context_uFF09" class="headerlink" title="6、模态情境（Modal Context）"></a>6、模态情境（Modal Context）</h4><p>模态，一种用来承载特定内容、功能或体验的模式，比如警告框，模态视图和分享界面。它可以帮助用户完成某些任务，或在不受干扰的情况获取信息，但会暂时性的强迫用户停止与应用其他部分的互动。通常，仅在这些情况下考虑创建模态情境：</p>
+<ul>
+<li>非常有必要吸引用户的注意力</li>
+<li>必须完成某些任务，或明确的放弃某项操作，否则用户数据将进入不稳定的状态</li>
+</ul>
+<p>在使用模态时，应该注意一下几点：</p>
+<ul>
+<li>保持模态任务的简单、简短、易聚焦</li>
+<li>始终提供一种明显而安全的退出方式</li>
+<li>如果主任务需要一系列层极化的模态视图，那么要确保用户知道当他们再模态视图中点击“完成”按钮后发生什么</li>
+<li>使用警告框来传递那些必不可少的重要信息，通常还要提供可执行的功能选项</li>
+<li>尊重用户对于是否接受通知信息所做的设定</li>
+</ul>
+<h4 id="7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09"><a href="#7_u3001_u4EA4_u4E92_u6027_u4E0E_u53CD_u9988_uFF08Interactivity_and_Feedback_uFF09" class="headerlink" title="7、交互性与反馈（Interactivity and Feedback）"></a>7、交互性与反馈（Interactivity and Feedback）</h4><ul>
+<li>用户习惯于标准手势<ul>
+<li>人们会使用诸如点击、拖拽、开合等手势与iOS设备及应用进行交互。他们会希望所有应用当中的手势操作模式保持一致<ul>
+<li>通过点击（tap）来按压或选择一个对象</li>
+<li>通过拖拽（drag）来滚屏或移动对象（将其从界面一边拖向另一边）</li>
+<li>通过滑动（flick）来快速滚屏或移动对象</li>
+<li>使用一个手指进行轻扫（swipe），可以展现更多内容。例如列表的删除功能，从界面顶端展开通知中心</li>
+<li>通过双击（double tap）将内容或图片放大并治愈屏幕中央；如果当前内容已呈最大状态，则将其缩小至默认尺寸</li>
+<li>通过双指张开（pinch open）或闭合（pinch close）对内容进行放大或缩小</li>
+<li>通过长按（Touch and hold）在可编辑或可选择的文字上显示放大镜，用来定位光标</li>
+<li>通过摇晃（shake）机身执行撤销或重做的操作</li>
+</ul>
+</li>
+<li>使用手势时要注意<ul>
+<li>不要为标准手势赋予不同的行为</li>
+<li>不要重复创建与标准手势具有相同作用的自定义手势</li>
+<li>可以将复杂的手势作为完成任务的快捷方式，而不是唯一的方式</li>
+<li>不要定义新的手势，除非你的应用是游戏</li>
+<li>对于iPad，要考虑使用多指手势</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>反馈有助于理解（iOS用户习惯于接受各种反馈。这些反馈可以帮助他们了解当前的状态，发现接下来可以做什么，或是预计自己的操作会产生怎样的结果）<ul>
+<li>尽可能将状态或其他的相关反馈信息整合到UI当中</li>
+<li>避免不必要的警告提示</li>
+</ul>
+</li>
+<li>信息输入方式要简单易行（无论是点击元素还是使用键盘，输入信息都需要耗费用户的时间和注意力。）<ul>
+<li>使用选择让输入更轻松</li>
+<li>在合适的情况下，从iOS获取信息</li>
+<li>给予用户有价值的反馈，来平衡向他们索取信息的要求</li>
+</ul>
+</li>
+</ul>
+<h4 id="8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09"><a href="#8_u3001_u672F_u8BED_u548C_u63AA_u8F9E_uFF08Terminology_and_Wording_uFF09" class="headerlink" title="8、术语和措辞（Terminology and Wording）"></a>8、术语和措辞（Terminology and Wording）</h4><p>应用当中所显示的任何一个词汇都是你与用户之间交流对话的一部分。要将这些多看做是帮助人们提升舒适感的机会。</p>
+<ul>
+<li>确保你所使用的术语能够被用户理解</li>
+<li>使用非正式的、友善的语气，但不要过于随便</li>
+<li>像报纸编辑一样思考，留意那些多余的、非必要的词语</li>
+<li>在交互控件旁边使用剪短的标题或含义明确的图标</li>
+<li>在描述日期信息是，一定要做到准确</li>
+<li>在App Store中撰写优秀的产品描述文案，尽可能创造机会与潜在用户进行沟通<ul>
+<li>更正所有的拼写、语法和标点当中的错误</li>
+<li>尽量少使用全部大写字母的词语</li>
+<li>考虑对特定的bug修正进行描述</li>
+</ul>
+</li>
+</ul>
+<h4 id="9_u3001_u52A8_u753B_uFF08Animation_uFF09"><a href="#9_u3001_u52A8_u753B_uFF08Animation_uFF09" class="headerlink" title="9、动画（Animation）"></a>9、动画（Animation）</h4><p>漂亮而精致的动画效果遍及iOS各处，它们使应用体验更具动态性，更加吸引人。惊喜恰当的动画效果可以：</p>
+<ul>
+<li>传达状态</li>
+<li>增强用户对直接操作（direct manipulation）的感知</li>
+<li>通过视觉化的方式像用户呈现操作结果</li>
+</ul>
+<p>在使用动画时应该注意以下几点：</p>
+<ul>
+<li>要谨慎的使用动画效果，特别是在非沉浸型应用当中</li>
+<li>尽可能与iOS内置应用的动画模式保持一致</li>
+<li>在你的应用当中保持动画效果的一致性</li>
+<li>多数情况下，要在你的自定义动画效果中力争实现仿真效果</li>
+</ul>
+<h4 id="10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29"><a href="#10_u3001_u6587_u5B57_u6392_u7248_u4E0E_u914D_u8272_uFF08Typography_and_Color_29" class="headerlink" title="10、文字排版与配色（Typography and Color)"></a>10、文字排版与配色（Typography and Color)</h4><ul>
+<li>文字必须易读：最首要的是，要确保文字排版的清晰易读。iOS7当中的动态文字（Dynamic Type）可以实现<ul>
+<li>在每种字号下都能自动调整文字的粗细、字间距和行高</li>
+<li>针对语义上有所区别的文本模块，例如Body、Footnote或Headline1等，可以自动指定不同的文字样式风格</li>
+<li>文字可以根据用户在动态文字及可访问性设置当中指定的字号来自动调整</li>
+</ul>
+</li>
+<li>色彩可以增进沟通<ul>
+<li>考虑定义一种基本色</li>
+<li>色彩是具有沟通能力的，但不总是以你希望的方式来实现</li>
+<li>多数情况下，不要让用户因为色彩而分神</li>
+</ul>
+</li>
+</ul>
+<h4 id="11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29"><a href="#11_u3001_u56FE_u5F62_u4E0E_u56FE_u6807_uFF08Icons_and_Graphics_29" class="headerlink" title="11、图形与图标（Icons and Graphics)"></a>11、图形与图标（Icons and Graphics)</h4><ul>
+<li>应用图标<ul>
+<li>应用图标是产品品牌的重要组成部分</li>
+<li>最好的应用图标都是独特、简洁和吸引人的</li>
+<li>应用图标在不同的尺寸规格下都应该表现良好</li>
+</ul>
+</li>
+<li>其他图标（iOS提供了很多小图标用来再标签栏、工具栏和导航栏当中代表常见的任务或内容类型。也可以在需要表现自定义行为或内容类型时使用定制化的图标）</li>
+<li>图形<ul>
+<li>支持Retina屏幕</li>
+<li>按照原始的长宽比例显示照片和图形，另外放大比率不要超过100%</li>
+<li>不要在你的设计当中使用那些代表苹果公司产品的图形</li>
+</ul>
+</li>
+</ul>
+<h4 id="12_u3001_u54C1_u724C_uFF08Branding_uFF09"><a href="#12_u3001_u54C1_u724C_uFF08Branding_uFF09" class="headerlink" title="12、品牌（Branding）"></a>12、品牌（Branding）</h4><p>当你需要在应用中明确的向用户展示品牌信息的时候，要记住一下两点：</p>
+<ul>
+<li>将品牌元素中的色彩或图形进行必要的精炼，通过一种非侵入式的方式整合到应用当中</li>
+<li>不要从用户所关注的内容当中挤兑空间来展示品牌信息</li>
+</ul>
+<p>Note：应用图标是个例外，它完全聚焦在品牌识别性上。因为用户会很频繁的看到你的图标，所以要多花些时间再图标的设计上，增强其对于用户目光的可识别性，这是很重要的</p>
+<h4 id="13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09"><a href="#13_u3001_u4E0EiOS_u7684_u7CFB_u7EDF_u6574_u5408_uFF08Integrating_with_iOS_uFF09" class="headerlink" title="13、与iOS的系统整合（Integrating with iOS）"></a>13、与iOS的系统整合（Integrating with iOS）</h4><ul>
+<li>使用标准UI<ul>
+<li>尽可能使用UIKit框架定义的各种标准UI元素。使用标准UI控件而非自定义元素，你和你的用户都会收益：<ul>
+<li>如果iOS本身经过重新设计，那么标准的UI元素再系统更新时随时可以随之自动更新，而自定义的UI元素不会</li>
+<li>人们会自动了解怎样使用你的应用，因为他们已经习惯于标准的UI元素</li>
+</ul>
+</li>
+<li>为了充分发挥系统标准UI元素的价值，你必须：<ul>
+<li>在使用任何一个标准UI元素的时候都要依照设计规范的指导</li>
+<li>通常，不要为标准的交互行为创建自定义UI控件</li>
+<li>不要为系统预设的按钮和图标赋予其它含义</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对横竖屏的响应<ul>
+<li>让用户再横竖屏的状态下都能聚焦于最重要的内容</li>
+<li>通常，要让应用能够运行在各种定向模式当中<ul>
+<li>应用再启动时只按照默认支持的定向方式进行加载，忽略当前设备的屏幕方向</li>
+<li>避免在界面中通过UI元素提示人们调转设备屏幕</li>
+<li>同时支持两种子状态</li>
+</ul>
+</li>
+<li>如果对于你的应用来说，调转屏幕方向是用户输入方式的一部分，那么你可以通过特定的方式进行定制化的处理</li>
+<li>在iPhone上，判断用户再调转屏幕方向时的需求所在，并进行响应</li>
+<li>在iPad上，尽量支持所以的定向方式，满足用户的期待</li>
+<li>在为iPad应用设计横竖屏响应规则时，遵循以下几点规范：<ul>
+<li>考虑改变辅助信息或功能的展示方式</li>
+<li>避免无意义的布局变化</li>
+<li>如果可能，再切换横竖屏时尽量避免对信息内容样式的重新定义</li>
+<li>为横竖屏各提供一张单独的启动图片</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弱化文件和文档的处理过程<ul>
+<li>在iOS中，用户不应该被要求与文件直接打交道，特别不该去面对任何会让他们联想到文件数据源或存储位置一类信息的东西，例如：<ul>
+<li>确认打开或保存文件的对话框</li>
+<li>关于文件访问权限的信息</li>
+</ul>
+</li>
+<li>尽量让人们在不需要打开桌面端iTunes的情况下管理各种文档，如果你的应用需要提供创建及编辑文档的功能，那么可以尝试提供某种“文档选择器”。理想情况下，这样的文档选择器应该：<ul>
+<li>具有高度的图形化外观</li>
+<li>让人们使用最少量的手势完成目标操作</li>
+<li>提供新建文档的功能</li>
+</ul>
+</li>
+<li>给用户一张安全感，让他们知道自己的工作始终会被保存，除非他们主动取消保存或进行删除</li>
+</ul>
+</li>
+<li>必要的时候提供设置方式<ul>
+<li>尽量避免将用户打发到系统的“设置”当中进行操作</li>
+<li>如果有必要，让用户尽量再你的应用内部进行设置</li>
+<li>如果需要，尽量在应用的主界面中提供设置选项</li>
+</ul>
+</li>
+</ul>
+</div></article><article><header><h2><a href="/archive/2013-08-07/welcome-to-my-new-home/">我终于有家啦-利用Octopress搭建个人博客</a></h2></header><div class="article-meta clearfix"><time class="left">2013-08-07</time><ul class="tags left"><li><a href="/categories/技术/">技术</a></li></ul><ul class="tags right"><li><a href="/tags/工具/">工具</a></li></ul></div><div class="markdown-body"><p>一直以来都想搭建个人博客。虽然之前发表在网络上的文字并不多，但前前后后也换过几个平台。初中毕业的暑假，怀揣作家梦的我在51空间开了第一个小窝，写过几篇矫揉造作的文章，没有人送鲜花，也没有人扔鸡蛋，一切都是自娱自乐。后来因为QQ空间的社交性，又开始写文章，用青春期的文笔，写一些现在看来是为赋新词强说愁的文字吧。再后来只想找个安静的地方默默抒发感情，在Lofter上每周一记。这时候的想法相对成熟，更多的是对人生、对未来的思考。另外也在豆瓣，还一些我都忘了名字的网站上写过零零碎碎的文字。</p>
+<p>在选择软件工程这个专业之前，我一直觉得自己文科比较强，回顾自己过去写过的文章也都是偏文艺范。直到上了大学之后，才知道有很多技术牛人坚持写技术博客。为了表现我在专业方面的追求，一直想脱离现成的平台，搭建自己的博客。最狂热的时候应该是大三开始学操作系统那会儿。看了Linux的书，教你如何搭建自己的服务器，再加上学过JavaEE，HTML+CSS，就想着动手试着做自己的网站。可惜到了毕业也没做成。</p>
+<p>直到最近开始工作了，出于某些原因，终于觉得搭建自己的博客的很有必要。在重温了池建强老师的<a href="http://macshuo.com/?p=547" target="_blank" rel="external">《趣谈个人建站》</a>这篇文章后就开始动手了。虽然有样本参照，网上也能找到其他的资源，但建站的过程也不顺利。罪魁祸首就是住的地方的网络差到令人发指。不过好在每天总还是有那么一段时间能够连通外面的世界。</p>
+<h2 id="u4E0B_u9762_u5C31_u6765_u56DE_u987E_u4E00_u4E0B_u6240_u505A_u7684_u5DE5_u4F5C_uFF1A"><a href="#u4E0B_u9762_u5C31_u6765_u56DE_u987E_u4E00_u4E0B_u6240_u505A_u7684_u5DE5_u4F5C_uFF1A" class="headerlink" title="下面就来回顾一下所做的工作："></a>下面就来回顾一下所做的工作：</h2><h4 id="1-_u8D2D_u4E70_u57DF_u540D"><a href="#1-_u8D2D_u4E70_u57DF_u540D" class="headerlink" title="1.购买域名"></a>1.购买域名</h4><p>最开始的时候我也不是很清楚IP地址（IP Adress），域名（Domain Name）和DNS（Domain Name Service）之间是什么关系。后来看到这样的比喻才觉得了然于心：博客或站点就是我们在网络中的家，IP地址就是标识家的位置的经纬度。如果有人想往家里寄快递，总不能报经纬度吧，这时候域名就派上用场了，它相当于门牌号。不过与现实世界门牌号与地址一对一不同，一个IP地址可以对应多个域名。那DNS又是什么。它就好比专门指路的服务亭。虽然你知道了门牌号（域名），可是你还是不知道怎么走。这时候你就要问DNS，如果他知道这个域名对应的IP地址，就会马上给你指路，如果不知道，就反馈到上级，直到找到为止，再给你指路。同时，他会把这个IP地址记录下来，下次再有人问起，就可以马上帮上忙啦。</p>
+<p>理清了这个几个概念，那我们就去买房子吧。提供域名购买的厂商很多。由于在国内购买需要提供材料备案，比较麻烦，而再国外网站购买的话就只要动动鼠标。最后我根据很多人的推荐，选择了<a href="http://www.godaddy.com" target="_blank" rel="external">Godaddy</a>。进入它的网站后，搜索域名，选好之后就可以加入购物车去付款啦，一般价格在几美元到十几美元不等。没有信用卡可以选择支付宝支付，非常方便。</p>
+<p>购买好域名之后需要把域名和IP地址绑定起来。Godaddy默认提供了DNS服务，但据说再国内访问不太稳定。最后我选择了国内免费的DNS提供商<a href="https://www.dnspod.cn" target="_blank" rel="external">DNSPod</a>。这时候需要到Godaddy控制面板修改DNS，具体操作可参考<a href="https://support.dnspod.cn/Kb/showarticle/tsid/42/" target="_blank" rel="external">DNSPod提供的帮助</a>。这里假设你已经购买了空间，拥有一个公网IP地址，只要在DNSPod上<a href="https://support.dnspod.cn/Kb/showarticle/tsid/30/" target="_blank" rel="external">添加一个A记录，将域名和IP地址绑定</a>。</p>
+<h4 id="2-_u5229_u7528Octopress_u548CGithub_u642D_u5EFA_u4E2A_u4EBA_u535A_u5BA2"><a href="#2-_u5229_u7528Octopress_u548CGithub_u642D_u5EFA_u4E2A_u4EBA_u535A_u5BA2" class="headerlink" title="2.利用Octopress和Github搭建个人博客"></a>2.利用Octopress和Github搭建个人博客</h4><p>前面提到过我是在读了<a href="http://macshuo.com/?p=547" target="_blank" rel="external">《趣谈个人建站》</a>之后开始建站的，原本也打算购买一个VPS（Virtual Private Server），后来在Google“搭建个人博客”的时候，发现了<a href="http://octopress.org" target="_blank" rel="external">Octopress</a>。这是基于<a href="https://github.com" target="_blank" rel="external">Github</a>(想了解Github可<a href="http://www.worldhello.net/gotgithub/index.html" target="_blank" rel="external">参考这里</a>)提供的Github Pages服务的博客生成框架，基于<a href="http://git-scm.com" target="_blank" rel="external">Git</a>来管理文章（想了解Git可阅读<a href="http://nettedfish.sinaapp.com/blog/2013/08/05/deep-into-git-with-diagrams/" target="_blank" rel="external">这篇文章</a>），采用<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown语法</a>来写文章（推荐使用<a href="http://mouapp.com" target="_blank" rel="external">Mou编辑器</a>）。</p>
+<p>关于如何安装Octopress网上有很多文章。比如很优质的网站<a href="http://beyondvincent.com" target="_blank" rel="external">破船之家</a>最近也搬到Octopress了，可以参考他的<a href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/" target="_blank" rel="external">相关文章</a>，包括除了常规安装之外其他诸如添加评论功能，域名解析等内容。还可以参考<a href="http://easypi.github.io/blog/2013/01/05/using-octopress-to-setup-blog-on-github/" target="_blank" rel="external">这篇文章</a>。这里就不再赘述。安装完成之后你一定还会想换个不一样的主题吧，那就去<a href="http://opthemes.com" target="_blank" rel="external">这里</a>找找吧。<br><a href="!--如果还想添加中文标签，可参考[这里](http://txgcwm.github.io/blog/2013/07/21/octopresstian-jia-zhong-wen-biao-qian-gong-neng/)。--">!--如果还想添加中文标签，可参考[这里](http://txgcwm.github.io/blog/2013/07/21/octopresstian-jia-zhong-wen-biao-qian-gong-neng/)。--</a></p>
+<p>所有这些安装和配置都完成后，开始<a href="http://octopress.org/docs/blogging/" target="_blank" rel="external">写博客</a>吧。</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>搭建这个博客我前前后后花了两个星期，主要原因就是要和前面提到过的住的地方糟糕的网络做斗争（这让我更加有努力工作换个好房子住的斗志：D）。虽然过程有点痛苦，但结果还是令人欣喜的。终于能通过带有个人标识的域名访问我在网上的家了。为了这个家能按我的个人品位装修，我以后应该还会学学前端的知识，自己动手装修，会更有意思。除了视觉之外，我也会多写文章，让家里充满属于我的独特气息。</p>
+<p>这真是一段有趣的记忆，也会是一个全新的开始！</p>
+</div></article><article><header><h2><a href="/archive/2013-05-28/2013-5-28-where-is-my-gap-year/">假期结束</a></h2></header><div class="article-meta clearfix"><time class="left">2013-05-28</time><ul class="tags left"><li><a href="/categories/生活/">生活</a></li></ul><ul class="tags right"><li><a href="/tags/随笔/">随笔</a></li></ul></div><div class="markdown-body"><p>前段时间我把毕业旅行当作任务来看待。结果还是因为没人陪自己一个人又不敢出去而不了了之了。现在要回学校了，找工作，答辩，可能还要找房子，各种事要忙起来了。朋友们又一个个邀我去旅行了。我开始后悔五月份没有把工作搞定。现在也不用这么焦急。我也后悔这几天没把项目完成。不过后悔也没用，还是往前看吧。<br>回家待了一个月，心想着的是工作之前再陪爸妈一会儿。但是每天还是一人在房间独处的时间居多。真希望自己是个会撒娇的女儿。<br>明天得回学校了，现在越长大越恋家。略有点伤感。</p>
+</div></article><article><header><h2><a href="/archive/2013-01-06/2013-1-6-i-have-no-job/">又是新的一年呢</a></h2></header><div class="article-meta clearfix"><time class="left">2013-01-06</time><ul class="tags left"><li><a href="/categories/生活/">生活</a></li></ul><ul class="tags right"><li><a href="/tags/随笔/">随笔</a></li></ul></div><div class="markdown-body"><p>辞职已经有一个半来月了。原本打算到周围城市走走看看同学的，最后只去了金华。那天一群人在旅馆喝酒吃烧烤乱舞到也是非常尽兴。另外就是花了两天时间结束了实习答辩。其它时间可以说被惰性控制着，整日只是看一些没有营养的视频，刷微博逛贴吧获取一些碎片化的信息。</p>
+<p>回家后这样混日子的生活更甚，因为不用考虑吃饭的问题，也不用自己洗衣打扫（虽然说起来这些我都应该自己做），要说有什么令人激动的事情，那也就是少女时代回归的事了。我从来没想过我还能饭上这个从前每次被提起我都会说“这种人这么多脸都分不清楚的团没意思的”的韩国组合。但是现在我却能从她们那样积极努力的追求梦乡的行为中感受到励志的意味。明明都是差不多年纪的女孩，可是她们是那样充满热情，那样努力。</p>
+<p>和别人付出一样的努力是不能成为和别人不一样的存在的。这是侑利说的。给了我很多的驱动力。刚刚看完小贤的四辑的 ThanksTo，开始喜欢她就是因为她的正直，她的执着。这个神奇的少女看很多书，尤其是自我开发方面的。她很注重健康管理，要按时睡觉，睡前一定会写日记，再做冥想。她会早起学习外语，她说 2013 年要更努力的学习英语，中文，日语。因为她要在 30 年后成为出色的外交官。就是这样怀着梦想并努力实践的她，是我学习的榜样。而其它８个女生，也都充满各自不同却同样迷人的魅力。我会一直为少女时代应援。</p>
+<p>而我自己对于 2013 年的展望，倒是和小贤挺相似。再感叹一句，她不愧是我饭的人，虽然比我还小几个月。自我管理，外语（英语，韩语），健康，读书。这些都是新的一年需要更加努力实践的。2013 年对我来说的重要性还在于今年我要毕业了。过了年我就不得不考虑工作的事。关于职业规划得重新写一篇文章。</p>
+<p>最近看书太少，获取的信息都太碎片化了。明天网上买得两本书终于到手。戒掉整日刷微博和逛贴吧，控制好时间。静下心来多看点书，多做思考，另外也得开始毕业设计的项目了。又是好久没有敲代码了，怕有点生疏了。</p>
+<p>睡觉时间到了，昨天有点失眠。晚安。</p>
+</div></article><div class="archive-pagination"><div class="paginator"><span class="page-number current">1</span></div></div></div><div class="block-sidebar column one-fourth"><div class="widget tags"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul></div><div class="widget archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">一月 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a><span class="archive-list-count">1</span></li></ul></div><div class="widget text-content"><p>© 2015 ananwbr <br>
+Powered by &nbsp;<a href="http://hexo.io">Hexo</a></p></div></div></div></div></body></html>
